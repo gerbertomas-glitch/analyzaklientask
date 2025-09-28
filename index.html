@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMF Analýza | Najděte svůj potenciál</title>
+    <title>GMF Analýza | Nájdite svoj potenciál</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400&display=swap');
@@ -338,11 +338,11 @@
              <img src="https://viewcz.com/images/svg/head-logo.svg" alt="ViewCZ Logo" class="welcome-logo">
         </header>
         <div class="welcome-content">
-            <h1>Odhalte plný potenciál svého firemního profilu</h1>
-            <p class="subtitle">V digitálním světě je vaše vizitka na Google Mapách klíčová. Náš nástroj provede hloubkovou analýzu, porovná vás s konkurencí a ukáže vám cestu k lepší viditelnosti a novým zákazníkům.</p>
+            <h1>Odhaľte plný potenciál svojho firemného profilu</h1>
+            <p class="subtitle">V digitálnom svete je vaša vizitka na Google Mapách kľúčová. Náš nástroj vykoná hĺbkovú analýzu, porovná vás s konkurenciou a ukáže vám cestu k lepšej viditeľnosti a novým zákazníkom.</p>
             <div class="search-container">
                  <i class="fas fa-search"></i>
-                 <input type="text" id="gmf-input" placeholder="Zadejte název a adresu vaší firmy...">
+                 <input type="text" id="gmf-input" placeholder="Zadajte názov a adresu vašej firmy...">
             </div>
         </div>
     </main>
@@ -354,13 +354,13 @@
 
     <div id="floating-warning-bar" class="hidden">
         <div>
-            <h4><i class="fas fa-exclamation-triangle"></i> Kritický nedostatek</h4>
+            <h4><i class="fas fa-exclamation-triangle"></i> Kritický nedostatok</h4>
             <ul>
-                <li>⚠️ Riziko převzetí profilu</li>
-                <li>🚫 Omezené možnosti správy</li>
-                <li>📉 Horší pozice ve vyhledávání a mapách</li>
-                <li>❌ Nižší důvěryhodnost u zákazníků</li>
-                <li>📊 Omezený přístup k analytikám a funkcím</li>
+                <li>⚠️ Riziko prevzatia profilu</li>
+                <li>🚫 Obmedzené možnosti správy</li>
+                <li>📉 Horšia pozícia vo vyhľadávaní a mapách</li>
+                <li>❌ Nižšia dôveryhodnosť u zákazníkov</li>
+                <li>📊 Obmedzený prístup k analytikám a funkciám</li>
             </ul>
         </div>
         <button class="close-btn">×</button>
@@ -373,17 +373,17 @@
         <i class="fas fa-search-plus"></i> Nová analýza
     </button>
     <button id="floating-comparison-btn" class="btn btn-green hidden">
-        <i class="fas fa-chart-bar"></i> Porovnání s konkurencí <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        <i class="fas fa-chart-bar"></i> Porovnanie s konkurenciou <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
     </button>
     <button id="floating-back-btn" class="btn hidden">
-        <i class="fas fa-arrow-left"></i> Zpět na analýzu
+        <i class="fas fa-arrow-left"></i> Späť na analýzu
     </button>
     <button id="floating-solution-btn" class="btn btn-green hidden">
-        <i class="fas fa-lightbulb"></i> Návrh řešení <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        <i class="fas fa-lightbulb"></i> Návrh riešenia <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
     </button>
     <!-- NOVÉ TLAČÍTKO ZPĚT -->
     <button id="floating-back-to-comparison-btn" class="btn hidden">
-        <i class="fas fa-arrow-left"></i> Zpět na porovnání
+        <i class="fas fa-arrow-left"></i> Späť na porovnanie
     </button>
 
 
@@ -669,7 +669,7 @@
             }
             
             const script = document.getElementById('google-maps-script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places,geometry&language=cs&callback=initGoogleServices`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places,geometry&language=sk&callback=initGoogleServices`;
             window.initGoogleServices = initializeGoogleAndAutocomplete;
             
             // --- VYKRESLOVACÍ FUNKCE (zůstávají beze změny) ---
@@ -711,7 +711,7 @@
                                         <div class="rating-info">
                                             <i class="fas fa-star"></i>
                                             <span>${d.rating?.toFixed(1) || 'N/A'}</span>
-                                            <span style="margin-left:5px;">(${d.user_ratings_total || 0} recenzí)</span>
+                                            <span style="margin-left:5px;">(${d.user_ratings_total || 0} recenzií)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -784,10 +784,10 @@
                         const streetViewToggleBtn = $('#street-view-toggle-btn');
                         if (!streetViewToggleBtn) return;
                         if (status === google.maps.StreetViewStatus.OK) {
-                            streetViewToggleBtn.innerHTML = `<span>Zobrazit Street View</span><i class="fas fa-chevron-down"></i>`;
+                            streetViewToggleBtn.innerHTML = `<span>Zobraziť Street View</span><i class="fas fa-chevron-down"></i>`;
                             streetViewToggleBtn.disabled = false;
                         } else {
-                            streetViewToggleBtn.innerHTML = `<span>Street View chybí</span><i class="fas fa-chevron-down"></i>`;
+                            streetViewToggleBtn.innerHTML = `<span>Street View chýba</span><i class="fas fa-chevron-down"></i>`;
                             streetViewToggleBtn.disabled = true;
                         }
                     });
@@ -795,21 +795,21 @@
 
 
                 $('#auto-details-widget').innerHTML = `
-                    <h3><i class="fas fa-cogs"></i> Fáze 1: Automatická analýza</h3>
+                    <h3><i class="fas fa-cogs"></i> Fáza 1: Automatická analýza</h3>
                     <ul class="details-list">
-                        <h4>Kategorie</h4>
-                        <li><strong>Primární kategorie:</strong> <div class="value-col">${getData(d.types?.[0])?.replace(/_/g, ' ')}</div></li>
-                        <li><strong>Sekundární kategorie:</strong> <div class="value-col">${getData(d.types?.slice(1), arr => arr.map(i => i.replace(/_/g, ' ')).join(', '))}</div></li>
-                        <h4>Kontaktní informace</h4>
+                        <h4>Kategórie</h4>
+                        <li><strong>Primárna kategória:</strong> <div class="value-col">${getData(d.types?.[0])?.replace(/_/g, ' ')}</div></li>
+                        <li><strong>Sekundárne kategórie:</strong> <div class="value-col">${getData(d.types?.slice(1), arr => arr.map(i => i.replace(/_/g, ' ')).join(', '))}</div></li>
+                        <h4>Kontaktné informácie</h4>
                         <li><strong>Adresa:</strong> <div class="value-col">${getData(d.formatted_address)}</div></li>
                         <li><strong>Web:</strong> <div class="value-col">${getData(d.website, url => `<a href="${url}" target="_blank">${url}</a>`)}</div></li>
-                        <li><strong>Telefon:</strong> <div class="value-col">${getData(d.formatted_phone_number)}</div></li>
+                        <li><strong>Telefón:</strong> <div class="value-col">${getData(d.formatted_phone_number)}</div></li>
                         <li><strong>Plus Code:</strong> <div class="value-col">${getData(d.plus_code?.global_code)}</div></li>
                         <li>
-                            <strong>Otevírací doba:</strong>
+                            <strong>Otváracie hodiny:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="opening-hours-toggle">
-                                    <span>${d.opening_hours?.weekday_text ? 'Zobrazit dny' : 'Chybí'}</span>
+                                    <span>${d.opening_hours?.weekday_text ? 'Zobraziť dni' : 'Chýba'}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -821,7 +821,7 @@
                             <strong>GPS lokace:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="map-toggle-btn">
-                                    <span>${hasGeometry ? 'Zobrazit mapu' : 'Chybí'}</span>
+                                    <span>${hasGeometry ? 'Zobraziť mapu' : 'Chýba'}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -845,7 +845,7 @@
                         <li><strong>Prům. hodnocení:</strong> <div class="value-col">${getData(d.rating, r => `<strong>${r} ★</strong>`)}</div></li>
                         <li><strong>Počet hodnocení:</strong> <div class="value-col">${getData(d.user_ratings_total)}</div></li>
                         <li>
-                            <strong>Nejnovější recenze:</strong>
+                            <strong>Najnovšie recenzie:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="reviews-toggle-btn">
                                     <span>Nejnovější</span>
@@ -882,7 +882,7 @@
                         const span = streetViewToggleBtn.querySelector('span');
 
                         if (!streetViewLi.classList.contains('hidden')) {
-                            span.textContent = 'Skrýt Street View';
+                            span.textContent = 'Skryť Street View';
                             if (!panorama) {
                                 panorama = new google.maps.StreetViewPanorama(
                                     document.getElementById('street-view-panorama'), {
@@ -898,16 +898,16 @@
                                 });
                             }
                         } else {
-                            span.textContent = 'Zobrazit Street View';
+                            span.textContent = 'Zobraziť Street View';
                         }
                     });
                 } else if (streetViewToggleBtn) {
-                    streetViewToggleBtn.innerHTML = `<span>Street View chybí</span><i class="fas fa-chevron-down"></i>`;
+                    streetViewToggleBtn.innerHTML = `<span>Street View chýba</span><i class="fas fa-chevron-down"></i>`;
                     streetViewToggleBtn.disabled = true;
                 }
 
                 if (!reviews || reviews.length === 0) {
-                    reviewsToggleBtn.innerHTML = '<span class="missing">Žádné recenze</span>';
+                    reviewsToggleBtn.innerHTML = '<span class="missing">Žiadne recenzie</span>';
                     reviewsToggleBtn.disabled = true;
                 } else {
                     reviewsToggleBtn.addEventListener('click', () => {
@@ -915,7 +915,7 @@
                         reviewsToggleBtn.classList.toggle('expanded');
                         
                         if (reviewsListContainer.classList.contains('show')) {
-                            reviewsToggleBtn.querySelector('span').textContent = 'Skrýt recenze';
+                            reviewsToggleBtn.querySelector('span').textContent = 'Skryť recenzie';
                             const sortedReviews = reviews.sort((a, b) => b.time - a.time).filter(r => r.text && r.text.trim() !== '').slice(0, 3);
                             let reviewsHtml = '';
                             sortedReviews.forEach(review => {
@@ -946,7 +946,7 @@
                         openingHoursToggleBtn.classList.toggle('expanded');
                         const span = openingHoursToggleBtn.querySelector('span');
                         if (openingHoursLi.classList.contains('hidden')) {
-                            span.textContent = 'Zobrazit dny';
+                            span.textContent = 'Zobraziť dni';
                         } else {
                             span.textContent = 'Skrýt dny';
                         }
@@ -962,7 +962,7 @@
                         mapToggleBtn.classList.toggle('expanded');
                         const span = mapToggleBtn.querySelector('span');
                         if (mapLi.classList.contains('hidden')) {
-                            span.textContent = 'Zobrazit mapu';
+                            span.textContent = 'Zobraziť mapu';
                         } else {
                             span.textContent = 'Skrýt mapu';
                             if (!map) {
@@ -1001,67 +1001,67 @@
             const renderManualAnalysisWidget = (d) => {
                 $('#manual-analysis-widget').innerHTML = `
                     <div class="manual-header">
-                        <h3><i class="fas fa-user-check"></i> Fáze 2: Manuální audit</h3>
+                        <h3><i class="fas fa-user-check"></i> Fáza 2: Manuálny audit</h3>
                     </div>
                     <div id="manual-checklist">
                         <div class="checklist-group">
-                            <h4><i class="fas fa-key"></i> Základní stav profilu</h4>
+                            <h4><i class="fas fa-key"></i> Základný stav profilu</h4>
                             <div class="check-item"><label for="check-claimed">Ověřený firemní zápis</label><input type="checkbox" id="check-claimed"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-info-circle"></i> Informace, konzistence a pravidla</h4>
-                             <div class="check-item"><label for="check-primary-category">Primární kategorie</label><input type="checkbox" id="check-primary-category"></div>
-                             <div class="check-item"><label for="check-secondary-categories">Sekundární kategorie</label><input type="checkbox" id="check-secondary-categories"></div>
+                            <h4><i class="fas fa-info-circle"></i> Informácie, konzistencia a pravidlá</h4>
+                             <div class="check-item"><label for="check-primary-category">Primárna kategória</label><input type="checkbox" id="check-primary-category"></div>
+                             <div class="check-item"><label for="check-secondary-categories">Sekundárne kategórie</label><input type="checkbox" id="check-secondary-categories"></div>
                              <div class="check-item"><label for="check-address">Adresa</label><input type="checkbox" id="check-address"></div>
                              <div class="check-item"><label for="check-website">Webové stránky</label><input type="checkbox" id="check-website"></div>
-                             <div class="check-item"><label for="check-phone">Telefonní číslo</label><input type="checkbox" id="check-phone"></div>
-                             <div class="check-item"><label for="check-hours">Otevírací doba</label><input type="checkbox" id="check-hours"></div>
-                            <div class="check-item"><label for="check-name-spam">Název firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam"></div>
-                            <div class="check-item"><label for="check-nap">Údaje (NAP) jsou shodné</label><input type="checkbox" id="check-nap"></div>
+                             <div class="check-item"><label for="check-phone">Telefónne číslo</label><input type="checkbox" id="check-phone"></div>
+                             <div class="check-item"><label for="check-hours">Otváracie hodiny</label><input type="checkbox" id="check-hours"></div>
+                            <div class="check-item"><label for="check-name-spam">Názov firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam"></div>
+                            <div class="check-item"><label for="check-nap">Údaje (NAP) sú zhodné</label><input type="checkbox" id="check-nap"></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-image"></i> Kvalita obsahu</h4>
-                            <div class="check-item"><label for="check-owner-photos">Fotky od majitele (Logo, titulní fotografie, další)</label><input type="checkbox" id="check-owner-photos"></div>
-                            <div class="check-item"><label for="check-photos-10plus">Počet fotografií (více než 10)</label><input type="checkbox" id="check-photos-10plus"></div>
+                            <div class="check-item"><label for="check-owner-photos">Fotky od majiteľa (Logo, titulná fotografia, ďalšie)</label><input type="checkbox" id="check-owner-photos"></div>
+                            <div class="check-item"><label for="check-photos-10plus">Počet fotografií (viac ako 10)</label><input type="checkbox" id="check-photos-10plus"></div>
                             <div class="check-item"><label for="check-street-view">Profil obsahuje Google Street View</label><input type="checkbox" id="check-street-view"></div>
-                            <div class="check-item"><label for="check-virtual-tour">Profil obsahuje Virtuální prohlídku</label><input type="checkbox" id="check-virtual-tour"></div>
+                            <div class="check-item"><label for="check-virtual-tour">Profil obsahuje Virtuálnu prehliadku</label><input type="checkbox" id="check-virtual-tour"></div>
                             <div class="check-item"><label for="check-drone-video">Profil obsahuje Dron</label><input type="checkbox" id="check-drone-video"></div>
                             <div class="check-item"><label for="check-video">Profil obsahuje Video</label><input type="checkbox" id="check-video"></div>
-                            <div class="check-item"><label for="check-description">Vlastní popis firmy</label><input type="checkbox" id="check-description"></div>
-                            <div class="check-item"><label for="check-attributes">Atributy</label><input type="checkbox" id="check-attributes"></div>
+                            <div class="check-item"><label for="check-description">Vlastný popis firmy</label><input type="checkbox" id="check-description"></div>
+                            <div class="check-item"><label for="check-attributes">Atribúty</label><input type="checkbox" id="check-attributes"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-shopping-basket"></i> Produkty/Služby/Objednávky/Menu/Rezervace</h4>
-                            <div class="check-item"><label for="check-products">Vyplněna sekce Produkty/Služby/Menu</label><input type="checkbox" id="check-products"></div>
-                            <div class="check-item"><label for="check-services">Vyplněna sekce Rezervace/Objednávky</label><input type="checkbox" id="check-services"></div>
+                            <h4><i class="fas fa-shopping-basket"></i> Produkty/Služby/Objednávky/Menu/Rezervácie</h4>
+                            <div class="check-item"><label for="check-products">Vyplnená sekcia Produkty/Služby/Menu</label><input type="checkbox" id="check-products"></div>
+                            <div class="check-item"><label for="check-services">Vyplnená sekcia Rezervácie/Objednávky</label><input type="checkbox" id="check-services"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-bullhorn"></i> Reklamní novinky</h4>
-                            <div class="check-item"><label for="check-posts">Aktivní příspěvky</label><input type="checkbox" id="check-posts"></div>
-                            <div class="check-item"><label for="check-posts-types">Aktivita příspěvků (méně než 14 dnů)</label><input type="checkbox" id="check-posts-types"></div>
+                            <h4><i class="fas fa-bullhorn"></i> Reklamné novinky</h4>
+                            <div class="check-item"><label for="check-posts">Aktívne príspevky</label><input type="checkbox" id="check-posts"></div>
+                            <div class="check-item"><label for="check-posts-types">Aktivita príspevkov (menej ako 14 dní)</label><input type="checkbox" id="check-posts-types"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-question-circle"></i> Otázky a odpovědi (Q&A)</h4>
-                            <div class="check-item"><label for="check-qa-owner-reply">Majitel odpovídá na otázky</label><input type="checkbox" id="check-qa-owner-reply"></div>
+                            <h4><i class="fas fa-question-circle"></i> Otázky a odpovede (Q&A)</h4>
+                            <div class="check-item"><label for="check-qa-owner-reply">Majiteľ odpovedá na otázky</label><input type="checkbox" id="check-qa-owner-reply"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-users"></i> Interakce</h4>
+                            <h4><i class="fas fa-users"></i> Interakcie</h4>
                             <div class="check-item">
-                                <label for="check-review-reply">Reakce na recenze</label>
+                                <label for="check-review-reply">Reakcia na recenzie</label>
                                 <div class="review-dropdown-wrapper">
                                     <button type="button" class="review-select-btn" id="review-reply-btn" data-value="0">
-                                        <span>Ne</span>
+                                        <span>Nie</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <ul class="review-select-options">
-                                        <li data-value="0">Ne</li>
-                                        <li data-value="1">Částečně</li>
-                                        <li data-value="2">Ano</li>
+                                        <li data-value="0">Nie</li>
+                                        <li data-value="1">Čiastočne</li>
+                                        <li data-value="2">Áno</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="check-item"><label for="check-messaging">Aktivní zasílání zpráv (Chat)</label><input type="checkbox" id="check-messaging"></div>
-                            <div class="check-item"><label for="check-whatsapp">Tlačítko zpráv/Whatsapp</label><input type="checkbox" id="check-whatsapp"></div>
+                            <div class="check-item"><label for="check-messaging">Aktívne zasielanie správ (Chat)</label><input type="checkbox" id="check-messaging"></div>
+                            <div class="check-item"><label for="check-whatsapp">Tlačidlo správ/Whatsapp</label><input type="checkbox" id="check-whatsapp"></div>
                         </div>
                     </div>`;
                 
@@ -1137,7 +1137,7 @@
                     </li>`).join('');
 
                 $('#score-widget').innerHTML = `
-                    <h3><i class="fas fa-tachometer-alt"></i> Skóre optimalizace</h3>
+                    <h3><i class="fas fa-tachometer-alt"></i> Skóre optimalizácie</h3>
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <div class="score-circle" style="background: conic-gradient(${scoreColor} ${score * 3.6}deg, #e9ecef ${score * 3.6}deg);">
                             <span class="score-value" style="color:${scoreColor}">${score}%</span>
@@ -1262,12 +1262,12 @@
                 const container = $('#competitor-comparison-container');
                 container.innerHTML = `
                     <div class="comparison-header">
-                        <h3><i class="fas fa-chart-line"></i> Porovnání s konkurencí</h3>
+                        <h3><i class="fas fa-chart-line"></i> Porovnanie s konkurenciou</h3>
                     </div>
                     <div class="competitor-add-container">
                         <div class="search-container">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="competitor-input" placeholder="Přidat dalšího konkurenta ručně...">
+                            <input type="text" id="competitor-input" placeholder="Pridať ďalšieho konkurenta ručne...">
                         </div>
                         <button id="add-competitor-btn" class="btn" disabled><i class="fas fa-plus"></i> Přidat</button>
                     </div>
@@ -1342,49 +1342,49 @@
                 const fullChecklist = `
                     <div id="manual-checklist-${c.place_id}" style="flex-grow: 1;">
                          <div class="checklist-group">
-                            <h4><i class="fas fa-key"></i> Základní stav</h4>
-                            <div class="check-item"><label for="check-claimed-${c.place_id}">Ověřený zápis</label><input type="checkbox" id="check-claimed-${c.place_id}" ${getCheck('check-claimed')} ${getDisabledAttribute('check-claimed')}></div>
+                            <h4><i class="fas fa-key"></i> Základný stav</h4>
+                            <div class="check-item"><label for="check-claimed-${c.place_id}">Overený zápis</label><input type="checkbox" id="check-claimed-${c.place_id}" ${getCheck('check-claimed')} ${getDisabledAttribute('check-claimed')}></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-info-circle"></i> Informace, konzistence a pravidla</h4>
-                            <div class="check-item"><label for="check-primary-category-${c.place_id}">Primární kategorie</label><input type="checkbox" id="check-primary-category-${c.place_id}" ${getCheck('check-primary-category')} ${getDisabledAttribute('check-primary-category')}></div>
-                            <div class="check-item"><label for="check-secondary-categories-${c.place_id}">Sekundární kategorie</label><input type="checkbox" id="check-secondary-categories-${c.place_id}" ${getCheck('check-secondary-categories')} ${getDisabledAttribute('check-secondary-categories')}></div>
+                            <h4><i class="fas fa-info-circle"></i> Informácie, konzistencia a pravidlá</h4>
+                            <div class="check-item"><label for="check-primary-category-${c.place_id}">Primárna kategória</label><input type="checkbox" id="check-primary-category-${c.place_id}" ${getCheck('check-primary-category')} ${getDisabledAttribute('check-primary-category')}></div>
+                            <div class="check-item"><label for="check-secondary-categories-${c.place_id}">Sekundárne kategórie</label><input type="checkbox" id="check-secondary-categories-${c.place_id}" ${getCheck('check-secondary-categories')} ${getDisabledAttribute('check-secondary-categories')}></div>
                             <div class="check-item"><label for="check-address-${c.place_id}">Adresa</label><input type="checkbox" id="check-address-${c.place_id}" ${getCheck('check-address')} ${getDisabledAttribute('check-address')}></div>
                             <div class="check-item"><label for="check-website-${c.place_id}">Webové stránky</label><input type="checkbox" id="check-website-${c.place_id}" ${getCheck('check-website')} ${getDisabledAttribute('check-website')}></div>
-                            <div class="check-item"><label for="check-phone-${c.place_id}">Telefonní číslo</label><input type="checkbox" id="check-phone-${c.place_id}" ${getCheck('check-phone')} ${getDisabledAttribute('check-phone')}></div>
-                            <div class="check-item"><label for="check-hours-${c.place_id}">Otevírací doba</label><input type="checkbox" id="check-hours-${c.place_id}" ${getCheck('check-hours')} ${getDisabledAttribute('check-hours')}></div>
-                            <div class="check-item"><label for="check-name-spam-${c.place_id}">Název firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam-${c.place_id}" ${getCheck('check-name-spam')} ${getDisabledAttribute('check-name-spam')}></div>
-                            <div class="check-item"><label for="check-nap-${c.place_id}">Údaje (NAP) jsou shodné</label><input type="checkbox" id="check-nap-${c.place_id}" ${getCheck('check-nap')} ${getDisabledAttribute('check-nap')}></div>
+                            <div class="check-item"><label for="check-phone-${c.place_id}">Telefónne číslo</label><input type="checkbox" id="check-phone-${c.place_id}" ${getCheck('check-phone')} ${getDisabledAttribute('check-phone')}></div>
+                            <div class="check-item"><label for="check-hours-${c.place_id}">Otváracie hodiny</label><input type="checkbox" id="check-hours-${c.place_id}" ${getCheck('check-hours')} ${getDisabledAttribute('check-hours')}></div>
+                            <div class="check-item"><label for="check-name-spam-${c.place_id}">Názov firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam-${c.place_id}" ${getCheck('check-name-spam')} ${getDisabledAttribute('check-name-spam')}></div>
+                            <div class="check-item"><label for="check-nap-${c.place_id}">Údaje (NAP) sú zhodné</label><input type="checkbox" id="check-nap-${c.place_id}" ${getCheck('check-nap')} ${getDisabledAttribute('check-nap')}></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-image"></i> Kvalita obsahu</h4>
                             <div class="check-item"><label for="check-owner-photos-${c.place_id}">Fotky od majitele</label><input type="checkbox" id="check-owner-photos-${c.place_id}" ${getCheck('check-owner-photos')} ${getDisabledAttribute('check-owner-photos')}></div>
                             <div class="check-item"><label for="check-photos-10plus-${c.place_id}">10+ fotografií</label><input type="checkbox" id="check-photos-10plus-${c.place_id}" ${getCheck('check-photos-10plus')} ${getDisabledAttribute('check-photos-10plus')}></div>
                             <div class="check-item"><label for="check-street-view-${c.place_id}">Google Street View</label><input type="checkbox" id="check-street-view-${c.place_id}" ${getCheck('check-street-view')} ${getDisabledAttribute('check-street-view')}></div>
-                            <div class="check-item"><label for="check-virtual-tour-${c.place_id}">Virtuální prohlídka</label><input type="checkbox" id="check-virtual-tour-${c.place_id}" ${getCheck('check-virtual-tour')} ${getDisabledAttribute('check-virtual-tour')}></div>
+                            <div class="check-item"><label for="check-virtual-tour-${c.place_id}">Virtuálna prehliadka</label><input type="checkbox" id="check-virtual-tour-${c.place_id}" ${getCheck('check-virtual-tour')} ${getDisabledAttribute('check-virtual-tour')}></div>
                             <div class="check-item"><label for="check-drone-video-${c.place_id}">Dron</label><input type="checkbox" id="check-drone-video-${c.place_id}" ${getCheck('check-drone-video')} ${getDisabledAttribute('check-drone-video')}></div>
                             <div class="check-item"><label for="check-video-${c.place_id}">Video</label><input type="checkbox" id="check-video-${c.place_id}" ${getCheck('check-video')} ${getDisabledAttribute('check-video')}></div>
                             <div class="check-item"><label for="check-description-${c.place_id}">Vlastní popis firmy</label><input type="checkbox" id="check-description-${c.place_id}" ${getCheck('check-description')} ${getDisabledAttribute('check-description')}></div>
-                            <div class="check-item"><label for="check-attributes-${c.place_id}">Atributy</label><input type="checkbox" id="check-attributes-${c.place_id}" ${getCheck('check-attributes')} ${getDisabledAttribute('check-attributes')}></div>
+                            <div class="check-item"><label for="check-attributes-${c.place_id}">Atribúty</label><input type="checkbox" id="check-attributes-${c.place_id}" ${getCheck('check-attributes')} ${getDisabledAttribute('check-attributes')}></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-shopping-basket"></i> Služby</h4>
                             <div class="check-item"><label for="check-products-${c.place_id}">Produkty/Služby/Menu</label><input type="checkbox" id="check-products-${c.place_id}" ${getCheck('check-products')} ${getDisabledAttribute('check-products')}></div>
-                            <div class="check-item"><label for="check-services-${c.place_id}">Rezervace/Objednávky</label><input type="checkbox" id="check-services-${c.place_id}" ${getCheck('check-services')} ${getDisabledAttribute('check-services')}></div>
+                            <div class="check-item"><label for="check-services-${c.place_id}">Rezervácie/Objednávky</label><input type="checkbox" id="check-services-${c.place_id}" ${getCheck('check-services')} ${getDisabledAttribute('check-services')}></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-bullhorn"></i> Reklamní novinky</h4>
-                            <div class="check-item"><label for="check-posts-${c.place_id}">Aktivní příspěvky</label><input type="checkbox" id="check-posts-${c.place_id}" ${getCheck('check-posts')} ${getDisabledAttribute('check-posts')}></div>
-                            <div class="check-item"><label for="check-posts-types-${c.place_id}">Aktivita < 14 dnů</label><input type="checkbox" id="check-posts-types-${c.place_id}" ${getCheck('check-posts-types')} ${getDisabledAttribute('check-posts-types')}></div>
+                            <h4><i class="fas fa-bullhorn"></i> Reklamné novinky</h4>
+                            <div class="check-item"><label for="check-posts-${c.place_id}">Aktívne príspevky</label><input type="checkbox" id="check-posts-${c.place_id}" ${getCheck('check-posts')} ${getDisabledAttribute('check-posts')}></div>
+                            <div class="check-item"><label for="check-posts-types-${c.place_id}">Aktivita < 14 dní</label><input type="checkbox" id="check-posts-types-${c.place_id}" ${getCheck('check-posts-types')} ${getDisabledAttribute('check-posts-types')}></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-question-circle"></i> Q&A</h4>
-                            <div class="check-item"><label for="check-qa-owner-reply-${c.place_id}">Majitel odpovídá</label><input type="checkbox" id="check-qa-owner-reply-${c.place_id}" ${getCheck('check-qa-owner-reply')} ${getDisabledAttribute('check-qa-owner-reply')}></div>
+                            <div class="check-item"><label for="check-qa-owner-reply-${c.place_id}">Majiteľ odpovedá</label><input type="checkbox" id="check-qa-owner-reply-${c.place_id}" ${getCheck('check-qa-owner-reply')} ${getDisabledAttribute('check-qa-owner-reply')}></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-users"></i> Interakce</h4>
+                            <h4><i class="fas fa-users"></i> Interakcie</h4>
                             <div class="check-item">
-                                <label>Reakce na recenze</label>
+                                <label>Reakcia na recenzie</label>
                                 <div class="review-dropdown-wrapper">
                                     <button type="button" class="review-select-btn" id="review-reply-btn-${c.place_id}" data-value="${replyState.value}">
                                         <span>${replyState.text}</span> <i class="fas fa-chevron-down"></i>
@@ -1405,9 +1405,9 @@
                             <h4 style="color: ${color};">${c.name}</h4>
                             <div class="card-top-actions">
                                 ${!isMain ? `
-                                    <a class="card-action-btn" href="${searchUrl}" target="_blank" title="Hledat na Google"><i class="fas fa-search"></i></a>
-                                    <a class="card-action-btn" href="${mapsUrl}" target="_blank" title="Zobrazit na Mapách"><i class="fas fa-map-marker-alt"></i></a>
-                                    <button class="remove-btn" title="Odebrat konkurenta" data-place-id="${c.place_id}">×</button>
+                                    <a class="card-action-btn" href="${searchUrl}" target="_blank" title="Hľadať na Google"><i class="fas fa-search"></i></a>
+                                    <a class="card-action-btn" href="${mapsUrl}" target="_blank" title="Zobraziť na Mapách"><i class="fas fa-map-marker-alt"></i></a>
+                                    <button class="remove-btn" title="Odobrať konkurenta" data-place-id="${c.place_id}">×</button>
                                 ` : ''}
                             </div>
                         </div>
@@ -1426,7 +1426,7 @@
             };
 
             const renderDeepAuditChart = (rankedCompanies, colorsMap) => {
-                let chartHtml = `<h3><i class="fas fa-chart-line"></i> Hloubkový audit (Skóre)</h3>`;
+                let chartHtml = `<h3><i class="fas fa-chart-line"></i> Hĺbkový audit (Skóre)</h3>`;
                 rankedCompanies.forEach(c => {
                     const color = colorsMap.get(c.place_id);
                     chartHtml += `
@@ -1478,7 +1478,7 @@
                             </div>
                             <div class="podium-info">
                                 ${company.rating?.toFixed(1) || 'N/A'} ★
-                                <span class="review-count">(${company.user_ratings_total || 0} recenzí)</span>
+                                <span class="review-count">(${company.user_ratings_total || 0} recenzií)</span>
                             </div>
                         </div>
                     `;
@@ -1619,38 +1619,38 @@
                 addPoints(5, state['check-secondary-categories'], "Sekundární kategorie");
                 addPoints(5, state['check-address'], "Adresa");
                 addPoints(5, state['check-website'], "Webové stránky");
-                addPoints(5, state['check-phone'], "Telefonní číslo");
-                addPoints(5, state['check-hours'], "Otevírací doba");
-                addPoints(10, company.rating >= 4.0, "Hodnocení 4.0 ★ a více");
-                addPoints(10, company.user_ratings_total >= 20, "Více než 20 recenzí");
-                addPoints(5, state['check-photos-10plus'], "Má více než 10 fotografií");
-                addPoints(5, state['check-owner-photos'], "Kvalitní fotky od majitele");
+                addPoints(5, state['check-phone'], "Telefónne číslo");
+                addPoints(5, state['check-hours'], "Otváracie hodiny");
+                addPoints(10, company.rating >= 4.0, "Hodnotenie 4.0 ★ a viac");
+                addPoints(10, company.user_ratings_total >= 20, "Viac ako 20 recenzií");
+                addPoints(5, state['check-photos-10plus'], "Má viac ako 10 fotografií");
+                addPoints(5, state['check-owner-photos'], "Kvalitné fotky od majiteľa");
                 addPoints(5, state['check-street-view'], "Profil obsahuje Google Street View");
-                addPoints(5, state['check-virtual-tour'], "Existuje virtuální prohlídka");
+                addPoints(5, state['check-virtual-tour'], "Existuje virtuálna prehliadka");
                 addPoints(5, state['check-drone-video'], "Profil obsahuje Dron");
                 addPoints(5, state['check-video'], "Profil obsahuje Video");
-                addPoints(5, state['check-description'], "Vlastní popis firmy");
-                addPoints(5, state['check-attributes'], "Vyplněny atributy");
-                addPoints(5, state['check-products'], "Vyplněná sekce Produkty/Služby/Menu");
-                addPoints(5, state['check-services'], "Vyplněná sekce Rezervace/Objednávky");
-                addPoints(10, state['check-posts'], "Pravidelně publikuje příspěvky");
-                addPoints(5, state['check-posts-types'], "Aktivita příspěvků (méně než 14 dnů)");
-                addPoints(5, state['check-qa-owner-reply'], "Odpovídá na otázky v Q&A");
-                addPoints(5, state['check-messaging'], "Aktivní zasílání zpráv (Chat)");
-                addPoints(5, state['check-whatsapp'], "Tlačítko zpráv/Whatsapp");
-                addPoints(5, state['check-name-spam'], "Název firmy bez spamu");
-                addPoints(5, state['check-nap'], "Konzistence údajů s webem (NAP)");
+                addPoints(5, state['check-description'], "Vlastný popis firmy");
+                addPoints(5, state['check-attributes'], "Vyplnené atribúty");
+                addPoints(5, state['check-products'], "Vyplnená sekcia Produkty/Služby/Menu");
+                addPoints(5, state['check-services'], "Vyplnená sekcia Rezervácie/Objednávky");
+                addPoints(10, state['check-posts'], "Pravidelne publikuje príspevky");
+                addPoints(5, state['check-posts-types'], "Aktivita príspevkov (menej ako 14 dní)");
+                addPoints(5, state['check-qa-owner-reply'], "Odpovedá na otázky v Q&A");
+                addPoints(5, state['check-messaging'], "Aktívne zasielanie správ (Chat)");
+                addPoints(5, state['check-whatsapp'], "Tlačidlo správ/Whatsapp");
+                addPoints(5, state['check-name-spam'], "Názov firmy bez spamu");
+                addPoints(5, state['check-nap'], "Konzistencia údajov s webom (NAP)");
 
                 maxScore += 10;
                 const reviewReplyStatus = parseInt(state['review-reply-btn'] || '0');
                 if (reviewReplyStatus === 2) {
                     score += 10;
-                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenze", earned: true });
+                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenzie", earned: true });
                 } else if (reviewReplyStatus === 1) {
                     score += 5;
-                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenze (částečně)", earned: true });
+                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenzie (čiastočne)", earned: true });
                 } else {
-                    if(generateBreakdown) breakdown.push({ text: "Nereaguje na recenze", earned: false });
+                    if(generateBreakdown) breakdown.push({ text: "Nereaguje na recenzie", earned: false });
                 }
                 
                 const finalScore = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
@@ -1673,163 +1673,163 @@
                 const recommendations = [
                     // Kritické
                     {
-                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Ověřte si vlastnictví firemního profilu',
-                        why: 'Podle Googlu mají ověřené profily <strong>2.7x vyšší šanci</strong>, že je zákazníci budou považovat za důvěryhodné. Bez ověření nemůžete spravovat klíčové informace a riskujete, že váš profil převezme konkurence nebo nespokojený zákazník.',
-                        how: 'Proces ověření může vyžadovat zaslání kódu poštou nebo jiné metody. <strong>Zajistíme, aby celý proces proběhl hladce a rychle</strong>, a vy jste se mohli co nejdříve plně věnovat správě profilu.',
+                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Overte si vlastníctvo firemného profilu',
+                        why: 'Podľa Googlu majú overené profily <strong>2.7x vyššiu šancu</strong>, že ich zákazníci budú považovať za dôveryhodné. Bez overenia nemôžete spravovať kľúčové informácie a riskujete, že váš profil prevezme konkurencia alebo nespokojný zákazník.',
+                        how: 'Proces overenia môže vyžadovať zaslanie kódu poštou alebo iné metódy. <strong>Zabezpečíme, aby celý proces prebehol hladko a rýchlo</strong>, a vy ste sa mohli čo najskôr plne venovať správe profilu.',
                         condition: (d, s) => !s['check-claimed']
                     },
-                    // Základní informace
+                    // Základné informácie
                      {
-                        id: 'check-primary-category', category: 'Základní informace', icon: 'fa-tags', title: 'Zvolte správnou primární kategorii',
-                        why: 'Primární kategorie je nejdůležitější signál pro Google, čemu se věnujete. Správná volba dramaticky zvyšuje šanci na zobrazení relevantním zákazníkům, kteří hledají přesně vaše služby. Špatná kategorie znamená, že se ukazujete nesprávným lidem.',
-                        how: 'Na základě analýzy vašeho byznysu a klíčových slov vybereme a nastavíme nejpřesnější a nejvýkonnější primární kategorii, která maximalizuje vaši viditelnost v oboru.',
+                        id: 'check-primary-category', category: 'Základné informácie', icon: 'fa-tags', title: 'Zvoľte správnu primárnu kategóriu',
+                        why: 'Primárna kategória je najdôležitejší signál pre Google, čomu sa venujete. Správna voľba dramaticky zvyšuje šancu na zobrazenie relevantným zákazníkom, ktorí hľadajú presne vaše služby. Zlá kategória znamená, že sa ukazujete nesprávnym ľuďom.',
+                        how: 'Na základe analýzy vášho biznisu a kľúčových slov vyberieme a nastavíme najpresnejšiu a najvýkonnejšiu primárnu kategóriu, ktorá maximalizuje vašu viditeľnosť v obore.',
                         condition: (d, s) => !s['check-primary-category']
                     },
                     {
-                        id: 'check-secondary-categories', category: 'Základní informace', icon: 'fa-tags', title: 'Doplňte relevantní sekundární kategorie',
-                        why: 'Sekundární kategorie umožňují Googlu pochopit celou šíři vaší nabídky. Každá další správně zvolená kategorie je jako další síť, kterou chytáte nové zákazníky hledající specifické služby, které nabízíte.',
-                        how: 'Provedeme detailní rešerši a doplníme všechny relevantní vedlejší kategorie, abychom pokryli veškerý váš sortiment a služby a zajistili, že vám neunikne žádný potenciální zákazník.',
+                        id: 'check-secondary-categories', category: 'Základné informácie', icon: 'fa-tags', title: 'Doplňte relevantné sekundárne kategórie',
+                        why: 'Sekundárne kategórie umožňujú Googlu pochopiť celú šírku vašej ponuky. Každá ďalšia správne zvolená kategória je ako ďalšia sieť, ktorou chytáte nových zákazníkov hľadajúcich špecifické služby, ktoré ponúkate.',
+                        how: 'Prevedieme detailný výskum a doplníme všetky relevantné vedľajšie kategórie, abychom pokryli celý váš sortiment a služby a zabezpečili, že vám neunikne žiadny potenciálny zákazník.',
                         condition: (d, s) => !s['check-secondary-categories']
                     },
                     {
-                        id: 'check-address', category: 'Základní informace', icon: 'fa-map-marker-alt', title: 'Zkontrolujte a optimalizujte adresu',
-                        why: 'Přesná adresa a správně umístěný špendlík na mapě jsou klíčové pro funkci "Navigovat" a pro zákazníky, kteří vás chtějí fyzicky navštívit. Chyba v adrese může znamenat ztrátu zákazníka, který vás nenajde.',
-                        how: 'Ověříme přesnost vaší adresy a pozice na mapě. Zajistíme, aby formát odpovídal standardům Googlu a poštovních služeb, což zlepší vaši důvěryhodnost pro algoritmus i pro zákazníky.',
+                        id: 'check-address', category: 'Základné informácie', icon: 'fa-map-marker-alt', title: 'Skontrolujte a optimalizujte adresu',
+                        why: 'Presná adresa a správne umiestnený špendlík na mape sú kľúčové pre funkciu "Navigovať" a pre zákazníkov, ktorí vás chcú fyzicky navštíviť. Chyba v adrese môže znamenať stratu zákazníka, ktorý vás nenájde.',
+                        how: 'Overíme presnosť vašej adresy a pozície na mape. Zabezpečíme, aby formát zodpovedal štandardom Googlu a poštových služieb, čo zlepší vašu dôveryhodnosť pre algoritmus i pre zákazníkov.',
                         condition: (d, s) => !s['check-address']
                     },
                     {
-                        id: 'check-website', category: 'Základní informace', icon: 'fa-globe', title: 'Doplňte webové stránky',
-                        why: 'Firmy s propojeným webem získávají v průměru o <strong>21-34 % více prokliků a dotazů</strong>. Váš web je centrem vaší online identity a Google profily s webem vnímá jako autoritativnější.',
-                        how: 'Nejde jen o vložení odkazu. Propojíme váš profil s webem tak, aby měření návštěvnosti bylo přesné a abychom zajistili konzistenci klíčových informací (NAP), což je zásadní pro SEO. <strong>Postaráme se o technicky správné nastavení.</strong>',
+                        id: 'check-website', category: 'Základné informácie', icon: 'fa-globe', title: 'Doplňte webové stránky',
+                        why: 'Firmy s prepojeným webom získavajú v priemere o <strong>21-34 % viac prekladov a dotazov</strong>. Váš web je centrom vašej online identity a Google profily s webom vníma ako autoritatívnejšie.',
+                        how: 'Nejde len o vloženie odkazu. Prepojíme váš profil s webom tak, aby meranie návštevnosti bolo presné a abychom zabezpečili konzistenciu kľúčových informácií (NAP), čo je zásadné pre SEO. <strong>Postaráme sa o technicky správne nastavenie.</strong>',
                         condition: (d, s) => !s['check-website']
                     },
                     {
-                        id: 'check-phone', category: 'Základní informace', icon: 'fa-phone', title: 'Přidejte telefonní číslo',
-                        why: 'Možnost \'Click-to-Call\' z mobilního vyhledávání je jedním z nejčastějších způsobů konverze. Chybějící číslo znamená ztracené zákazníky, kteří se nebudou obtěžovat hledat jinde.',
-                        how: 'Doplníme a zformátujeme číslo do správného mezinárodního tvaru, aby bylo funkční pro volání jedním klikem odkudkoliv. <strong>Zajistíme, aby vše fungovalo bezchybně.</strong>',
+                        id: 'check-phone', category: 'Základné informácie', icon: 'fa-phone', title: 'Pridajte telefónne číslo',
+                        why: 'Možnosť \'Click-to-Call\' z mobilného vyhľadávania je jedným z najčastejších spôsobov konverzie. Chýbajúce číslo znamená stratených zákazníkov, ktorí sa nebudú obťažovať hľadať inde.',
+                        how: 'Doplníme a zformátujeme číslo do správneho medzinárodného tvaru, aby bolo funkčné pre volanie jedným klikom odkiaľkoľvek. <strong>Zabezpečíme, aby všetko fungovalo bezchybne.</strong>',
                         condition: (d, s) => !s['check-phone']
                     },
                     {
-                        id: 'check-hours', category: 'Základní informace', icon: 'fa-clock', title: 'Vyplňte otevírací dobu',
-                        why: 'Až <strong>40 % lokálních vyhledávání</strong> se týká dotazů na otevírací dobu. Neúplné informace odrazují zákazníky, kteří si vyberou konkurenci, u které mají jistotu, že je otevřeno.',
-                        how: 'Správné nastavení otevírací doby, včetně speciálních hodin pro svátky, je klíčové. <strong>Můžeme za vás tuto agendu kompletně spravovat</strong>, abyste měli vždy aktuální informace bez starostí.',
+                        id: 'check-hours', category: 'Základné informácie', icon: 'fa-clock', title: 'Vyplňte otváracie hodiny',
+                        why: 'Až <strong>40 % lokálnych vyhľadávaní</strong> sa týka dotazov na otváracie hodiny. Neúplné informácie odrádzajú zákazníkov, ktorí si vyberú konkurenciu, u ktorej majú istotu, že je otvorené.',
+                        how: 'Správne nastavenie otváracích hodín, vrátane špeciálnych hodín pre sviatky, je kľúčové. <strong>Môžeme za vás túto agendu kompletne spravovať</strong>, aby ste mali vždy aktuálne informácie bez starostí.',
                         condition: (d, s) => !s['check-hours']
                     },
                     {
-                        id: 'check-name-spam', category: 'Základní informace', icon: 'fa-signature', title: 'Optimalizujte název firmy dle pravidel',
-                        why: 'Google penalizuje profily, které v názvu používají klíčová slova navíc (tzv. "spam"). Čistý a správný název firmy bez přidaných klíčových slov zvyšuje důvěryhodnost a chrání vás před rizikem pozastavení profilu.',
-                        how: 'Upravíme název vaší firmy tak, aby přesně odpovídal realitě a pravidlům Googlu. Klíčová slova strategicky umístíme tam, kam patří – do popisu, služeb a příspěvků.',
+                        id: 'check-name-spam', category: 'Základné informácie', icon: 'fa-signature', title: 'Optimalizujte názov firmy podľa pravidiel',
+                        why: 'Google penalizuje profily, ktoré v názve používajú kľúčové slová navyše (tzv. "spam"). Čistý a správny názov firmy bez pridaných kľúčových slov zvyšuje dôveryhodnosť a chráni vás pred rizikom pozastavenia profilu.',
+                        how: 'Upravíme názov vašej firmy tak, aby presne zodpovedal realite a pravidlám Googlu. Kľúčové slová strategicky umiestnime tam, kam patria – do popisu, služieb a príspevkov.',
                         condition: (d, s) => !s['check-name-spam']
                     },
                     {
-                        id: 'check-nap', category: 'Základní informace', icon: 'fa-check-double', title: 'Sjednoťte firemní údaje (NAP)',
-                        why: 'Konzistence jména, adresy a telefonu (Name, Address, Phone - NAP) napříč internetem (váš web, katalogy, sociální sítě) je pro Google silným signálem důvěryhodnosti. Neshody v údajích poškozují vaši pozici ve vyhledávání.',
-                        how: 'Provedeme audit vašich NAP údajů na internetu a zajistíme jejich sjednocení. Tato "čistá" digitální stopa je základem pro úspěšné lokální SEO.',
+                        id: 'check-nap', category: 'Základné informácie', icon: 'fa-check-double', title: 'Zjednoťte firemné údaje (NAP)',
+                        why: 'Konzistencia mena, adresy a telefónu (Name, Address, Phone - NAP) naprieč internetom (váš web, katalógy, sociálne siete) je pre Google silným signálom dôveryhodnosti. Nezrovnalosti v údajoch poškodzujú vašu pozíciu vo vyhľadávaní.',
+                        how: 'Prevedieme audit vašich NAP údajov na internete a zabezpečíme ich zjednotenie. Táto "čistá" digitálna stopa je základom pre úspešné lokálne SEO.',
                         condition: (d, s) => !s['check-nap']
                     },
-                    // Obsah a média
+                    // Obsah a médiá
                     {
-                        id: 'check-owner-photos', category: 'Obsah a média', icon: 'fa-camera-retro', title: 'Přidejte profesionální fotky od majitele',
-                        why: 'Fotky od majitele (logo, titulní fotka, fotky interiéru/exteriéru) mají mnohem větší váhu než fotky od zákazníků. Profesionální vizuální prezentace je klíčová pro první dojem a budování značky.',
-                        how: 'Zajistíme profesionální focení vašeho podniku. Vytvoříme sadu fotografií, které prodávají – od kvalitního loga, přes atraktivní titulní fotku až po snímky vašich prostor a produktů.',
+                        id: 'check-owner-photos', category: 'Obsah a médiá', icon: 'fa-camera-retro', title: 'Pridajte profesionálne fotky od majiteľa',
+                        why: 'Fotky od majiteľa (logo, titulná fotka, fotky interiéru/exteriéru) majú oveľa väčšiu váhu ako fotky od zákazníkov. Profesionálna vizuálna prezentácia je kľúčová pre prvý dojem a budovanie značky.',
+                        how: 'Zabezpečíme profesionálne fotenie vášho podniku. Vytvoríme sadu fotografií, ktoré predávajú – od kvalitného loga, cez atraktívnu titulnú fotku až po snímky vašich priestorov a produktov.',
                         condition: (d, s) => !s['check-owner-photos']
                     },
                     {
-                        id: 'check-photos-10plus', category: 'Obsah a média', icon: 'fa-images', title: 'Přidejte více kvalitních fotografií (alespoň 10)',
-                        why: 'Google uvádí, že profily s více než 10 kvalitními fotografiemi získávají <strong>o 42 % více žádostí o navigaci</strong> a <strong>o 35 % více prokliků na web</strong>. Vizuální obsah je dnes králem.',
-                        how: 'Nestačí jen nahrát fotky z mobilu. Vytvoříme pro vás profesionální sadu fotografií, která ukáže váš podnik v nejlepším světle. <strong>Investice do profesionálních fotek se mnohonásobně vrací.</strong>',
+                        id: 'check-photos-10plus', category: 'Obsah a médiá', icon: 'fa-images', title: 'Pridajte viac kvalitných fotografií (aspoň 10)',
+                        why: 'Google uvádza, že profily s viac ako 10 kvalitnými fotografiami získavajú <strong>o 42 % viac žiadostí o navigáciu</strong> a <strong>o 35 % viac prekliakov na web</strong>. Vizuálny obsah je dnes kráľom.',
+                        how: 'Nestačí len nahrať fotky z mobilu. Vytvoríme pre vás profesionálnu sadu fotografií, ktorá ukáže váš podnik v najlepšom svetle. <strong>Investícia do profesionálnych fotiek sa mnohonásobne vráti.</strong>',
                         condition: (d, s) => !s['check-photos-10plus']
                     },
                     {
-                        id: 'check-street-view', category: 'Obsah a média', icon: 'fa-street-view', title: 'Propojte profil s Google Street View',
-                        why: 'Aktuální a správně propojené Street View usnadňuje zákazníkům nalezení vaší firmy. Pokud snímky chybí nebo jsou zastaralé, může to působit nedůvěryhodně a odradit od návštěvy.',
-                        how: 'Zajistíme aktualizaci snímků Street View před vaší provozovnou a jejich správné propojení s profilem. Vytvoříme pro vás profesionální 360° snímky, které vás dokonale představí.',
+                        id: 'check-street-view', category: 'Obsah a médiá', icon: 'fa-street-view', title: 'Prepojte profil s Google Street View',
+                        why: 'Aktuálne a správne prepojené Street View uľahčuje zákazníkom nájdenie vašej firmy. Ak snímky chýbajú alebo sú zastarané, môže to pôsobiť nedôveryhodne a odradiť od návštevy.',
+                        how: 'Zabezpečíme aktualizáciu snímkov Street View pred vašou prevádzkou a ich správne prepojenie s profilom. Vytvoríme pre vás profesionálne 360° snímky, ktoré vás dokonale predstavia.',
                         condition: (d, s) => !s['check-street-view']
                     },
                     {
-                        id: 'check-virtual-tour', category: 'Obsah a média', icon: 'fa-vr-cardboard', title: 'Vytvořte virtuální prohlídku 360°',
-                        why: 'Profily s virtuální prohlídkou mají dle Googlu <strong>dvojnásobnou šanci na zaujetí uživatele</strong>. Zákazníci si mohou váš podnik "projít" z pohodlí domova, což výrazně zvyšuje jejich důvěru a chuť vás navštívit.',
-                        how: 'Jsme certifikovaní partneři Google pro tvorbu Street View a virtuálních prohlídek. Vytvoříme pro vás profesionální 360° prohlídku, kterou propojíme s vaším profilem a zajistíme maximální vizuální dopad.',
+                        id: 'check-virtual-tour', category: 'Obsah a médiá', icon: 'fa-vr-cardboard', title: 'Vytvorte virtuálnu prehliadku 360°',
+                        why: 'Profily s virtuálnou prehliadkou majú podľa Googlu <strong>dvojnásobnú šancu na zaujatie používateľa</strong>. Zákazníci si môžu váš podnik "prejsť" z pohodlia domova, čo výrazne zvyšuje ich dôveru a chuť vás navštíviť.',
+                        how: 'Sme certifikovaní partneri Google pre tvorbu Street View a virtuálnych prehliadok. Vytvoríme pre vás profesionálnu 360° prehliadku, ktorú prepojíme s vaším profilom a zabezpečíme maximálny vizuálny dopad.',
                         condition: (d, s) => !s['check-virtual-tour']
                     },
                     {
-                        id: 'check-drone-video', category: 'Obsah a média', icon: 'fa-helicopter', title: 'Obohaťte profil o video z dronu',
-                        why: 'Záběry z dronu představují vaši firmu z unikátní perspektivy a zanechávají silný dojem. Jsou ideální pro prezentaci rozsáhlejších areálů, hotelů, restaurací s venkovním posezením nebo realit.',
-                        how: 'Zajistíme profesionální natáčení a postprodukci videa z dronu. Vytvoříme krátký, dynamický klip, který odliší váš profil od konkurence a zaujme na první pohled.',
+                        id: 'check-drone-video', category: 'Obsah a médiá', icon: 'fa-helicopter', title: 'Obohaťte profil o video z dronu',
+                        why: 'Zábery z dronu predstavujú vašu firmu z unikátnej perspektívy a zanechávajú silný dojem. Sú ideálne pre prezentáciu rozsiahlejších areálov, hotelov, reštaurácií s vonkajším sedením alebo realít.',
+                        how: 'Zabezpečíme profesionálne natáčanie a postprodukciu videa z dronu. Vytvoríme krátky, dynamický klip, ktorý odlíši váš profil od konkurencie a zaujme na prvý pohľad.',
                         condition: (d, s) => !s['check-drone-video']
                     },
                     {
-                        id: 'check-video', category: 'Obsah a média', icon: 'fa-video', title: 'Přidejte do profilu prezentační video',
-                        why: 'Video je nejefektivnější formát pro rychlé předání emocí a informací. Krátké video představující vaši firmu, služby nebo produkty udrží pozornost zákazníka déle než jakýkoliv text nebo obrázek.',
-                        how: 'Vytvoříme pro vás profesionální krátké video optimalizované pro Google profil. Od scénáře, přes natáčení až po finální střih se postaráme o to, aby video prodávalo vaše služby.',
+                        id: 'check-video', category: 'Obsah a médiá', icon: 'fa-video', title: 'Pridajte do profilu prezentačné video',
+                        why: 'Video je najefektívnejší formát pre rýchle predanie emócií a informácií. Krátke video predstavujúce vašu firmu, služby alebo produkty udrží pozornosť zákazníka dlhšie ako akýkoľvek text alebo obrázok.',
+                        how: 'Vytvoríme pre vás profesionálne krátke video optimalizované pre Google profil. Od scenára, cez natáčanie až po finálny strih sa postaráme o to, aby video predávalo vaše služby.',
                         condition: (d, s) => !s['check-video']
                     },
                     {
-                        id: 'check-description', category: 'Obsah a média', icon: 'fa-info-circle', title: 'Napište poutavý popis firmy',
-                        why: 'Kvalitní popis je zásadní pro lokální SEO. Umožňuje nám strategicky umístit klíčová slova, díky kterým vás zákazníci najdou, i když nehledají přímo název vaší firmy.',
-                        how: 'Napíšeme pro vás text, který bude nejen čtivý a přesvědčivý pro zákazníky, ale také optimalizovaný pro vyhledávací algoritmy Googlu. <strong>Využijte našich copywriterů a SEO specialistů.</strong>',
+                        id: 'check-description', category: 'Obsah a médiá', icon: 'fa-info-circle', title: 'Napíšte pútavý popis firmy',
+                        why: 'Kvalitný popis je zásadný pre lokálne SEO. Umožňuje nám strategicky umiestniť kľúčové slová, vďaka ktorým vás zákazníci nájdu, aj keď nehľadajú priamo názov vašej firmy.',
+                        how: 'Napíšeme pre vás text, ktorý bude nielen čítavý a presvedčivý pre zákazníkov, ale aj optimalizovaný pre vyhľadávacie algoritmy Googlu. <strong>Využite našich copywriterov a SEO špecialistov.</strong>',
                         condition: (d, s) => !s['check-description']
                     },
                     {
-                        id: 'check-attributes', category: 'Obsah a média', icon: 'fa-tasks', title: 'Doplňte specifické atributy',
-                        why: 'Atributy (např. "Bezbariérový přístup", "Wi-Fi zdarma", "Možnost platit kartou") umožňují zákazníkům filtrovat výsledky vyhledávání. Pokud je nemáte vyplněné, nezobrazíte se zákazníkům, kteří hledají právě tyto vlastnosti.',
-                        how: 'Projdeme s vámi všechny dostupné atributy pro vaši kategorii a pečlivě je vyplníme, aby váš profil odpovídal na co nejvíce specifických dotazů zákazníků.',
+                        id: 'check-attributes', category: 'Obsah a médiá', icon: 'fa-tasks', title: 'Doplňte špecifické atribúty',
+                        why: 'Atribúty (napr. "Bezbariérový prístup", "Wi-Fi zadarmo", "Možnosť platiť kartou") umožňujú zákazníkom filtrovať výsledky vyhľadávania. Ak ich nemáte vyplnené, nezobrazíte sa zákazníkom, ktorí hľadajú práve tieto vlastnosti.',
+                        how: 'Prejdeme s vami všetky dostupné atribúty pre vašu kategóriu a starostlivo ich vyplníme, aby váš profil odpovedal na čo najviac špecifických dotazov zákazníkov.',
                         condition: (d, s) => !s['check-attributes']
                     },
-                    // Interakce se zákazníky
+                    // Interakcie so zákazníkmi
                     {
-                        id: 'reviews-10', category: 'Interakce se zákazníky', icon: 'fa-star', title: 'Získejte více než 10 recenzí',
-                        why: 'Podle studií si <strong>91 % zákazníků</strong> čte online recenze a <strong>84 %</strong> jim věří stejně jako osobnímu doporučení. Počet recenzí přímo ovlivňuje vaši pozici ve vyhledávání a důvěryhodnost.',
-                        how: 'Víme, jak eticky a efektivně motivovat vaše zákazníky k zanechání hodnocení. <strong>Připravíme pro vás strategii a nástroje pro systematický sběr recenzí</strong>, které posunou váš profil na vrchol.',
+                        id: 'reviews-10', category: 'Interakcie so zákazníkmi', icon: 'fa-star', title: 'Získajte viac ako 10 recenzií',
+                        why: 'Podľa štúdií si <strong>91 % zákazníkov</strong> číta online recenzie a <strong>84 %</strong> im verí rovnako ako osobnému odporúčaniu. Počet recenzií priamo ovplyvňuje vašu pozíciu vo vyhľadávaní a dôveryhodnosť.',
+                        how: 'Vieme, ako eticky a efektívne motivovať vašich zákazníkov k zanechaniu hodnotenia. <strong>Pripravíme pre vás stratégiu a nástroje pre systematický zber recenzií</strong>, ktoré posunú váš profil na vrchol.',
                         condition: (d, s) => d.user_ratings_total < 10
                     },
                     {
-                        id: 'rating-4.2', category: 'Interakce se zákazníky', icon: 'fa-star-half-alt', title: 'Zvyšte průměrné hodnocení nad 4.2 ★',
-                        why: 'Průměrné hodnocení je jedním z prvních údajů, které zákazník vidí. Podle studií si firmy s hodnocením pod 4.0 hvězdičky vybírá jen minimum zákazníků. Zvýšení průměru i o desetiny bodu může výrazně zvýšit míru prokliku.',
-                        how: 'Naše strategie pro sběr recenzí se zaměřuje na oslovování spokojených zákazníků, čímž přirozeně zvyšujeme průměrné hodnocení. Součástí je i profesionální řešení negativních recenzí.',
+                        id: 'rating-4.2', category: 'Interakcie so zákazníkmi', icon: 'fa-star-half-alt', title: 'Zvýšte priemerné hodnotenie nad 4.2 ★',
+                        why: 'Priemerné hodnotenie je jedným z prvých údajov, ktoré zákazník vidí. Podľa štúdií si firmy s hodnotením pod 4.0 hviezdičky vybiera len minimum zákazníkov. Zvýšenie priemeru aj o desatiny bodu môže výrazne zvýšiť mieru prekliku.',
+                        how: 'Naša stratégia pre zber recenzií sa zameriava na oslovenie spokojných zákazníkov, čím prirodzene zvyšujeme priemerné hodnotenie. Súčasťou je aj profesionálne riešenie negatívnych recenzií.',
                         condition: (d, s) => d.rating < 4.2
                     },
                     {
-                        id: 'review-reply-btn', category: 'Interakce se zákazníky', icon: 'fa-reply', title: 'Odpovídejte na všechny recenze',
-                        why: 'Firmy, které odpovídají na recenze, jsou vnímány <strong>1.7x důvěryhodněji</strong> než ty, které nereagují. Google navíc aktivitu na profilu hodnotí jako pozitivní signál a zlepšuje vaši viditelnost.',
-                        how: 'Pravidelné sledování a profesionální odpovídání na recenze je časově náročné. <strong>Tuto komunikaci převezmeme za vás</strong>, budeme reagovat rychle a v souladu s vaší firemní kulturou.',
+                        id: 'review-reply-btn', category: 'Interakcie so zákazníkmi', icon: 'fa-reply', title: 'Odpovedajte na všetky recenzie',
+                        why: 'Firmy, ktoré odpovedajú na recenzie, sú vnímané <strong>1.7x dôveryhodnejšie</strong> ako tie, ktoré nereagujú. Google navyše aktivitu na profile hodnotí ako pozitívny signál a zlepšuje vašu viditeľnosť.',
+                        how: 'Pravidelné sledovanie a profesionálne odpovedanie na recenzie je časovo náročné. <strong>Túto komunikáciu prevezmeme za vás</strong>, budeme reagovať rýchlo a v súlade s vašou firemnou kultúrou.',
                         condition: (d, s) => parseInt(s['review-reply-btn']) < 2
                     },
                      {
-                        id: 'check-qa-owner-reply', category: 'Interakce se zákazníky', icon: 'fa-question-circle', title: 'Využijte sekci Otázky a odpovědi',
-                        why: 'Proaktivní zodpovězení častých dotazů snižuje zátěž vašeho personálu a poskytuje zákazníkům okamžité informace. Je to také skvělá příležitost, jak do profilu dostat další relevantní klíčová slova.',
-                        how: 'Analyzujeme, co vaši zákazníci nejčastěji hledají, a vytvoříme sadu strategických otázek a odpovědí (FAQ), které předejdou nejasnostem a zlepší vaši pozici ve vyhledávání. <strong>Nechte analytickou práci na nás.</strong>',
+                        id: 'check-qa-owner-reply', category: 'Interakcie so zákazníkmi', icon: 'fa-question-circle', title: 'Využite sekciu Otázky a odpovede',
+                        why: 'Proaktívne zodpovedanie častých dotazov znižuje záťaž vášho personálu a poskytuje zákazníkom okamžité informácie. Je to tiež skvelá príležitosť, ako do profilu dostať ďalšie relevantné kľúčové slová.',
+                        how: 'Analyzujeme, čo vaši zákazníci najčastejšie hľadajú, a vytvoríme sadu strategických otázok a odpovedí (FAQ), ktoré predídu nejasnostiam a zlepšia vašu pozíciu vo vyhľadávaní. <strong>Nechajte analytickú prácu na nás.</strong>',
                         condition: (d, s) => !s['check-qa-owner-reply']
                     },
                     {
-                        id: 'messaging-whatsapp', category: 'Interakce se zákazníky', icon: 'fa-comments', title: 'Aktivujte zasílání zpráv (Chat / WhatsApp)',
-                        why: 'Moderní zákazníci preferují rychlou a neformální komunikaci. Možnost poslat rychlý dotaz přes chat může být rozhodujícím faktorem, proč si vyberou právě vás. Zvyšuje to engagement a počet poptávek.',
-                        how: 'Aktivujeme a nastavíme pro vás funkci chatu. Můžeme zajistit i správu příchozích dotazů, abyste na žádný nezapomněli odpovědět včas, což je pro udržení dobrého hodnocení klíčové.',
+                        id: 'messaging-whatsapp', category: 'Interakcie so zákazníkmi', icon: 'fa-comments', title: 'Aktivujte zasielanie správ (Chat / WhatsApp)',
+                        why: 'Moderní zákazníci preferujú rýchlu a neformálnu komunikáciu. Možnosť poslať rýchly dotaz cez chat môže byť rozhodujúcim faktorom, prečo si vyberú práve vás. Zvyšuje to engagement a počet dopytov.',
+                        how: 'Aktivujeme a nastavíme pre vás funkciu chatu. Môžeme zabezpečiť aj správu prichádzajúcich dotazov, aby ste na žiadny nezabudli odpovedať včas, čo je pre udržanie dobrého hodnotenia kľúčové.',
                         condition: (d, s) => !s['check-messaging'] || !s['check-whatsapp']
                     },
-                    // Pokročilé funkce
+                    // Pokročilé funkcie
                     {
-                        id: 'check-products', category: 'Pokročilé funkce', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby nebo menu',
-                        why: 'Zobrazení produktů a služeb přímo v profilu zkracuje nákupní proces. Zákazník nemusí chodit na web, aby zjistil, co nabízíte, což zvyšuje šanci na okamžitou akci.',
-                        how: 'Profesionálně nafotíme a popíšeme vaše klíčové produkty či služby a vložíme je do profilu tak, aby byly pro zákazníky co nejatraktivnější. <strong>Postaráme se o kompletní prezentaci vaší nabídky.</strong>',
+                        id: 'check-products', category: 'Pokročilé funkcie', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby alebo menu',
+                        why: 'Zobrazenie produktov a služieb priamo v profile skracuje nákupný proces. Zákazník nemusí ísť na web, aby zistil, čo ponúkate, čo zvyšuje šancu na okamžitú akciu.',
+                        how: 'Profesionálne nafotíme a popíšeme vaše kľúčové produkty či služby a vložíme ich do profilu tak, aby boli pre zákazníkov čo najatraktívnejšie. <strong>Postaráme sa o kompletnú prezentáciu vašej ponuky.</strong>',
                         condition: (d, s) => !s['check-products']
                     },
                      {
-                        id: 'check-services', category: 'Pokročilé funkce', icon: 'fa-calendar-check', title: 'Aktivujte Rezervace / Objednávky',
-                        why: 'Přímé prolinkování na rezervační nebo objednávkový systém zkracuje zákazníkovi cestu ke konverzi. Google tuto funkci aktivně podporuje a profily s ní mají vyšší míru interakce.',
-                        how: 'Propojíme váš profil s vaším stávajícím rezervačním systémem, nebo vám pomůžeme s implementací nového. Zajistíme, aby proces objednání byl pro zákazníka co nejjednodušší.',
+                        id: 'check-services', category: 'Pokročilé funkcie', icon: 'fa-calendar-check', title: 'Aktivujte Rezervácie / Objednávky',
+                        why: 'Priame prepojenie na rezervačný alebo objednávkový systém skracuje zákazníkovi cestu ku konverzii. Google túto funkciu aktívne podporuje a profily s ňou majú vyššiu mieru interakcie.',
+                        how: 'Prepojíme váš profil s vaším existujúcim rezervačným systémom, alebo vám pomôžeme s implementáciou nového. Zabezpečíme, aby proces objednania bol pre zákazníka čo najjednoduchší.',
                         condition: (d, s) => !s['check-services']
                     },
                     {
-                        id: 'check-posts', category: 'Pokročilé funkce', icon: 'fa-bullhorn', title: 'Využívejte Příspěvky',
-                        why: 'Příspěvky jsou jako bezplatná reklamní plocha přímo na Googlu. Umožňují komunikovat aktuální nabídky a novinky, což prokazatelně zvyšuje míru prokliku (CTR) a počet konverzí.',
-                        how: 'Vytvoříme pro vás redakční plán a budeme pravidelně publikovat vizuálně atraktivní a textově poutavé příspěvky, které zaujmou a přivedou nové zákazníky. <strong>Ušetříme vám čas a zajistíme profesionální obsah.</strong>',
+                        id: 'check-posts', category: 'Pokročilé funkcie', icon: 'fa-bullhorn', title: 'Využívajte Príspevky',
+                        why: 'Príspevky sú ako bezplatná reklamná plocha priamo na Googlu. Umožňujú komunikovať aktuálne ponuky a novinky, čo preukázateľne zvyšuje mieru prekliku (CTR) a počet konverzií.',
+                        how: 'Vytvoríme pre vás redakčný plán a budeme pravidelne publikovať vizuálne atraktívne a textovo pútavé príspevky, ktoré zaujmú a privedú nových zákazníkov. <strong>Ušetríme vám čas a zabezpečíme profesionálny obsah.</strong>',
                         condition: (d, s) => !s['check-posts']
                     },
                      {
-                        id: 'check-posts-types', category: 'Pokročilé funkce', icon: 'fa-history', title: 'Zvyšte aktivitu a frekvenci příspěvků',
-                        why: 'Příspěvky na Google jsou platné pouze omezenou dobu. Pravidelná aktivita (alespoň jednou za 7-14 dní) je pro algoritmus signálem, že je váš profil živý a aktuální, což odměňuje lepší pozicí.',
-                        how: 'Nemusíte se o nic starat. V rámci naší správy pro vás vytvoříme redakční plán a budeme pravidelně publikovat relevantní a poutavé příspěvky, které udrží váš profil na špici.',
+                        id: 'check-posts-types', category: 'Pokročilé funkcie', icon: 'fa-history', title: 'Zvýšte aktivitu a frekvenciu príspevkov',
+                        why: 'Príspevky na Google sú platné len obmedzenú dobu. Pravidelná aktivita (aspoň raz za 7-14 dní) je pre algoritmus signálom, že je váš profil živý a aktuálny, čo odmeňuje lepšou pozíciou.',
+                        how: 'Nemusíte sa o nič starať. V rámci našej správy pre vás vytvoríme redakčný plán a budeme pravidelne publikovať relevantné a pútavé príspevky, ktoré udržia váš profil na špici.',
                         condition: (d, s) => !s['check-posts-types']
                     }
                 ];
@@ -1838,8 +1838,8 @@
                 
                 let html = `
                     <div class="solution-header">
-                        <h2>Návrh řešení pro ${currentPlaceDetails.name}</h2>
-                        <p>Kroky, které vám pomohou dosáhnout 100% potenciálu vašeho profilu.</p>
+                        <h2>Návrh riešenia pre ${currentPlaceDetails.name}</h2>
+                        <p>Kroky, ktoré vám pomôžu dosiahnuť 100% potenciálu vášho profilu.</p>
                     </div>
                 `;
 
@@ -1848,7 +1848,7 @@
                         <div class="congrats-message">
                             <i class="fas fa-check-circle"></i>
                             <h2>Gratulujeme!</h2>
-                            <p>Váš profil je ve skvělé kondici! Nenašli jsme žádné zásadní nedostatky, které by bylo třeba okamžitě řešit.</p>
+                            <p>Váš profil je vo skvelej kondícii! Nenašli sme žiadne zásadné nedostatky, ktoré by bolo treba okamžite riešiť.</p>
                         </div>
                     `;
                 } else {
@@ -1857,7 +1857,7 @@
                         return acc;
                     }, {});
 
-                    const categoryOrder = ['Kritické kroky', 'Základní informace', 'Obsah a média', 'Interakce se zákazníky', 'Pokročilé funkce'];
+                    const categoryOrder = ['Kritické kroky', 'Základné informácie', 'Obsah a médiá', 'Interakcie so zákazníkmi', 'Pokročilé funkcie'];
 
                     for (const category of categoryOrder) {
                         if (grouped[category]) {
@@ -1869,11 +1869,11 @@
                                         <div class="recommendation-content">
                                             <h4 class="recommendation-title">${rec.title}</h4>
                                             <div class="why">
-                                                <h4>Proč je to důležité?</h4>
+                                                <h4>Prečo je to dôležité?</h4>
                                                 <p>${rec.why}</p>
                                             </div>
                                             <div class="how">
-                                                <h4>Jak na to?</h4>
+                                                <h4>Ako na to?</h4>
                                                 <p>${rec.how}</p>
                                             </div>
                                         </div>
