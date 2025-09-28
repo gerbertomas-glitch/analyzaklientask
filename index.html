@@ -1673,163 +1673,163 @@
                 const recommendations = [
                     // Kritické
                     {
-                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Ověřte si vlastnictví firemního profilu',
-                        why: 'Podle Googlu mají ověřené profily <strong>2.7x vyšší šanci</strong>, že je zákazníci budou považovat za důvěryhodné. Bez ověření nemůžete spravovat klíčové informace a riskujete, že váš profil převezme konkurence nebo nespokojený zákazník.',
-                        how: 'Proces ověření může vyžadovat zaslání kódu poštou nebo jiné metody. <strong>Zajistíme, aby celý proces proběhl hladce a rychle</strong>, a vy jste se mohli co nejdříve plně věnovat správě profilu.',
+                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Overte si vlastníctvo firemného profilu',
+                        why: 'Podľa Googlu majú overené profily <strong>2.7x vyššiu šancu</strong>, že ich zákazníci budú považovať za dôveryhodné. Bez overenia nemôžete spravovať kľúčové informácie a riskujete, že váš profil prevezme konkurencia alebo nespokojný zákazník.',
+                        how: 'Proces overenia môže vyžadovať zaslanie kódu poštou alebo iné metódy. <strong>Zabezpečíme, aby celý proces prebehol hladko a rýchlo</strong>, a vy ste sa mohli čo najskôr plne venovať správe profilu.',
                         condition: (d, s) => !s['check-claimed']
                     },
-                    // Základní informace
+                    // Základné informácie
                      {
-                        id: 'check-primary-category', category: 'Základní informace', icon: 'fa-tags', title: 'Zvolte správnou primární kategorii',
-                        why: 'Primární kategorie je nejdůležitější signál pro Google, čemu se věnujete. Správná volba dramaticky zvyšuje šanci na zobrazení relevantním zákazníkům, kteří hledají přesně vaše služby. Špatná kategorie znamená, že se ukazujete nesprávným lidem.',
-                        how: 'Na základě analýzy vašeho byznysu a klíčových slov vybereme a nastavíme nejpřesnější a nejvýkonnější primární kategorii, která maximalizuje vaši viditelnost v oboru.',
+                        id: 'check-primary-category', category: 'Základné informácie', icon: 'fa-tags', title: 'Zvoľte správnu primárnu kategóriu',
+                        why: 'Primárna kategória je najdôležitejší signál pre Google, čomu sa venujete. Správna voľba dramaticky zvyšuje šancu na zobrazenie relevantným zákazníkom, ktorí hľadajú presne vaše služby. Zlá kategória znamená, že sa ukazujete nesprávnym ľuďom.',
+                        how: 'Na základe analýzy vášho biznisu a kľúčových slov vyberieme a nastavíme najpresnejšiu a najvýkonnejšiu primárnu kategóriu, ktorá maximalizuje vašu viditeľnosť v obore.',
                         condition: (d, s) => !s['check-primary-category']
                     },
                     {
-                        id: 'check-secondary-categories', category: 'Základní informace', icon: 'fa-tags', title: 'Doplňte relevantní sekundární kategorie',
-                        why: 'Sekundární kategorie umožňují Googlu pochopit celou šíři vaší nabídky. Každá další správně zvolená kategorie je jako další síť, kterou chytáte nové zákazníky hledající specifické služby, které nabízíte.',
-                        how: 'Provedeme detailní rešerši a doplníme všechny relevantní vedlejší kategorie, abychom pokryli veškerý váš sortiment a služby a zajistili, že vám neunikne žádný potenciální zákazník.',
+                        id: 'check-secondary-categories', category: 'Základné informácie', icon: 'fa-tags', title: 'Doplňte relevantné sekundárne kategórie',
+                        why: 'Sekundárne kategórie umožňujú Googlu pochopiť celú šírku vašej ponuky. Každá ďalšia správne zvolená kategória je ako ďalšia sieť, ktorou chytáte nových zákazníkov hľadajúcich špecifické služby, ktoré ponúkate.',
+                        how: 'Prevedieme detailný výskum a doplníme všetky relevantné vedľajšie kategórie, abychom pokryli celý váš sortiment a služby a zabezpečili, že vám neunikne žiadny potenciálny zákazník.',
                         condition: (d, s) => !s['check-secondary-categories']
                     },
                     {
-                        id: 'check-address', category: 'Základní informace', icon: 'fa-map-marker-alt', title: 'Zkontrolujte a optimalizujte adresu',
-                        why: 'Přesná adresa a správně umístěný špendlík na mapě jsou klíčové pro funkci "Navigovat" a pro zákazníky, kteří vás chtějí fyzicky navštívit. Chyba v adrese může znamenat ztrátu zákazníka, který vás nenajde.',
-                        how: 'Ověříme přesnost vaší adresy a pozice na mapě. Zajistíme, aby formát odpovídal standardům Googlu a poštovních služeb, což zlepší vaši důvěryhodnost pro algoritmus i pro zákazníky.',
+                        id: 'check-address', category: 'Základné informácie', icon: 'fa-map-marker-alt', title: 'Skontrolujte a optimalizujte adresu',
+                        why: 'Presná adresa a správne umiestnený špendlík na mape sú kľúčové pre funkciu "Navigovať" a pre zákazníkov, ktorí vás chcú fyzicky navštíviť. Chyba v adrese môže znamenať stratu zákazníka, ktorý vás nenájde.',
+                        how: 'Overíme presnosť vašej adresy a pozície na mape. Zabezpečíme, aby formát zodpovedal štandardom Googlu a poštových služieb, čo zlepší vašu dôveryhodnosť pre algoritmus i pre zákazníkov.',
                         condition: (d, s) => !s['check-address']
                     },
                     {
-                        id: 'check-website', category: 'Základní informace', icon: 'fa-globe', title: 'Doplňte webové stránky',
-                        why: 'Firmy s propojeným webem získávají v průměru o <strong>21-34 % více prokliků a dotazů</strong>. Váš web je centrem vaší online identity a Google profily s webem vnímá jako autoritativnější.',
-                        how: 'Nejde jen o vložení odkazu. Propojíme váš profil s webem tak, aby měření návštěvnosti bylo přesné a abychom zajistili konzistenci klíčových informací (NAP), což je zásadní pro SEO. <strong>Postaráme se o technicky správné nastavení.</strong>',
+                        id: 'check-website', category: 'Základné informácie', icon: 'fa-globe', title: 'Doplňte webové stránky',
+                        why: 'Firmy s prepojeným webom získavajú v priemere o <strong>21-34 % viac prekladov a dotazov</strong>. Váš web je centrom vašej online identity a Google profily s webom vníma ako autoritatívnejšie.',
+                        how: 'Nejde len o vloženie odkazu. Prepojíme váš profil s webom tak, aby meranie návštevnosti bolo presné a abychom zabezpečili konzistenciu kľúčových informácií (NAP), čo je zásadné pre SEO. <strong>Postaráme sa o technicky správne nastavenie.</strong>',
                         condition: (d, s) => !s['check-website']
                     },
                     {
-                        id: 'check-phone', category: 'Základní informace', icon: 'fa-phone', title: 'Přidejte telefonní číslo',
-                        why: 'Možnost \'Click-to-Call\' z mobilního vyhledávání je jedním z nejčastějších způsobů konverze. Chybějící číslo znamená ztracené zákazníky, kteří se nebudou obtěžovat hledat jinde.',
-                        how: 'Doplníme a zformátujeme číslo do správného mezinárodního tvaru, aby bylo funkční pro volání jedním klikem odkudkoliv. <strong>Zajistíme, aby vše fungovalo bezchybně.</strong>',
+                        id: 'check-phone', category: 'Základné informácie', icon: 'fa-phone', title: 'Pridajte telefónne číslo',
+                        why: 'Možnosť \'Click-to-Call\' z mobilného vyhľadávania je jedným z najčastejších spôsobov konverzie. Chýbajúce číslo znamená stratených zákazníkov, ktorí sa nebudú obťažovať hľadať inde.',
+                        how: 'Doplníme a zformátujeme číslo do správneho medzinárodného tvaru, aby bolo funkčné pre volanie jedným klikom odkiaľkoľvek. <strong>Zabezpečíme, aby všetko fungovalo bezchybne.</strong>',
                         condition: (d, s) => !s['check-phone']
                     },
                     {
-                        id: 'check-hours', category: 'Základní informace', icon: 'fa-clock', title: 'Vyplňte otevírací dobu',
-                        why: 'Až <strong>40 % lokálních vyhledávání</strong> se týká dotazů na otevírací dobu. Neúplné informace odrazují zákazníky, kteří si vyberou konkurenci, u které mají jistotu, že je otevřeno.',
-                        how: 'Správné nastavení otevírací doby, včetně speciálních hodin pro svátky, je klíčové. <strong>Můžeme za vás tuto agendu kompletně spravovat</strong>, abyste měli vždy aktuální informace bez starostí.',
+                        id: 'check-hours', category: 'Základné informácie', icon: 'fa-clock', title: 'Vyplňte otváracie hodiny',
+                        why: 'Až <strong>40 % lokálnych vyhľadávaní</strong> sa týka dotazov na otváracie hodiny. Neúplné informácie odrádzajú zákazníkov, ktorí si vyberú konkurenciu, u ktorej majú istotu, že je otvorené.',
+                        how: 'Správne nastavenie otváracích hodín, vrátane špeciálnych hodín pre sviatky, je kľúčové. <strong>Môžeme za vás túto agendu kompletne spravovať</strong>, aby ste mali vždy aktuálne informácie bez starostí.',
                         condition: (d, s) => !s['check-hours']
                     },
                     {
-                        id: 'check-name-spam', category: 'Základní informace', icon: 'fa-signature', title: 'Optimalizujte název firmy dle pravidel',
-                        why: 'Google penalizuje profily, které v názvu používají klíčová slova navíc (tzv. "spam"). Čistý a správný název firmy bez přidaných klíčových slov zvyšuje důvěryhodnost a chrání vás před rizikem pozastavení profilu.',
-                        how: 'Upravíme název vaší firmy tak, aby přesně odpovídal realitě a pravidlům Googlu. Klíčová slova strategicky umístíme tam, kam patří – do popisu, služeb a příspěvků.',
+                        id: 'check-name-spam', category: 'Základné informácie', icon: 'fa-signature', title: 'Optimalizujte názov firmy podľa pravidiel',
+                        why: 'Google penalizuje profily, ktoré v názve používajú kľúčové slová navyše (tzv. "spam"). Čistý a správny názov firmy bez pridaných kľúčových slov zvyšuje dôveryhodnosť a chráni vás pred rizikom pozastavenia profilu.',
+                        how: 'Upravíme názov vašej firmy tak, aby presne zodpovedal realite a pravidlám Googlu. Kľúčové slová strategicky umiestnime tam, kam patria – do popisu, služieb a príspevkov.',
                         condition: (d, s) => !s['check-name-spam']
                     },
                     {
-                        id: 'check-nap', category: 'Základní informace', icon: 'fa-check-double', title: 'Sjednoťte firemní údaje (NAP)',
-                        why: 'Konzistence jména, adresy a telefonu (Name, Address, Phone - NAP) napříč internetem (váš web, katalogy, sociální sítě) je pro Google silným signálem důvěryhodnosti. Neshody v údajích poškozují vaši pozici ve vyhledávání.',
-                        how: 'Provedeme audit vašich NAP údajů na internetu a zajistíme jejich sjednocení. Tato "čistá" digitální stopa je základem pro úspěšné lokální SEO.',
+                        id: 'check-nap', category: 'Základné informácie', icon: 'fa-check-double', title: 'Zjednoťte firemné údaje (NAP)',
+                        why: 'Konzistencia mena, adresy a telefónu (Name, Address, Phone - NAP) naprieč internetom (váš web, katalógy, sociálne siete) je pre Google silným signálom dôveryhodnosti. Nezrovnalosti v údajoch poškodzujú vašu pozíciu vo vyhľadávaní.',
+                        how: 'Prevedieme audit vašich NAP údajov na internete a zabezpečíme ich zjednotenie. Táto "čistá" digitálna stopa je základom pre úspešné lokálne SEO.',
                         condition: (d, s) => !s['check-nap']
                     },
-                    // Obsah a média
+                    // Obsah a médiá
                     {
-                        id: 'check-owner-photos', category: 'Obsah a média', icon: 'fa-camera-retro', title: 'Přidejte profesionální fotky od majitele',
-                        why: 'Fotky od majitele (logo, titulní fotka, fotky interiéru/exteriéru) mají mnohem větší váhu než fotky od zákazníků. Profesionální vizuální prezentace je klíčová pro první dojem a budování značky.',
-                        how: 'Zajistíme profesionální focení vašeho podniku. Vytvoříme sadu fotografií, které prodávají – od kvalitního loga, přes atraktivní titulní fotku až po snímky vašich prostor a produktů.',
+                        id: 'check-owner-photos', category: 'Obsah a médiá', icon: 'fa-camera-retro', title: 'Pridajte profesionálne fotky od majiteľa',
+                        why: 'Fotky od majiteľa (logo, titulná fotka, fotky interiéru/exteriéru) majú oveľa väčšiu váhu ako fotky od zákazníkov. Profesionálna vizuálna prezentácia je kľúčová pre prvý dojem a budovanie značky.',
+                        how: 'Zabezpečíme profesionálne fotenie vášho podniku. Vytvoríme sadu fotografií, ktoré predávajú – od kvalitného loga, cez atraktívnu titulnú fotku až po snímky vašich priestorov a produktov.',
                         condition: (d, s) => !s['check-owner-photos']
                     },
                     {
-                        id: 'check-photos-10plus', category: 'Obsah a média', icon: 'fa-images', title: 'Přidejte více kvalitních fotografií (alespoň 10)',
-                        why: 'Google uvádí, že profily s více než 10 kvalitními fotografiemi získávají <strong>o 42 % více žádostí o navigaci</strong> a <strong>o 35 % více prokliků na web</strong>. Vizuální obsah je dnes králem.',
-                        how: 'Nestačí jen nahrát fotky z mobilu. Vytvoříme pro vás profesionální sadu fotografií, která ukáže váš podnik v nejlepším světle. <strong>Investice do profesionálních fotek se mnohonásobně vrací.</strong>',
+                        id: 'check-photos-10plus', category: 'Obsah a médiá', icon: 'fa-images', title: 'Pridajte viac kvalitných fotografií (aspoň 10)',
+                        why: 'Google uvádza, že profily s viac ako 10 kvalitnými fotografiami získavajú <strong>o 42 % viac žiadostí o navigáciu</strong> a <strong>o 35 % viac prekliakov na web</strong>. Vizuálny obsah je dnes kráľom.',
+                        how: 'Nestačí len nahrať fotky z mobilu. Vytvoríme pre vás profesionálnu sadu fotografií, ktorá ukáže váš podnik v najlepšom svetle. <strong>Investícia do profesionálnych fotiek sa mnohonásobne vráti.</strong>',
                         condition: (d, s) => !s['check-photos-10plus']
                     },
                     {
-                        id: 'check-street-view', category: 'Obsah a média', icon: 'fa-street-view', title: 'Propojte profil s Google Street View',
-                        why: 'Aktuální a správně propojené Street View usnadňuje zákazníkům nalezení vaší firmy. Pokud snímky chybí nebo jsou zastaralé, může to působit nedůvěryhodně a odradit od návštěvy.',
-                        how: 'Zajistíme aktualizaci snímků Street View před vaší provozovnou a jejich správné propojení s profilem. Vytvoříme pro vás profesionální 360° snímky, které vás dokonale představí.',
+                        id: 'check-street-view', category: 'Obsah a médiá', icon: 'fa-street-view', title: 'Prepojte profil s Google Street View',
+                        why: 'Aktuálne a správne prepojené Street View uľahčuje zákazníkom nájdenie vašej firmy. Ak snímky chýbajú alebo sú zastarané, môže to pôsobiť nedôveryhodne a odradiť od návštevy.',
+                        how: 'Zabezpečíme aktualizáciu snímkov Street View pred vašou prevádzkou a ich správne prepojenie s profilom. Vytvoríme pre vás profesionálne 360° snímky, ktoré vás dokonale predstavia.',
                         condition: (d, s) => !s['check-street-view']
                     },
                     {
-                        id: 'check-virtual-tour', category: 'Obsah a média', icon: 'fa-vr-cardboard', title: 'Vytvořte virtuální prohlídku 360°',
-                        why: 'Profily s virtuální prohlídkou mají dle Googlu <strong>dvojnásobnou šanci na zaujetí uživatele</strong>. Zákazníci si mohou váš podnik "projít" z pohodlí domova, což výrazně zvyšuje jejich důvěru a chuť vás navštívit.',
-                        how: 'Jsme certifikovaní partneři Google pro tvorbu Street View a virtuálních prohlídek. Vytvoříme pro vás profesionální 360° prohlídku, kterou propojíme s vaším profilem a zajistíme maximální vizuální dopad.',
+                        id: 'check-virtual-tour', category: 'Obsah a médiá', icon: 'fa-vr-cardboard', title: 'Vytvorte virtuálnu prehliadku 360°',
+                        why: 'Profily s virtuálnou prehliadkou majú podľa Googlu <strong>dvojnásobnú šancu na zaujatie používateľa</strong>. Zákazníci si môžu váš podnik "prejsť" z pohodlia domova, čo výrazne zvyšuje ich dôveru a chuť vás navštíviť.',
+                        how: 'Sme certifikovaní partneri Google pre tvorbu Street View a virtuálnych prehliadok. Vytvoríme pre vás profesionálnu 360° prehliadku, ktorú prepojíme s vaším profilom a zabezpečíme maximálny vizuálny dopad.',
                         condition: (d, s) => !s['check-virtual-tour']
                     },
                     {
-                        id: 'check-drone-video', category: 'Obsah a média', icon: 'fa-helicopter', title: 'Obohaťte profil o video z dronu',
-                        why: 'Záběry z dronu představují vaši firmu z unikátní perspektivy a zanechávají silný dojem. Jsou ideální pro prezentaci rozsáhlejších areálů, hotelů, restaurací s venkovním posezením nebo realit.',
-                        how: 'Zajistíme profesionální natáčení a postprodukci videa z dronu. Vytvoříme krátký, dynamický klip, který odliší váš profil od konkurence a zaujme na první pohled.',
+                        id: 'check-drone-video', category: 'Obsah a médiá', icon: 'fa-helicopter', title: 'Obohaťte profil o video z dronu',
+                        why: 'Zábery z dronu predstavujú vašu firmu z unikátnej perspektívy a zanechávajú silný dojem. Sú ideálne pre prezentáciu rozsiahlejších areálov, hotelov, reštaurácií s vonkajším sedením alebo realít.',
+                        how: 'Zabezpečíme profesionálne natáčanie a postprodukciu videa z dronu. Vytvoríme krátky, dynamický klip, ktorý odlíši váš profil od konkurencie a zaujme na prvý pohľad.',
                         condition: (d, s) => !s['check-drone-video']
                     },
                     {
-                        id: 'check-video', category: 'Obsah a média', icon: 'fa-video', title: 'Přidejte do profilu prezentační video',
-                        why: 'Video je nejefektivnější formát pro rychlé předání emocí a informací. Krátké video představující vaši firmu, služby nebo produkty udrží pozornost zákazníka déle než jakýkoliv text nebo obrázek.',
-                        how: 'Vytvoříme pro vás profesionální krátké video optimalizované pro Google profil. Od scénáře, přes natáčení až po finální střih se postaráme o to, aby video prodávalo vaše služby.',
+                        id: 'check-video', category: 'Obsah a médiá', icon: 'fa-video', title: 'Pridajte do profilu prezentačné video',
+                        why: 'Video je najefektívnejší formát pre rýchle predanie emócií a informácií. Krátke video predstavujúce vašu firmu, služby alebo produkty udrží pozornosť zákazníka dlhšie ako akýkoľvek text alebo obrázok.',
+                        how: 'Vytvoríme pre vás profesionálne krátke video optimalizované pre Google profil. Od scenára, cez natáčanie až po finálny strih sa postaráme o to, aby video predávalo vaše služby.',
                         condition: (d, s) => !s['check-video']
                     },
                     {
-                        id: 'check-description', category: 'Obsah a média', icon: 'fa-info-circle', title: 'Napište poutavý popis firmy',
-                        why: 'Kvalitní popis je zásadní pro lokální SEO. Umožňuje nám strategicky umístit klíčová slova, díky kterým vás zákazníci najdou, i když nehledají přímo název vaší firmy.',
-                        how: 'Napíšeme pro vás text, který bude nejen čtivý a přesvědčivý pro zákazníky, ale také optimalizovaný pro vyhledávací algoritmy Googlu. <strong>Využijte našich copywriterů a SEO specialistů.</strong>',
+                        id: 'check-description', category: 'Obsah a médiá', icon: 'fa-info-circle', title: 'Napíšte pútavý popis firmy',
+                        why: 'Kvalitný popis je zásadný pre lokálne SEO. Umožňuje nám strategicky umiestniť kľúčové slová, vďaka ktorým vás zákazníci nájdu, aj keď nehľadajú priamo názov vašej firmy.',
+                        how: 'Napíšeme pre vás text, ktorý bude nielen čítavý a presvedčivý pre zákazníkov, ale aj optimalizovaný pre vyhľadávacie algoritmy Googlu. <strong>Využite našich copywriterov a SEO špecialistov.</strong>',
                         condition: (d, s) => !s['check-description']
                     },
                     {
-                        id: 'check-attributes', category: 'Obsah a média', icon: 'fa-tasks', title: 'Doplňte specifické atributy',
-                        why: 'Atributy (např. "Bezbariérový přístup", "Wi-Fi zdarma", "Možnost platit kartou") umožňují zákazníkům filtrovat výsledky vyhledávání. Pokud je nemáte vyplněné, nezobrazíte se zákazníkům, kteří hledají právě tyto vlastnosti.',
-                        how: 'Projdeme s vámi všechny dostupné atributy pro vaši kategorii a pečlivě je vyplníme, aby váš profil odpovídal na co nejvíce specifických dotazů zákazníků.',
+                        id: 'check-attributes', category: 'Obsah a médiá', icon: 'fa-tasks', title: 'Doplňte špecifické atribúty',
+                        why: 'Atribúty (napr. "Bezbariérový prístup", "Wi-Fi zadarmo", "Možnosť platiť kartou") umožňujú zákazníkom filtrovať výsledky vyhľadávania. Ak ich nemáte vyplnené, nezobrazíte sa zákazníkom, ktorí hľadajú práve tieto vlastnosti.',
+                        how: 'Prejdeme s vami všetky dostupné atribúty pre vašu kategóriu a starostlivo ich vyplníme, aby váš profil odpovedal na čo najviac špecifických dotazov zákazníkov.',
                         condition: (d, s) => !s['check-attributes']
                     },
-                    // Interakce se zákazníky
+                    // Interakcie so zákazníkmi
                     {
-                        id: 'reviews-10', category: 'Interakce se zákazníky', icon: 'fa-star', title: 'Získejte více než 10 recenzí',
-                        why: 'Podle studií si <strong>91 % zákazníků</strong> čte online recenze a <strong>84 %</strong> jim věří stejně jako osobnímu doporučení. Počet recenzí přímo ovlivňuje vaši pozici ve vyhledávání a důvěryhodnost.',
-                        how: 'Víme, jak eticky a efektivně motivovat vaše zákazníky k zanechání hodnocení. <strong>Připravíme pro vás strategii a nástroje pro systematický sběr recenzí</strong>, které posunou váš profil na vrchol.',
+                        id: 'reviews-10', category: 'Interakcie so zákazníkmi', icon: 'fa-star', title: 'Získajte viac ako 10 recenzií',
+                        why: 'Podľa štúdií si <strong>91 % zákazníkov</strong> číta online recenzie a <strong>84 %</strong> im verí rovnako ako osobnému odporúčaniu. Počet recenzií priamo ovplyvňuje vašu pozíciu vo vyhľadávaní a dôveryhodnosť.',
+                        how: 'Vieme, ako eticky a efektívne motivovať vašich zákazníkov k zanechaniu hodnotenia. <strong>Pripravíme pre vás stratégiu a nástroje pre systematický zber recenzií</strong>, ktoré posunú váš profil na vrchol.',
                         condition: (d, s) => d.user_ratings_total < 10
                     },
                     {
-                        id: 'rating-4.2', category: 'Interakce se zákazníky', icon: 'fa-star-half-alt', title: 'Zvyšte průměrné hodnocení nad 4.2 ★',
-                        why: 'Průměrné hodnocení je jedním z prvních údajů, které zákazník vidí. Podle studií si firmy s hodnocením pod 4.0 hvězdičky vybírá jen minimum zákazníků. Zvýšení průměru i o desetiny bodu může výrazně zvýšit míru prokliku.',
-                        how: 'Naše strategie pro sběr recenzí se zaměřuje na oslovování spokojených zákazníků, čímž přirozeně zvyšujeme průměrné hodnocení. Součástí je i profesionální řešení negativních recenzí.',
+                        id: 'rating-4.2', category: 'Interakcie so zákazníkmi', icon: 'fa-star-half-alt', title: 'Zvýšte priemerné hodnotenie nad 4.2 ★',
+                        why: 'Priemerné hodnotenie je jedným z prvých údajov, ktoré zákazník vidí. Podľa štúdií si firmy s hodnotením pod 4.0 hviezdičky vybiera len minimum zákazníkov. Zvýšenie priemeru aj o desatiny bodu môže výrazne zvýšiť mieru prekliku.',
+                        how: 'Naša stratégia pre zber recenzií sa zameriava na oslovenie spokojných zákazníkov, čím prirodzene zvyšujeme priemerné hodnotenie. Súčasťou je aj profesionálne riešenie negatívnych recenzií.',
                         condition: (d, s) => d.rating < 4.2
                     },
                     {
-                        id: 'review-reply-btn', category: 'Interakce se zákazníky', icon: 'fa-reply', title: 'Odpovídejte na všechny recenze',
-                        why: 'Firmy, které odpovídají na recenze, jsou vnímány <strong>1.7x důvěryhodněji</strong> než ty, které nereagují. Google navíc aktivitu na profilu hodnotí jako pozitivní signál a zlepšuje vaši viditelnost.',
-                        how: 'Pravidelné sledování a profesionální odpovídání na recenze je časově náročné. <strong>Tuto komunikaci převezmeme za vás</strong>, budeme reagovat rychle a v souladu s vaší firemní kulturou.',
+                        id: 'review-reply-btn', category: 'Interakcie so zákazníkmi', icon: 'fa-reply', title: 'Odpovedajte na všetky recenzie',
+                        why: 'Firmy, ktoré odpovedajú na recenzie, sú vnímané <strong>1.7x dôveryhodnejšie</strong> ako tie, ktoré nereagujú. Google navyše aktivitu na profile hodnotí ako pozitívny signál a zlepšuje vašu viditeľnosť.',
+                        how: 'Pravidelné sledovanie a profesionálne odpovedanie na recenzie je časovo náročné. <strong>Túto komunikáciu prevezmeme za vás</strong>, budeme reagovať rýchlo a v súlade s vašou firemnou kultúrou.',
                         condition: (d, s) => parseInt(s['review-reply-btn']) < 2
                     },
                      {
-                        id: 'check-qa-owner-reply', category: 'Interakce se zákazníky', icon: 'fa-question-circle', title: 'Využijte sekci Otázky a odpovědi',
-                        why: 'Proaktivní zodpovězení častých dotazů snižuje zátěž vašeho personálu a poskytuje zákazníkům okamžité informace. Je to také skvělá příležitost, jak do profilu dostat další relevantní klíčová slova.',
-                        how: 'Analyzujeme, co vaši zákazníci nejčastěji hledají, a vytvoříme sadu strategických otázek a odpovědí (FAQ), které předejdou nejasnostem a zlepší vaši pozici ve vyhledávání. <strong>Nechte analytickou práci na nás.</strong>',
+                        id: 'check-qa-owner-reply', category: 'Interakcie so zákazníkmi', icon: 'fa-question-circle', title: 'Využite sekciu Otázky a odpovede',
+                        why: 'Proaktívne zodpovedanie častých dotazov znižuje záťaž vášho personálu a poskytuje zákazníkom okamžité informácie. Je to tiež skvelá príležitosť, ako do profilu dostať ďalšie relevantné kľúčové slová.',
+                        how: 'Analyzujeme, čo vaši zákazníci najčastejšie hľadajú, a vytvoríme sadu strategických otázok a odpovedí (FAQ), ktoré predídu nejasnostiam a zlepšia vašu pozíciu vo vyhľadávaní. <strong>Nechajte analytickú prácu na nás.</strong>',
                         condition: (d, s) => !s['check-qa-owner-reply']
                     },
                     {
-                        id: 'messaging-whatsapp', category: 'Interakce se zákazníky', icon: 'fa-comments', title: 'Aktivujte zasílání zpráv (Chat / WhatsApp)',
-                        why: 'Moderní zákazníci preferují rychlou a neformální komunikaci. Možnost poslat rychlý dotaz přes chat může být rozhodujícím faktorem, proč si vyberou právě vás. Zvyšuje to engagement a počet poptávek.',
-                        how: 'Aktivujeme a nastavíme pro vás funkci chatu. Můžeme zajistit i správu příchozích dotazů, abyste na žádný nezapomněli odpovědět včas, což je pro udržení dobrého hodnocení klíčové.',
+                        id: 'messaging-whatsapp', category: 'Interakcie so zákazníkmi', icon: 'fa-comments', title: 'Aktivujte zasielanie správ (Chat / WhatsApp)',
+                        why: 'Moderní zákazníci preferujú rýchlu a neformálnu komunikáciu. Možnosť poslať rýchly dotaz cez chat môže byť rozhodujúcim faktorom, prečo si vyberú práve vás. Zvyšuje to engagement a počet dopytov.',
+                        how: 'Aktivujeme a nastavíme pre vás funkciu chatu. Môžeme zabezpečiť aj správu prichádzajúcich dotazov, aby ste na žiadny nezabudli odpovedať včas, čo je pre udržanie dobrého hodnotenia kľúčové.',
                         condition: (d, s) => !s['check-messaging'] || !s['check-whatsapp']
                     },
-                    // Pokročilé funkce
+                    // Pokročilé funkcie
                     {
-                        id: 'check-products', category: 'Pokročilé funkce', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby nebo menu',
-                        why: 'Zobrazení produktů a služeb přímo v profilu zkracuje nákupní proces. Zákazník nemusí chodit na web, aby zjistil, co nabízíte, což zvyšuje šanci na okamžitou akci.',
-                        how: 'Profesionálně nafotíme a popíšeme vaše klíčové produkty či služby a vložíme je do profilu tak, aby byly pro zákazníky co nejatraktivnější. <strong>Postaráme se o kompletní prezentaci vaší nabídky.</strong>',
+                        id: 'check-products', category: 'Pokročilé funkcie', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby alebo menu',
+                        why: 'Zobrazenie produktov a služieb priamo v profile skracuje nákupný proces. Zákazník nemusí ísť na web, aby zistil, čo ponúkate, čo zvyšuje šancu na okamžitú akciu.',
+                        how: 'Profesionálne nafotíme a popíšeme vaše kľúčové produkty či služby a vložíme ich do profilu tak, aby boli pre zákazníkov čo najatraktívnejšie. <strong>Postaráme sa o kompletnú prezentáciu vašej ponuky.</strong>',
                         condition: (d, s) => !s['check-products']
                     },
                      {
-                        id: 'check-services', category: 'Pokročilé funkce', icon: 'fa-calendar-check', title: 'Aktivujte Rezervace / Objednávky',
-                        why: 'Přímé prolinkování na rezervační nebo objednávkový systém zkracuje zákazníkovi cestu ke konverzi. Google tuto funkci aktivně podporuje a profily s ní mají vyšší míru interakce.',
-                        how: 'Propojíme váš profil s vaším stávajícím rezervačním systémem, nebo vám pomůžeme s implementací nového. Zajistíme, aby proces objednání byl pro zákazníka co nejjednodušší.',
+                        id: 'check-services', category: 'Pokročilé funkcie', icon: 'fa-calendar-check', title: 'Aktivujte Rezervácie / Objednávky',
+                        why: 'Priame prepojenie na rezervačný alebo objednávkový systém skracuje zákazníkovi cestu ku konverzii. Google túto funkciu aktívne podporuje a profily s ňou majú vyššiu mieru interakcie.',
+                        how: 'Prepojíme váš profil s vaším existujúcim rezervačným systémom, alebo vám pomôžeme s implementáciou nového. Zabezpečíme, aby proces objednania bol pre zákazníka čo najjednoduchší.',
                         condition: (d, s) => !s['check-services']
                     },
                     {
-                        id: 'check-posts', category: 'Pokročilé funkce', icon: 'fa-bullhorn', title: 'Využívejte Příspěvky',
-                        why: 'Příspěvky jsou jako bezplatná reklamní plocha přímo na Googlu. Umožňují komunikovat aktuální nabídky a novinky, což prokazatelně zvyšuje míru prokliku (CTR) a počet konverzí.',
-                        how: 'Vytvoříme pro vás redakční plán a budeme pravidelně publikovat vizuálně atraktivní a textově poutavé příspěvky, které zaujmou a přivedou nové zákazníky. <strong>Ušetříme vám čas a zajistíme profesionální obsah.</strong>',
+                        id: 'check-posts', category: 'Pokročilé funkcie', icon: 'fa-bullhorn', title: 'Využívajte Príspevky',
+                        why: 'Príspevky sú ako bezplatná reklamná plocha priamo na Googlu. Umožňujú komunikovať aktuálne ponuky a novinky, čo preukázateľne zvyšuje mieru prekliku (CTR) a počet konverzií.',
+                        how: 'Vytvoríme pre vás redakčný plán a budeme pravidelne publikovať vizuálne atraktívne a textovo pútavé príspevky, ktoré zaujmú a privedú nových zákazníkov. <strong>Ušetríme vám čas a zabezpečíme profesionálny obsah.</strong>',
                         condition: (d, s) => !s['check-posts']
                     },
                      {
-                        id: 'check-posts-types', category: 'Pokročilé funkce', icon: 'fa-history', title: 'Zvyšte aktivitu a frekvenci příspěvků',
-                        why: 'Příspěvky na Google jsou platné pouze omezenou dobu. Pravidelná aktivita (alespoň jednou za 7-14 dní) je pro algoritmus signálem, že je váš profil živý a aktuální, což odměňuje lepší pozicí.',
-                        how: 'Nemusíte se o nic starat. V rámci naší správy pro vás vytvoříme redakční plán a budeme pravidelně publikovat relevantní a poutavé příspěvky, které udrží váš profil na špici.',
+                        id: 'check-posts-types', category: 'Pokročilé funkcie', icon: 'fa-history', title: 'Zvýšte aktivitu a frekvenciu príspevkov',
+                        why: 'Príspevky na Google sú platné len obmedzenú dobu. Pravidelná aktivita (aspoň raz za 7-14 dní) je pre algoritmus signálom, že je váš profil živý a aktuálny, čo odmeňuje lepšou pozíciou.',
+                        how: 'Nemusíte sa o nič starať. V rámci našej správy pre vás vytvoríme redakčný plán a budeme pravidelne publikovať relevantné a pútavé príspevky, ktoré udržia váš profil na špici.',
                         condition: (d, s) => !s['check-posts-types']
                     }
                 ];
@@ -1838,8 +1838,8 @@
                 
                 let html = `
                     <div class="solution-header">
-                        <h2>Návrh řešení pro ${currentPlaceDetails.name}</h2>
-                        <p>Kroky, které vám pomohou dosáhnout 100% potenciálu vašeho profilu.</p>
+                        <h2>Návrh riešenia pre ${currentPlaceDetails.name}</h2>
+                        <p>Kroky, ktoré vám pomôžu dosiahnuť 100% potenciálu vášho profilu.</p>
                     </div>
                 `;
 
@@ -1848,7 +1848,7 @@
                         <div class="congrats-message">
                             <i class="fas fa-check-circle"></i>
                             <h2>Gratulujeme!</h2>
-                            <p>Váš profil je ve skvělé kondici! Nenašli jsme žádné zásadní nedostatky, které by bylo třeba okamžitě řešit.</p>
+                            <p>Váš profil je vo skvelej kondícii! Nenašli sme žiadne zásadné nedostatky, ktoré by bolo treba okamžite riešiť.</p>
                         </div>
                     `;
                 } else {
@@ -1857,7 +1857,7 @@
                         return acc;
                     }, {});
 
-                    const categoryOrder = ['Kritické kroky', 'Základní informace', 'Obsah a média', 'Interakce se zákazníky', 'Pokročilé funkce'];
+                    const categoryOrder = ['Kritické kroky', 'Základné informácie', 'Obsah a médiá', 'Interakcie so zákazníkmi', 'Pokročilé funkcie'];
 
                     for (const category of categoryOrder) {
                         if (grouped[category]) {
@@ -1869,11 +1869,11 @@
                                         <div class="recommendation-content">
                                             <h4 class="recommendation-title">${rec.title}</h4>
                                             <div class="why">
-                                                <h4>Proč je to důležité?</h4>
+                                                <h4>Prečo je to dôležité?</h4>
                                                 <p>${rec.why}</p>
                                             </div>
                                             <div class="how">
-                                                <h4>Jak na to?</h4>
+                                                <h4>Ako na to?</h4>
                                                 <p>${rec.how}</p>
                                             </div>
                                         </div>
