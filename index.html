@@ -1673,22 +1673,22 @@
                 const recommendations = [
                     // Kritické
                     {
-                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Ověřte si vlastnictví firemního profilu',
-                        why: 'Podle Googlu mají ověřené profily <strong>2.7x vyšší šanci</strong>, že je zákazníci budou považovat za důvěryhodné. Bez ověření nemůžete spravovat klíčové informace a riskujete, že váš profil převezme konkurence nebo nespokojený zákazník.',
-                        how: 'Proces ověření může vyžadovat zaslání kódu poštou nebo jiné metody. <strong>Zajistíme, aby celý proces proběhl hladce a rychle</strong>, a vy jste se mohli co nejdříve plně věnovat správě profilu.',
+                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Overte si vlastníctvo firemného profilu',
+                        why: 'Podľa Google majú overené profily <strong>2,7x vyššiu šancu</strong>, že ich zákazníci budú považovať za dôveryhodné. Bez overenia nemôžete spravovať kľúčové informácie a riskujete, že váš profil prevezme konkurencia alebo nespokojný zákazník.',
+                        how: 'Proces overenia môže vyžadovať zaslanie kódu poštou alebo iné metódy. <strong>Zabezpečíme, aby celý proces prebehol hladko a rýchlo</strong>, a vy ste sa mohli čo najskôr plne venovať správe profilu.',
                         condition: (d, s) => !s['check-claimed']
                     },
                     // Základní informace
                      {
-                        id: 'check-primary-category', category: 'Základní informace', icon: 'fa-tags', title: 'Zvolte správnou primární kategorii',
-                        why: 'Primární kategorie je nejdůležitější signál pro Google, čemu se věnujete. Správná volba dramaticky zvyšuje šanci na zobrazení relevantním zákazníkům, kteří hledají přesně vaše služby. Špatná kategorie znamená, že se ukazujete nesprávným lidem.',
-                        how: 'Na základě analýzy vašeho byznysu a klíčových slov vybereme a nastavíme nejpřesnější a nejvýkonnější primární kategorii, která maximalizuje vaši viditelnost v oboru.',
+                        id: 'check-primary-category', category: 'Základné informácie', icon: 'fa-tags', title: 'Zvoľte správnu primárnu kategóriu',
+                        why: 'Primárna kategória je najdôležitejší signál pre Google, čomu sa venujete. Správna voľba dramaticky zvyšuje šancu na zobrazenie relevantným zákazníkom, ktorí hľadajú presne vaše služby. Zlá kategória znamená, že sa ukazujete nesprávnym ľuďom.',
+                        how: 'Na základe analýzy vášho biznisu a kľúčových slov vyberieme a nastavíme najpresnejšiu a najvýkonnejšiu primárnu kategóriu, ktorá maximalizuje vašu viditeľnosť v odbore.',
                         condition: (d, s) => !s['check-primary-category']
                     },
                     {
-                        id: 'check-secondary-categories', category: 'Základní informace', icon: 'fa-tags', title: 'Doplňte relevantní sekundární kategorie',
-                        why: 'Sekundární kategorie umožňují Googlu pochopit celou šíři vaší nabídky. Každá další správně zvolená kategorie je jako další síť, kterou chytáte nové zákazníky hledající specifické služby, které nabízíte.',
-                        how: 'Provedeme detailní rešerši a doplníme všechny relevantní vedlejší kategorie, abychom pokryli veškerý váš sortiment a služby a zajistili, že vám neunikne žádný potenciální zákazník.',
+                        id: 'check-secondary-categories', category: 'Základné informácie', icon: 'fa-tags', title: 'Doplňte relevantné sekundárne kategórie',
+                        why: 'Sekundárne kategórie umožňujú Google pochopiť celú šírku vašej ponuky. Každá ďalšia správne zvolená kategória je ako ďalšia sieť, ktorou chytáte nových zákazníkov hľadajúcich špecifické služby, ktoré ponúkate.',
+                        how: 'Vykonáme detailnú rešerš a doplníme všetky relevantné vedľajšie kategórie, aby sme pokryli celý váš sortiment a služby a zabezpečili, že vám neunikne žiadny potenciálny zákazník.',
                         condition: (d, s) => !s['check-secondary-categories']
                     },
                     {
@@ -1778,7 +1778,7 @@
                     },
                     // Interakce se zákazníky
                     {
-                        id: 'reviews-10', category: 'Interakce se zákazníky', icon: 'fa-star', title: 'Získejte více než 10 recenzí',
+                        id: 'reviews-10', category: 'Interakcie so zákazníkmi', icon: 'fa-star', title: 'Získajte viac ako 10 recenzií',
                         why: 'Podle studií si <strong>91 % zákazníků</strong> čte online recenze a <strong>84 %</strong> jim věří stejně jako osobnímu doporučení. Počet recenzí přímo ovlivňuje vaši pozici ve vyhledávání a důvěryhodnost.',
                         how: 'Víme, jak eticky a efektivně motivovat vaše zákazníky k zanechání hodnocení. <strong>Připravíme pro vás strategii a nástroje pro systematický sběr recenzí</strong>, které posunou váš profil na vrchol.',
                         condition: (d, s) => d.user_ratings_total < 10
@@ -1809,7 +1809,7 @@
                     },
                     // Pokročilé funkce
                     {
-                        id: 'check-products', category: 'Pokročilé funkce', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby nebo menu',
+                        id: 'check-products', category: 'Pokročilé funkcie', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby alebo menu',
                         why: 'Zobrazení produktů a služeb přímo v profilu zkracuje nákupní proces. Zákazník nemusí chodit na web, aby zjistil, co nabízíte, což zvyšuje šanci na okamžitou akci.',
                         how: 'Profesionálně nafotíme a popíšeme vaše klíčové produkty či služby a vložíme je do profilu tak, aby byly pro zákazníky co nejatraktivnější. <strong>Postaráme se o kompletní prezentaci vaší nabídky.</strong>',
                         condition: (d, s) => !s['check-products']
