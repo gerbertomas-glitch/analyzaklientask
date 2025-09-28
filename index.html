@@ -1262,14 +1262,14 @@
                 const container = $('#competitor-comparison-container');
                 container.innerHTML = `
                     <div class="comparison-header">
-                        <h3><i class="fas fa-chart-line"></i> Porovnání s konkurencí</h3>
+                        <h3><i class="fas fa-chart-line"></i> Porovnanie s konkurenciou</h3>
                     </div>
                     <div class="competitor-add-container">
                         <div class="search-container">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="competitor-input" placeholder="Přidat dalšího konkurenta ručně...">
+                            <input type="text" id="competitor-input" placeholder="Pridať ďalšieho konkurenta ručne...">
                         </div>
-                        <button id="add-competitor-btn" class="btn" disabled><i class="fas fa-plus"></i> Přidat</button>
+                        <button id="add-competitor-btn" class="btn" disabled><i class="fas fa-plus"></i> Pridať</button>
                     </div>
                     <div id="deep-audit-chart" class="chart-section"></div>
                     <div id="comparison-cards" class="comparison-cards-container"></div>
@@ -1333,69 +1333,69 @@
                 
                 const getReplyState = () => {
                     const value = parseInt(state['review-reply-btn'] || 0);
-                    if (value === 1) return { value: 1, text: 'Částečně' };
-                    if (value === 2) return { value: 2, text: 'Ano' };
-                    return { value: 0, text: 'Ne' };
+                    if (value === 1) return { value: 1, text: 'Čiastočne' };
+                    if (value === 2) return { value: 2, text: 'Áno' };
+                    return { value: 0, text: 'Nie' };
                 };
                 const replyState = getReplyState();
                 
                 const fullChecklist = `
                     <div id="manual-checklist-${c.place_id}" style="flex-grow: 1;">
                          <div class="checklist-group">
-                            <h4><i class="fas fa-key"></i> Základní stav</h4>
-                            <div class="check-item"><label for="check-claimed-${c.place_id}">Ověřený zápis</label><input type="checkbox" id="check-claimed-${c.place_id}" ${getCheck('check-claimed')} ${getDisabledAttribute('check-claimed')}></div>
+                            <h4><i class="fas fa-key"></i> Základný stav</h4>
+                            <div class="check-item"><label for="check-claimed-${c.place_id}">Overený zápis</label><input type="checkbox" id="check-claimed-${c.place_id}" ${getCheck('check-claimed')} ${getDisabledAttribute('check-claimed')}></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-info-circle"></i> Informace, konzistence a pravidla</h4>
-                            <div class="check-item"><label for="check-primary-category-${c.place_id}">Primární kategorie</label><input type="checkbox" id="check-primary-category-${c.place_id}" ${getCheck('check-primary-category')} ${getDisabledAttribute('check-primary-category')}></div>
-                            <div class="check-item"><label for="check-secondary-categories-${c.place_id}">Sekundární kategorie</label><input type="checkbox" id="check-secondary-categories-${c.place_id}" ${getCheck('check-secondary-categories')} ${getDisabledAttribute('check-secondary-categories')}></div>
+                            <h4><i class="fas fa-info-circle"></i> Informácie, konzistentnosť a pravidlá</h4>
+                            <div class="check-item"><label for="check-primary-category-${c.place_id}">Primárna kategória</label><input type="checkbox" id="check-primary-category-${c.place_id}" ${getCheck('check-primary-category')} ${getDisabledAttribute('check-primary-category')}></div>
+                            <div class="check-item"><label for="check-secondary-categories-${c.place_id}">Sekundárne kategórie</label><input type="checkbox" id="check-secondary-categories-${c.place_id}" ${getCheck('check-secondary-categories')} ${getDisabledAttribute('check-secondary-categories')}></div>
                             <div class="check-item"><label for="check-address-${c.place_id}">Adresa</label><input type="checkbox" id="check-address-${c.place_id}" ${getCheck('check-address')} ${getDisabledAttribute('check-address')}></div>
                             <div class="check-item"><label for="check-website-${c.place_id}">Webové stránky</label><input type="checkbox" id="check-website-${c.place_id}" ${getCheck('check-website')} ${getDisabledAttribute('check-website')}></div>
-                            <div class="check-item"><label for="check-phone-${c.place_id}">Telefonní číslo</label><input type="checkbox" id="check-phone-${c.place_id}" ${getCheck('check-phone')} ${getDisabledAttribute('check-phone')}></div>
-                            <div class="check-item"><label for="check-hours-${c.place_id}">Otevírací doba</label><input type="checkbox" id="check-hours-${c.place_id}" ${getCheck('check-hours')} ${getDisabledAttribute('check-hours')}></div>
-                            <div class="check-item"><label for="check-name-spam-${c.place_id}">Název firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam-${c.place_id}" ${getCheck('check-name-spam')} ${getDisabledAttribute('check-name-spam')}></div>
-                            <div class="check-item"><label for="check-nap-${c.place_id}">Údaje (NAP) jsou shodné</label><input type="checkbox" id="check-nap-${c.place_id}" ${getCheck('check-nap')} ${getDisabledAttribute('check-nap')}></div>
+                            <div class="check-item"><label for="check-phone-${c.place_id}">Telefónne číslo</label><input type="checkbox" id="check-phone-${c.place_id}" ${getCheck('check-phone')} ${getDisabledAttribute('check-phone')}></div>
+                            <div class="check-item"><label for="check-hours-${c.place_id}">Otváracie hodiny</label><input type="checkbox" id="check-hours-${c.place_id}" ${getCheck('check-hours')} ${getDisabledAttribute('check-hours')}></div>
+                            <div class="check-item"><label for="check-name-spam-${c.place_id}">Názov firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam-${c.place_id}" ${getCheck('check-name-spam')} ${getDisabledAttribute('check-name-spam')}></div>
+                            <div class="check-item"><label for="check-nap-${c.place_id}">Údaje (NAP) sú zhodné</label><input type="checkbox" id="check-nap-${c.place_id}" ${getCheck('check-nap')} ${getDisabledAttribute('check-nap')}></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-image"></i> Kvalita obsahu</h4>
-                            <div class="check-item"><label for="check-owner-photos-${c.place_id}">Fotky od majitele</label><input type="checkbox" id="check-owner-photos-${c.place_id}" ${getCheck('check-owner-photos')} ${getDisabledAttribute('check-owner-photos')}></div>
+                            <div class="check-item"><label for="check-owner-photos-${c.place_id}">Fotky od majiteľa</label><input type="checkbox" id="check-owner-photos-${c.place_id}" ${getCheck('check-owner-photos')} ${getDisabledAttribute('check-owner-photos')}></div>
                             <div class="check-item"><label for="check-photos-10plus-${c.place_id}">10+ fotografií</label><input type="checkbox" id="check-photos-10plus-${c.place_id}" ${getCheck('check-photos-10plus')} ${getDisabledAttribute('check-photos-10plus')}></div>
                             <div class="check-item"><label for="check-street-view-${c.place_id}">Google Street View</label><input type="checkbox" id="check-street-view-${c.place_id}" ${getCheck('check-street-view')} ${getDisabledAttribute('check-street-view')}></div>
-                            <div class="check-item"><label for="check-virtual-tour-${c.place_id}">Virtuální prohlídka</label><input type="checkbox" id="check-virtual-tour-${c.place_id}" ${getCheck('check-virtual-tour')} ${getDisabledAttribute('check-virtual-tour')}></div>
+                            <div class="check-item"><label for="check-virtual-tour-${c.place_id}">Virtuálna prehliadka</label><input type="checkbox" id="check-virtual-tour-${c.place_id}" ${getCheck('check-virtual-tour')} ${getDisabledAttribute('check-virtual-tour')}></div>
                             <div class="check-item"><label for="check-drone-video-${c.place_id}">Dron</label><input type="checkbox" id="check-drone-video-${c.place_id}" ${getCheck('check-drone-video')} ${getDisabledAttribute('check-drone-video')}></div>
                             <div class="check-item"><label for="check-video-${c.place_id}">Video</label><input type="checkbox" id="check-video-${c.place_id}" ${getCheck('check-video')} ${getDisabledAttribute('check-video')}></div>
-                            <div class="check-item"><label for="check-description-${c.place_id}">Vlastní popis firmy</label><input type="checkbox" id="check-description-${c.place_id}" ${getCheck('check-description')} ${getDisabledAttribute('check-description')}></div>
-                            <div class="check-item"><label for="check-attributes-${c.place_id}">Atributy</label><input type="checkbox" id="check-attributes-${c.place_id}" ${getCheck('check-attributes')} ${getDisabledAttribute('check-attributes')}></div>
+                            <div class="check-item"><label for="check-description-${c.place_id}">Vlastný popis firmy</label><input type="checkbox" id="check-description-${c.place_id}" ${getCheck('check-description')} ${getDisabledAttribute('check-description')}></div>
+                            <div class="check-item"><label for="check-attributes-${c.place_id}">Atribúty</label><input type="checkbox" id="check-attributes-${c.place_id}" ${getCheck('check-attributes')} ${getDisabledAttribute('check-attributes')}></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-shopping-basket"></i> Služby</h4>
                             <div class="check-item"><label for="check-products-${c.place_id}">Produkty/Služby/Menu</label><input type="checkbox" id="check-products-${c.place_id}" ${getCheck('check-products')} ${getDisabledAttribute('check-products')}></div>
-                            <div class="check-item"><label for="check-services-${c.place_id}">Rezervace/Objednávky</label><input type="checkbox" id="check-services-${c.place_id}" ${getCheck('check-services')} ${getDisabledAttribute('check-services')}></div>
+                            <div class="check-item"><label for="check-services-${c.place_id}">Rezervácie/Objednávky</label><input type="checkbox" id="check-services-${c.place_id}" ${getCheck('check-services')} ${getDisabledAttribute('check-services')}></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-bullhorn"></i> Reklamní novinky</h4>
-                            <div class="check-item"><label for="check-posts-${c.place_id}">Aktivní příspěvky</label><input type="checkbox" id="check-posts-${c.place_id}" ${getCheck('check-posts')} ${getDisabledAttribute('check-posts')}></div>
-                            <div class="check-item"><label for="check-posts-types-${c.place_id}">Aktivita < 14 dnů</label><input type="checkbox" id="check-posts-types-${c.place_id}" ${getCheck('check-posts-types')} ${getDisabledAttribute('check-posts-types')}></div>
+                            <h4><i class="fas fa-bullhorn"></i> Reklamné novinky</h4>
+                            <div class="check-item"><label for="check-posts-${c.place_id}">Aktívne príspevky</label><input type="checkbox" id="check-posts-${c.place_id}" ${getCheck('check-posts')} ${getDisabledAttribute('check-posts')}></div>
+                            <div class="check-item"><label for="check-posts-types-${c.place_id}">Aktivita < 14 dní</label><input type="checkbox" id="check-posts-types-${c.place_id}" ${getCheck('check-posts-types')} ${getDisabledAttribute('check-posts-types')}></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-question-circle"></i> Q&A</h4>
-                            <div class="check-item"><label for="check-qa-owner-reply-${c.place_id}">Majitel odpovídá</label><input type="checkbox" id="check-qa-owner-reply-${c.place_id}" ${getCheck('check-qa-owner-reply')} ${getDisabledAttribute('check-qa-owner-reply')}></div>
+                            <div class="check-item"><label for="check-qa-owner-reply-${c.place_id}">Majiteľ odpovedá</label><input type="checkbox" id="check-qa-owner-reply-${c.place_id}" ${getCheck('check-qa-owner-reply')} ${getDisabledAttribute('check-qa-owner-reply')}></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-users"></i> Interakce</h4>
+                            <h4><i class="fas fa-users"></i> Interakcie</h4>
                             <div class="check-item">
-                                <label>Reakce na recenze</label>
+                                <label>Reakcie na recenzie</label>
                                 <div class="review-dropdown-wrapper">
                                     <button type="button" class="review-select-btn" id="review-reply-btn-${c.place_id}" data-value="${replyState.value}">
                                         <span>${replyState.text}</span> <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <ul class="review-select-options">
-                                        <li data-value="0">Ne</li> <li data-value="1">Částečně</li> <li data-value="2">Ano</li>
+                                        <li data-value="0">Nie</li> <li data-value="1">Čiastočne</li> <li data-value="2">Áno</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="check-item"><label for="check-messaging-${c.place_id}">Aktivní Chat</label><input type="checkbox" id="check-messaging-${c.place_id}" ${getCheck('check-messaging')} ${getDisabledAttribute('check-messaging')}></div>
-                            <div class="check-item"><label for="check-whatsapp-${c.place_id}">Tlačítko zpráv</label><input type="checkbox" id="check-whatsapp-${c.place_id}" ${getCheck('check-whatsapp')} ${getDisabledAttribute('check-whatsapp')}></div>
+                            <div class="check-item"><label for="check-messaging-${c.place_id}">Aktívny Chat</label><input type="checkbox" id="check-messaging-${c.place_id}" ${getCheck('check-messaging')} ${getDisabledAttribute('check-messaging')}></div>
+                            <div class="check-item"><label for="check-whatsapp-${c.place_id}">Tlačidlo správ</label><input type="checkbox" id="check-whatsapp-${c.place_id}" ${getCheck('check-whatsapp')} ${getDisabledAttribute('check-whatsapp')}></div>
                         </div>
                     </div>`;
 
@@ -1405,9 +1405,9 @@
                             <h4 style="color: ${color};">${c.name}</h4>
                             <div class="card-top-actions">
                                 ${!isMain ? `
-                                    <a class="card-action-btn" href="${searchUrl}" target="_blank" title="Hledat na Google"><i class="fas fa-search"></i></a>
-                                    <a class="card-action-btn" href="${mapsUrl}" target="_blank" title="Zobrazit na Mapách"><i class="fas fa-map-marker-alt"></i></a>
-                                    <button class="remove-btn" title="Odebrat konkurenta" data-place-id="${c.place_id}">×</button>
+                                    <a class="card-action-btn" href="${searchUrl}" target="_blank" title="Hľadať na Google"><i class="fas fa-search"></i></a>
+                                    <a class="card-action-btn" href="${mapsUrl}" target="_blank" title="Zobraziť na Mapách"><i class="fas fa-map-marker-alt"></i></a>
+                                    <button class="remove-btn" title="Odobrať konkurenta" data-place-id="${c.place_id}">×</button>
                                 ` : ''}
                             </div>
                         </div>
@@ -1426,7 +1426,7 @@
             };
 
             const renderDeepAuditChart = (rankedCompanies, colorsMap) => {
-                let chartHtml = `<h3><i class="fas fa-chart-line"></i> Hloubkový audit (Skóre)</h3>`;
+                let chartHtml = `<h3><i class="fas fa-chart-line"></i> Hĺbkový audit (Skóre)</h3>`;
                 rankedCompanies.forEach(c => {
                     const color = colorsMap.get(c.place_id);
                     chartHtml += `
@@ -1444,7 +1444,7 @@
             };
             
             const renderReviewsPodiumChart = (allCompanies, colorsMap) => {
-                let chartHtml = `<h3><i class="fas fa-trophy"></i> Hodnocení Zákazníků</h3>`;
+                let chartHtml = `<h3><i class="fas fa-trophy"></i> Hodnotenie zákazníkov</h3>`;
                 const rankedByReviews = [...allCompanies].sort((a,b) => (b.rating || 0) - (a.rating || 0) || (b.user_ratings_total || 0) - (a.user_ratings_total || 0));
                 
                 chartHtml += '<div class="podium-chart-container">';
@@ -1478,7 +1478,7 @@
                             </div>
                             <div class="podium-info">
                                 ${company.rating?.toFixed(1) || 'N/A'} ★
-                                <span class="review-count">(${company.user_ratings_total || 0} recenzí)</span>
+                                <span class="review-count">(${company.user_ratings_total || 0} recenzií)</span>
                             </div>
                         </div>
                     `;
@@ -1614,43 +1614,43 @@
                     }
                 };
 
-                addPoints(15, state['check-claimed'], "Ověřený firemní zápis");
-                addPoints(5, state['check-primary-category'], "Primární kategorie");
-                addPoints(5, state['check-secondary-categories'], "Sekundární kategorie");
+                addPoints(15, state['check-claimed'], "Overený firemný zápis");
+                addPoints(5, state['check-primary-category'], "Primárna kategória");
+                addPoints(5, state['check-secondary-categories'], "Sekundárne kategórie");
                 addPoints(5, state['check-address'], "Adresa");
                 addPoints(5, state['check-website'], "Webové stránky");
-                addPoints(5, state['check-phone'], "Telefonní číslo");
-                addPoints(5, state['check-hours'], "Otevírací doba");
-                addPoints(10, company.rating >= 4.0, "Hodnocení 4.0 ★ a více");
-                addPoints(10, company.user_ratings_total >= 20, "Více než 20 recenzí");
-                addPoints(5, state['check-photos-10plus'], "Má více než 10 fotografií");
-                addPoints(5, state['check-owner-photos'], "Kvalitní fotky od majitele");
+                addPoints(5, state['check-phone'], "Telefónne číslo");
+                addPoints(5, state['check-hours'], "Otváracie hodiny");
+                addPoints(10, company.rating >= 4.0, "Hodnotenie 4.0 ★ a viac");
+                addPoints(10, company.user_ratings_total >= 20, "Viac ako 20 recenzií");
+                addPoints(5, state['check-photos-10plus'], "Má viac ako 10 fotografií");
+                addPoints(5, state['check-owner-photos'], "Kvalitné fotky od majiteľa");
                 addPoints(5, state['check-street-view'], "Profil obsahuje Google Street View");
-                addPoints(5, state['check-virtual-tour'], "Existuje virtuální prohlídka");
+                addPoints(5, state['check-virtual-tour'], "Existuje virtuálna prehliadka");
                 addPoints(5, state['check-drone-video'], "Profil obsahuje Dron");
                 addPoints(5, state['check-video'], "Profil obsahuje Video");
-                addPoints(5, state['check-description'], "Vlastní popis firmy");
-                addPoints(5, state['check-attributes'], "Vyplněny atributy");
-                addPoints(5, state['check-products'], "Vyplněná sekce Produkty/Služby/Menu");
-                addPoints(5, state['check-services'], "Vyplněná sekce Rezervace/Objednávky");
-                addPoints(10, state['check-posts'], "Pravidelně publikuje příspěvky");
-                addPoints(5, state['check-posts-types'], "Aktivita příspěvků (méně než 14 dnů)");
-                addPoints(5, state['check-qa-owner-reply'], "Odpovídá na otázky v Q&A");
-                addPoints(5, state['check-messaging'], "Aktivní zasílání zpráv (Chat)");
-                addPoints(5, state['check-whatsapp'], "Tlačítko zpráv/Whatsapp");
-                addPoints(5, state['check-name-spam'], "Název firmy bez spamu");
-                addPoints(5, state['check-nap'], "Konzistence údajů s webem (NAP)");
+                addPoints(5, state['check-description'], "Vlastný popis firmy");
+                addPoints(5, state['check-attributes'], "Vyplnené atribúty");
+                addPoints(5, state['check-products'], "Vyplnená sekcia Produkty/Služby/Menu");
+                addPoints(5, state['check-services'], "Vyplnená sekcia Rezervácie/Objednávky");
+                addPoints(10, state['check-posts'], "Pravidelne publikuje príspevky");
+                addPoints(5, state['check-posts-types'], "Aktivita príspevkov (menej ako 14 dní)");
+                addPoints(5, state['check-qa-owner-reply'], "Odpovedá na otázky v Q&A");
+                addPoints(5, state['check-messaging'], "Aktívne zasielanie správ (Chat)");
+                addPoints(5, state['check-whatsapp'], "Tlačidlo správ/Whatsapp");
+                addPoints(5, state['check-name-spam'], "Názov firmy bez spamu");
+                addPoints(5, state['check-nap'], "Konzistentnosť údajov s webom (NAP)");
 
                 maxScore += 10;
                 const reviewReplyStatus = parseInt(state['review-reply-btn'] || '0');
                 if (reviewReplyStatus === 2) {
                     score += 10;
-                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenze", earned: true });
+                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenzie", earned: true });
                 } else if (reviewReplyStatus === 1) {
                     score += 5;
-                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenze (částečně)", earned: true });
+                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenzie (čiastočne)", earned: true });
                 } else {
-                    if(generateBreakdown) breakdown.push({ text: "Nereaguje na recenze", earned: false });
+                    if(generateBreakdown) breakdown.push({ text: "Nereaguje na recenzie", earned: false });
                 }
                 
                 const finalScore = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
@@ -1838,8 +1838,8 @@
                 
                 let html = `
                     <div class="solution-header">
-                        <h2>Návrh řešení pro ${currentPlaceDetails.name}</h2>
-                        <p>Kroky, které vám pomohou dosáhnout 100% potenciálu vašeho profilu.</p>
+                        <h2>Návrh riešenia pre ${currentPlaceDetails.name}</h2>
+                        <p>Kroky, ktoré vám pomôžu dosiahnuť 100% potenciál vášho profilu.</p>
                     </div>
                 `;
 
@@ -1848,7 +1848,7 @@
                         <div class="congrats-message">
                             <i class="fas fa-check-circle"></i>
                             <h2>Gratulujeme!</h2>
-                            <p>Váš profil je ve skvělé kondici! Nenašli jsme žádné zásadní nedostatky, které by bylo třeba okamžitě řešit.</p>
+                            <p>Váš profil je vo skvelej kondícii! Nenašli sme žiadne zásadné nedostatky, ktoré by bolo treba okamžite riešiť.</p>
                         </div>
                     `;
                 } else {
@@ -1857,7 +1857,7 @@
                         return acc;
                     }, {});
 
-                    const categoryOrder = ['Kritické kroky', 'Základní informace', 'Obsah a média', 'Interakce se zákazníky', 'Pokročilé funkce'];
+                    const categoryOrder = ['Kritické kroky', 'Základné informácie', 'Obsah a médiá', 'Interakcie so zákazníkmi', 'Pokročilé funkcie'];
 
                     for (const category of categoryOrder) {
                         if (grouped[category]) {
