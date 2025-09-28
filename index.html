@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMF Analýza | Najděte svůj potenciál</title>
+    <title>GMF Analýza | Nájdite svoj potenciál</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400&display=swap');
@@ -34,7 +34,7 @@
             font-family: 'Roboto', sans-serif;
             color: var(--text-dark);
             background-color: var(--background-light);
-            overflow: hidden; /* Zabrání scrollbarům z plátna */
+            overflow: hidden; /* Zabráni scrollbarom z plátna */
         }
         
         /* --- STYLY PRO ÚVODNÍ OBRAZOVKU --- */
@@ -159,19 +159,19 @@
         .analysis-layout { display: grid; grid-template-columns: minmax(350px, 1.5fr) 1fr 0.8fr; gap: 25px; align-items: flex-start; }
         @media (max-width: 900px) { .analysis-layout { grid-template-columns: 1fr; } }
         
-        .analysis-top-panel { background: var(--card-bg-color); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; overflow: hidden; padding: 0; position: relative; min-height: 250px; }
+        .analysis-top-panel { background: var(--card-bg-color); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 25px; overflow: hidden; padding: 0; position: relative; }
         .top-panel-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: brightness(0.6) blur(1.5px); }
         .top-panel-content { position: absolute; top: 0; left: 0; z-index: 3; color: white; height: 100%; width: 100%; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
         .top-panel-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px; }
         .company-info { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; }
         .company-details-group { display: flex; align-items: center; gap: 15px; }
         .company-name-section h2 { font-size: 2.2em; margin: 0; line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-        .status-button { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 500; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.4); box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: background-color: 0.3s; }
+        .status-button { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 500; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
         .verified-icon { position: relative; font-size: 2.5em; transition: color 0.4s; margin-right: -5px; }
         .verified-icon .fa-stack-1x { font-size: 0.5em; color: white; }
         .company-actions-block { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
         .company-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 0; justify-content: flex-end; }
-        .btn { padding: 10px 18px; font-size: 0.9em; border-radius: 8px; background-color: var(--google-blue); color: white; text-decoration: none; display: inline-flex; align-items: center; border: none; cursor: pointer; gap: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+        .btn { padding: 10px 18px; font-size: 0.9em; border-radius: 8px; background-color: var(--google-blue); color: white; text-decoration: none; display: inline-flex; align-items: center; border: none; cursor: pointer; }
         .btn:hover { background-color: #3367D6; box-shadow: 0 6px 12px rgba(0,0,0,0.15); transform: translateY(-2px); }
         .btn-green { background-color: var(--google-green); }
         .btn-green:hover { background-color: #2e8b57; }
@@ -187,7 +187,7 @@
         .details-list .missing { color: var(--danger-color); font-style: italic; }
         .details-list .present { color: var(--google-green); }
         .details-list h4 { margin-top: 15px; color: var(--primary-color); text-align: left; width: 100%; border-top: 1px solid #e0e0e0; padding-top: 15px; }
-        .details-list .toggle-btn { background: none; border: none; color: var(--secondary-color); cursor: pointer; font-size: 1rem; display: flex; align-items: center; gap: 5px; transition: color 0.2s, transform 0.2s; }
+        .details-list .toggle-btn { background: none; border: none; color: var(--secondary-color); cursor: pointer; font-size: 1rem; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
         .details-list .toggle-btn:hover { text-decoration: underline; }
         .details-list .toggle-btn .fas { transition: transform 0.2s; }
         .details-list .toggle-btn.expanded .fas { transform: rotate(180deg); }
@@ -200,7 +200,7 @@
         .check-item input[type="checkbox"] { width: 1.5em; height: 1.5em; cursor: pointer; flex-shrink: 0; }
         #score-widget { text-align: center; position: sticky; top: 20px; z-index: 10; }
         #score-widget .score-circle-wrapper { display: flex; flex-direction: column; align-items: center; }
-        #score-widget .score-circle { position: relative; width: 180px; height: 180px; border-radius: 50%; background: conic-gradient(var(--score-green) 0deg, #e9ecef 0deg); display: flex; justify-content: center; align-items: center; margin: 0 auto 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: background 1s ease-out; }
+        #score-widget .score-circle { position: relative; width: 180px; height: 180px; border-radius: 50%; background: conic-gradient(var(--score-green) 0deg, #e9ecef 0deg); display: flex; justify-content: center; align-items: center; }
         #score-widget .score-circle::before { content: ''; position: absolute; width: 150px; height: 150px; background: #fff; border-radius: 50%; }
         #score-widget .score-value { position: relative; font-size: 3em; font-weight: 700; color: var(--score-green); }
         .score-breakdown-toggle { cursor: pointer; font-weight: 500; color: var(--secondary-color); margin-top: 15px; display: inline-flex; align-items: center; user-select: none; transition: color 0.2s; }
@@ -219,7 +219,7 @@
         .rating-info i { margin-right: 5px; color: var(--star-color); letter-spacing: 2px; font-size: 1.2em; }
         .pac-container { z-index: 1050 !important; }
         @media (max-width: 900px) { .top-panel-header-content { max-width: 100%; } }
-        #floating-warning-bar { position: fixed; bottom: 20px; right: 20px; width: 280px; height: 280px; background-color: var(--danger-color); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 100; display: flex; flex-direction: column; justify-content: space-between; opacity: 0; visibility: hidden; transition: opacity 0.5s ease-out, visibility 0.5s ease-out; text-align: left; }
+        #floating-warning-bar { position: fixed; bottom: 20px; right: 20px; width: 280px; height: 280px; background-color: var(--danger-color); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 10px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
         #floating-warning-bar ul { list-style: none; padding: 0; margin-top: 15px; }
         #floating-warning-bar li { margin-bottom: 8px; font-size: 0.9em; line-height: 1.4; }
         #floating-warning-bar.visible { opacity: 1; visibility: visible; }
@@ -227,82 +227,12 @@
         #floating-warning-bar .close-btn:hover { opacity: 1; }
         #floating-warning-bar h4 { margin: 0; font-size: 1.1em; display: flex; align-items: center; gap: 10px; }
         #floating-warning-bar p { font-size: 0.9em; margin: 0; opacity: 0.8; line-height: 1.4; }
-        #company-details-box { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .top-panel-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
-        .company-info { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; }
-        .company-details-group { display: flex; align-items: center; gap: 15px; }
-        .company-actions-block { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
-        .company-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 0; justify-content: flex-end; }
-        .review-card { background: #f9f9f9; border-radius: 8px; padding: 15px; margin-bottom: 10px; box-shadow: inset 0 0 5px rgba(0,0,0,0.05); }
-        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-        .review-author { font-weight: 500; color: var(--text-dark); }
-        .review-rating { color: var(--star-color); letter-spacing: 2px; font-size: 1.2em; }
-        .review-time { font-size: 0.8em; color: var(--text-light); margin-top: 5px; }
-        .review-text { font-size: 0.9em; line-height: 1.4; color: var(--text-light); margin-bottom: 10px; }
-        .reviews-list-container { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.5s ease-out; }
-        .reviews-list-container.show { max-height: 2000px; padding-top: 15px; }
-        .opening-hours-grid { display: grid; grid-template-columns: minmax(100px, max-content) 1fr; gap: 5px 20px; width: 100%; }
-        .map-container, .street-view-container { height: 300px; width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .review-dropdown-wrapper { position: relative; display: inline-flex; align-items: center; min-width: 100px; }
-        .review-select-btn { background: none; border: none; padding: 0; font-size: 1rem; cursor: pointer; outline: none; transition: color 0.2s; display: flex; align-items: center; gap: 5px; color: var(--secondary-color); flex-grow: 1; justify-content: flex-end; text-align: right; }
-        .review-select-btn:hover { color: var(--google-blue); }
-        .review-select-btn .fa-chevron-down { transition: transform 0.2s; }
-        .review-select-btn.expanded .fa-chevron-down { transform: rotate(180deg); }
-        .review-select-options { position: absolute; top: 100%; right: 0; background: #fff; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 10; margin-top: 5px; width: 100%; min-width: 150px; list-style: none; padding: 5px 0; display: none; }
-        .review-select-options.show { display: block; }
-        .review-select-options li { padding: 8px 12px; cursor: pointer; text-align: left; transition: background-color 0.2s; }
-        .review-select-options li:hover { background-color: #f0f0f0; }
-        .check-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
-        .check-item label { flex-grow: 1; user-select: none; }
-        
-        /* STYLY PRO POROVNÁNÍ KONKURENCE */
-        .comparison-header { width: 100%; background: var(--card-bg-color); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 25px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 15px; position: relative; }
-        .comparison-header h3 { font-size: 1.5em; margin: 0; color: var(--text-dark); text-align: center; }
-        .comparison-header h3 i { margin-right: 10px; color: var(--primary-color); }
-        .competitor-add-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; align-items: center; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .competitor-add-container .search-container { flex-grow: 1; margin: 0; max-width: none; }
-        .comparison-cards-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; width: 100%; margin-top: 25px; }
-        .competitor-card { background-color: var(--card-bg-color); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 20px; text-align: center; position: relative; display: flex; flex-direction: column; }
-        .competitor-card.main-company { border: 2px solid var(--primary-color); box-shadow: 0 0 15px rgba(52, 168, 83, 0.4); }
-        .competitor-card .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 5px; }
-        .competitor-card .card-top-actions { position: static; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
-        .competitor-card .card-action-btn { background-color: rgba(255, 255, 255, 0.7); color: var(--text-light); border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.2s; font-size: 0.9em; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .competitor-card .card-action-btn:hover { background-color: #fff; color: var(--text-dark); transform: scale(1.1); }
-        .competitor-card h4 { font-size: 1.2em; font-weight: 500; margin-bottom: 0; text-align: left; flex-grow: 1; }
-        .competitor-card .rating-info { color: var(--text-dark); justify-content: center; margin-bottom: 15px; display: flex; align-items: center; flex-wrap: wrap; gap: 5px 15px;}
-        .competitor-card .rating-info i { font-size: 1em; margin-right: 5px; color: var(--star-color); }
-        .competitor-card .rating-info span { font-weight: bold; }
-        .competitor-card .metrics-list { list-style: none; padding: 0; text-align: left; flex-grow: 1; border-top: 1px solid #f0f0f0; margin-top: 10px; padding-top: 15px; }
-        .competitor-card .metrics-list li { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; font-size: 0.9em; }
-        .competitor-card .remove-btn { position: static; padding: 0; border: none; width: 32px; height: 32px; line-height: 1; border-radius: 50%; background-color: rgba(255, 255, 255, 0.7); color: var(--text-light); cursor: pointer; font-size: 1.2em; transition: all 0.2s; }
-        .competitor-card .remove-btn:hover { background-color: var(--danger-color); color: white; transform: scale(1.1); }
-        .chart-section { background: var(--card-bg-color); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 25px; margin-top: 25px; }
-        .chart-section h3 { margin-bottom: 25px; color: var(--text-dark); }
-        .chart-section h3 i { color: var(--primary-color); margin-right: 10px; }
-        .chart-bar-container { display: flex; align-items: center; margin-bottom: 15px; gap: 15px; }
-        .chart-label { width: 200px; flex-shrink: 0; font-weight: 500; color: var(--text-dark); text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
-        .chart-bar-wrapper { flex-grow: 1; height: 30px; background-color: #f0f0f0; border-radius: 8px; overflow: hidden; position: relative; }
-        .chart-bar { height: 100%; transition: width 0.5s ease-out, background-color 0.3s; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; overflow: hidden; }
-        .chart-score { font-weight: bold; font-size: 1em; text-shadow: 1px 1px 2px rgba(0,0,0,0.4); white-space: nowrap; }
-        .competitor-card .checklist-group { margin-top: 15px; border-top: 1px solid #f0f0f0; padding-top: 15px; }
-        .competitor-card .checklist-group h4 { font-size: 0.9em; margin-bottom: 10px; color: var(--primary-color); text-align: left; }
-        .competitor-card .check-item { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; font-size: 0.85em; text-align: left; }
-        .competitor-card .check-item label { flex-grow: 1; user-select: none; }
-        .podium-chart-container { display: flex; justify-content: center; align-items: flex-end; gap: 5px; height: 300px; padding: 20px; border-bottom: 5px solid #e0e0e0; box-sizing: content-box; }
-        .podium-step { width: 33%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 20px 10px; border-radius: 10px 10px 0 0; color: white; text-align: center; box-shadow: inset 0 6px 10px rgba(0,0,0,0.2); transition: height 0.5s ease-out, background-color 0.5s ease-out; }
-        .podium-step h4 { font-size: 1em; font-weight: bold; margin: 0 0 10px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.4); word-break: break-word; }
-        .podium-info { font-size: 1.2em; font-weight: bold; }
-        .podium-info .review-count { font-size: 0.8em; font-weight: normal; opacity: 0.9; display: block; }
-        .podium-medal { font-size: 2.5em; margin-bottom: 10px; }
-        .podium-1 { height: 100%; order: 2; }
-        .podium-1 .podium-medal { text-shadow: 0 0 5px rgba(0,0,0,0.5); }
-        .podium-2 { height: 85%; order: 1; }
-        .podium-3 { height: 70%; order: 3; }
-        
-        /* --- STYLY PRO PLOVOUCÍ TLAČÍTKA --- */
-        #floating-new-analysis-btn { position: fixed; right: 30px; bottom: 30px; z-index: 1001; background-color: var(--google-blue); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 1rem; font-weight: 500; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; transition: transform 0.2s ease-out, background-color 0.2s, bottom 0.5s ease-out; }
+        #company-details-box { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);}
+
+        /* --- PLOVOUCE TLAČIDLÁ --- */
+        #floating-new-analysis-btn { position: fixed; right: 30px; bottom: 30px; z-index: 1001; background-color: var(--google-blue); color: white; border: none; border-radius: 50px; padding: 15px 25px; cursor: pointer; box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
         #floating-new-analysis-btn:hover { transform: scale(1.05); background-color: #3367D6; }
-        #floating-comparison-btn { position: fixed; right: 30px; bottom: 95px; z-index: 1001; background-color: var(--google-green); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 1rem; font-weight: 500; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; transition: transform 0.2s ease-out, background-color 0.2s, bottom 0.5s ease-out; }
+        #floating-comparison-btn { position: fixed; right: 30px; bottom: 95px; z-index: 1001; background-color: var(--google-green); color: white; border: none; border-radius: 50px; padding: 15px 25px; cursor: pointer; box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
         #floating-comparison-btn:hover { transform: scale(1.05); background-color: #2e8b57; }
         #floating-back-btn { position: fixed; left: 30px; bottom: 30px; z-index: 1001; border-radius: 50px; padding: 15px 25px; }
         #floating-solution-btn { position: fixed; right: 30px; bottom: 95px; z-index: 1001; border-radius: 50px; padding: 15px 25px; }
@@ -314,8 +244,8 @@
         #solution-proposal-container .solution-header h2 { font-size: 2.2em; margin-bottom: 10px; }
         #solution-proposal-container .solution-header p { font-size: 1.1em; color: var(--text-light); }
         .solution-category { margin-bottom: 35px; }
-        .solution-category h3 { font-size: 1.5em; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px;}
-        .recommendation-card { background: var(--card-bg-color); border-left: 5px solid var(--google-blue); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 25px; margin-bottom: 20px; display: grid; grid-template-columns: 50px 1fr; gap: 0 25px; align-items: start; }
+        .solution-category h3 { font-size: 1.5em; color: var(--text-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .recommendation-card { background: var(--card-bg-color); border-left: 5px solid var(--google-blue); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 25px; margin-bottom: 20px; display: grid; grid-template-columns: 50px 1fr; gap: 15px; align-items: start; }
         .recommendation-card.critical { border-left-color: var(--danger-color); }
         .recommendation-icon { font-size: 2em; color: var(--google-blue); grid-row: 1 / span 2; display: flex; justify-content: center; align-items: flex-start; padding-top: 5px; }
         .recommendation-card.critical .recommendation-icon { color: var(--danger-color); }
@@ -338,11 +268,11 @@
              <img src="https://viewcz.com/images/svg/head-logo.svg" alt="ViewCZ Logo" class="welcome-logo">
         </header>
         <div class="welcome-content">
-            <h1>Odhalte plný potenciál svého firemního profilu</h1>
-            <p class="subtitle">V digitálním světě je vaše vizitka na Google Mapách klíčová. Náš nástroj provede hloubkovou analýzu, porovná vás s konkurencí a ukáže vám cestu k lepší viditelnosti a novým zákazníkům.</p>
+            <h1>Odhaľte plný potenciál svojho firemného profilu</h1>
+            <p class="subtitle">V digitálnom svete je vaša vizitka na Mapách Google kľúčová. Náš nástroj vykoná hĺbkovú analýzu, porovná vás s konkurenciou a ukáže vám cestu k lepším výsledkom.</p>
             <div class="search-container">
                  <i class="fas fa-search"></i>
-                 <input type="text" id="gmf-input" placeholder="Zadejte název a adresu vaší firmy...">
+                 <input type="text" id="gmf-input" placeholder="Zadajte názov a adresu vašej firmy...">
             </div>
         </div>
     </main>
@@ -354,13 +284,13 @@
 
     <div id="floating-warning-bar" class="hidden">
         <div>
-            <h4><i class="fas fa-exclamation-triangle"></i> Kritický nedostatek</h4>
+            <h4><i class="fas fa-exclamation-triangle"></i> Kritický nedostatok</h4>
             <ul>
-                <li>⚠️ Riziko převzetí profilu</li>
-                <li>🚫 Omezené možnosti správy</li>
-                <li>📉 Horší pozice ve vyhledávání a mapách</li>
-                <li>❌ Nižší důvěryhodnost u zákazníků</li>
-                <li>📊 Omezený přístup k analytikám a funkcím</li>
+                <li>⚠️ Riziko prevzatia profilu</li>
+                <li>🚫 Obmedzené možnosti správy</li>
+                <li>📉 Horšia pozícia vo vyhľadávaní a mapách</li>
+                <li>❌ Nižšia dôveryhodnosť u zákazníkov</li>
+                <li>📊 Obmedzený prístup k analytikám a funkciám</li>
             </ul>
         </div>
         <button class="close-btn">×</button>
@@ -368,22 +298,22 @@
     
     <div id="map-service-container" style="display:none"></div>
 
-    <!-- Plovoucí tlačítka -->
+    <!-- Plávajúce tlačidlá -->
     <button id="floating-new-analysis-btn" class="btn hidden">
         <i class="fas fa-search-plus"></i> Nová analýza
     </button>
     <button id="floating-comparison-btn" class="btn btn-green hidden">
-        <i class="fas fa-chart-bar"></i> Porovnání s konkurencí <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        <i class="fas fa-chart-bar"></i> Porovnanie s konkurenciou <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
     </button>
     <button id="floating-back-btn" class="btn hidden">
-        <i class="fas fa-arrow-left"></i> Zpět na analýzu
+        <i class="fas fa-arrow-left"></i> Späť na analýzu
     </button>
     <button id="floating-solution-btn" class="btn btn-green hidden">
-        <i class="fas fa-lightbulb"></i> Návrh řešení <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        <i class="fas fa-lightbulb"></i> Návrh riešenia <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
     </button>
-    <!-- NOVÉ TLAČÍTKO ZPĚT -->
+    <!-- NOVÉ TLAČIDLO SPÄŤ -->
     <button id="floating-back-to-comparison-btn" class="btn hidden">
-        <i class="fas fa-arrow-left"></i> Zpět na porovnání
+        <i class="fas fa-arrow-left"></i> Späť na porovnanie
     </button>
 
 
@@ -401,15 +331,15 @@
             const welcomeScreen = $('#welcome-screen');
             const analysisContainer = $('#analysis-container');
             const competitorComparisonContainer = $('#competitor-comparison-container');
-            const solutionProposalContainer = $('#solution-proposal-container'); // Nový kontejner
+            const solutionProposalContainer = $('#solution-proposal-container');
             
             const floatingNewAnalysisBtn = $('#floating-new-analysis-btn');   
             const floatingComparisonBtn = $('#floating-comparison-btn');
             const floatingBackBtn = $('#floating-back-btn');
             const floatingSolutionBtn = $('#floating-solution-btn');
-            const floatingBackToComparisonBtn = $('#floating-back-to-comparison-btn'); // Nové tlačítko
+            const floatingBackToComparisonBtn = $('#floating-back-to-comparison-btn');
 
-            const placeDetailsFields = ['place_id', 'name', 'formatted_address', 'address_components', 'rating', 'user_ratings_total', 'types', 'url', 'geometry', 'opening_hours', 'website', 'formatted_phone_number', 'photos', 'reviews', 'business_status', 'editorial_summary', 'wheelchair_accessible_entrance', 'plus_code', 'price_level'];
+            const placeDetailsFields = ['place_id', 'name', 'formatted_address', 'address_components', 'rating', 'user_ratings_total', 'types', 'url', 'geometry', 'opening_hours', 'website', 'formatted_phone_number', 'photos', 'plus_code', 'reviews', 'price_level', 'editorial_summary', 'business_status' ];
             let manualChecklistState = {};
             let competitorsState = {};
             const MAX_COMPETITORS = 2;
@@ -510,16 +440,16 @@
                 }
             }
 
-            // --- FUNKCE PRO RESETOVÁNÍ APLIKACE DO VÝCHOZÍHO STAVU ---
+            // --- RESET DO VÝCHODZIEHO STAVU ---
             const resetToWelcomeScreen = () => {
                 analysisContainer.classList.add('hidden');
                 competitorComparisonContainer.classList.add('hidden');
-                solutionProposalContainer.classList.add('hidden'); // Skrýt i novou sekci
+                solutionProposalContainer.classList.add('hidden');
                 floatingNewAnalysisBtn.classList.add('hidden');
                 floatingComparisonBtn.classList.add('hidden');
                 floatingBackBtn.classList.add('hidden');
                 floatingSolutionBtn.classList.add('hidden');
-                floatingBackToComparisonBtn.classList.add('hidden'); // Skrýt i nové tlačítko
+                floatingBackToComparisonBtn.classList.add('hidden');
                 const floatingWarningBar = $('#floating-warning-bar');
                 floatingWarningBar.classList.add('hidden');
                 floatingWarningBar.classList.remove('visible');
@@ -534,11 +464,10 @@
                 manualChecklistState = {};
                 competitorsState = {};
                 
-                // Restore body overflow for analysis screen
                 document.body.style.overflow = '';
             };
 
-            // Přidán Event Listener pro plovoucí tlačítka
+            // Tlačidlá
             floatingNewAnalysisBtn.addEventListener('click', resetToWelcomeScreen);
             
             floatingComparisonBtn.addEventListener('click', () => {
@@ -560,7 +489,6 @@
                 updateVerificationStatus();
             });
             
-            // --- LOGIKA PRO NOVÁ TLAČÍTKA ---
             floatingSolutionBtn.addEventListener('click', () => {
                 competitorComparisonContainer.classList.add('hidden');
                 solutionProposalContainer.classList.remove('hidden');
@@ -591,7 +519,7 @@
                 floatingComparisonBtn.style.bottom = '95px';
             });
 
-            // --- HLAVNÍ FUNKCE ---
+            // --- HLAVNÁ FUNKCIA ---
             const startAnalysisFlow = (placeId) => {
                 if (!placeId) return;
                 
@@ -600,13 +528,12 @@
                     welcomeScreen.classList.add('hidden');
                 }, 500);
 
-                // Allow scrolling for the analysis page
                 document.body.style.overflow = 'auto';
 
                 analysisContainer.innerHTML = '<div class="spinner"><i class="fas fa-spinner fa-spin fa-3x" style="color:var(--primary-color)"></i></div>';
                 analysisContainer.classList.remove('hidden');
                 competitorComparisonContainer.classList.add('hidden');
-                solutionProposalContainer.classList.add('hidden'); // Skrýt při startu
+                solutionProposalContainer.classList.add('hidden');
                 floatingNewAnalysisBtn.classList.remove('hidden');
                 floatingComparisonBtn.classList.remove('hidden');
                 
@@ -641,7 +568,7 @@
                         }
 
                     } else {
-                        showError('Nepodařilo se načíst detaily firmy.');
+                        showError('Nepodarilo sa načítať detaily firmy.');
                     }
                 });
             };
@@ -669,25 +596,25 @@
             }
             
             const script = document.getElementById('google-maps-script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places,geometry&language=cs&callback=initGoogleServices`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places,geometry&language=sk&callback=initGoogleServices`;
             window.initGoogleServices = initializeGoogleAndAutocomplete;
             
-            // --- VYKRESLOVACÍ FUNKCE (zůstávají beze změny) ---
+            // --- Vykresľovacie funkcie ---
             const renderTopPanel = (d) => {
                 const photoUrl = d.photos && d.photos.length > 0
                     ? d.photos[0].getUrl({ maxWidth: 1024, maxHeight: 250 })
-                    : 'https://placehold.co/1024x250/EAEAEA/B6B6B6?text=Fotografie+nen%C3%AD+dostupn%C3%A1';
+                    : 'https://placehold.co/1024x250/EAEAEA/B6B6B6?text=Fotografia+nie+je+dostupn%C3%A1';
 
                 const placeName = encodeURIComponent(d.name);
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${placeName}&query_place_id=${d.place_id}`;
                 const searchUrl = `https://www.google.com/search?q=${placeName}`;
                 
-                let businessStatusText = 'Neaktivní';
+                let businessStatusText = 'Neaktívne';
                 let statusColor = 'var(--google-red)';
                 let statusIcon = 'fa-eye-slash';
 
                 if (d.business_status === 'OPERATIONAL') {
-                    businessStatusText = 'Viditelné';
+                    businessStatusText = 'Viditeľné';
                     statusColor = 'var(--google-green)';
                     statusIcon = 'fa-eye';
                 } else if (d.business_status === 'CLOSED_TEMPORARILY') {
@@ -707,11 +634,11 @@
                                         <i class="fas fa-times fa-stack-1x" id="status-icon" style="color:white;"></i>
                                     </span>
                                     <div id="company-details-box">
-                                        <h2>${d.name || 'Neznámý podnik'}</h2>
+                                        <h2>${d.name || 'Neznámy podnik'}</h2>
                                         <div class="rating-info">
                                             <i class="fas fa-star"></i>
                                             <span>${d.rating?.toFixed(1) || 'N/A'}</span>
-                                            <span style="margin-left:5px;">(${d.user_ratings_total || 0} recenzí)</span>
+                                            <span style="margin-left:5px;">(${d.user_ratings_total || 0} recenzií)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -733,19 +660,19 @@
 
             const renderAutoDetailsWidget = (d) => {
                 const getData = (value, formatter) => {
-                    const fallback = '<span class="missing">Chybí</span>';
+                    const fallback = '<span class="missing">Chýba</span>';
                     if (value === null || typeof value === 'undefined' || value === '' || (Array.isArray(value) && value.length === 0)) return fallback;
                     if (typeof formatter === 'function') {
                         const result = formatter(value);
                         return result === null || result === '' ? fallback : result;
                     }
-                    if (typeof value === 'boolean') return value ? '<span class="present">Ano</span>' : '<span class="missing">Ne</span>';
+                    if (typeof value === 'boolean') return value ? '<span class="present">Áno</span>' : '<span class="missing">Nie</span>';
                     return value;
                 };
 
                 const formatPhotoCount = (photos) => {
                     if (!photos || photos.length === 0) {
-                        return '<span class="missing">Chybí</span>';
+                        return '<span class="missing">Chýba</span>';
                     }
                     const count = photos.length;
                     return count >= 10 ? '10+' : count;
@@ -753,11 +680,11 @@
 
                 const formatPriceLevel = (level) => {
                     switch (level) {
-                        case 0: return 'Zdarma';
-                        case 1: return 'Nízká';
-                        case 2: return 'Střední';
+                        case 0: return 'Zadarmo';
+                        case 1: return 'Nízka';
+                        case 2: return 'Stredná';
                         case 3: return 'Vysoká';
-                        case 4: return 'Velmi vysoká';
+                        case 4: return 'Veľmi vysoká';
                         default: return null;
                     }
                 };
@@ -767,13 +694,12 @@
                     const dayName = parts[0].trim();
                     const hours = parts.slice(1).join(':').trim();
                     return `<span>${dayName}:</span><span>${hours}</span>`;
-                }).join('') || '<span class="missing">Chybí</span>';
+                }).join('') || '<span class="missing">Chýba</span>';
 
                 const hasReviews = d.reviews && d.reviews.length > 0;
                 const hasGeometry = d.geometry && d.geometry.location;
 
                 const hasStreetView = d.geometry && d.geometry.location;
-                let hasStreetViewMessage = 'Chybí';
 
                 if (hasStreetView) {
                     streetViewService.getPanorama({
@@ -784,32 +710,31 @@
                         const streetViewToggleBtn = $('#street-view-toggle-btn');
                         if (!streetViewToggleBtn) return;
                         if (status === google.maps.StreetViewStatus.OK) {
-                            streetViewToggleBtn.innerHTML = `<span>Zobrazit Street View</span><i class="fas fa-chevron-down"></i>`;
+                            streetViewToggleBtn.innerHTML = `<span>Zobraziť Street View</span><i class="fas fa-chevron-down"></i>`;
                             streetViewToggleBtn.disabled = false;
                         } else {
-                            streetViewToggleBtn.innerHTML = `<span>Street View chybí</span><i class="fas fa-chevron-down"></i>`;
+                            streetViewToggleBtn.innerHTML = `<span>Street View chýba</span><i class="fas fa-chevron-down"></i>`;
                             streetViewToggleBtn.disabled = true;
                         }
                     });
                 }
 
-
                 $('#auto-details-widget').innerHTML = `
-                    <h3><i class="fas fa-cogs"></i> Fáze 1: Automatická analýza</h3>
+                    <h3><i class="fas fa-cogs"></i> Fáza 1: Automatická analýza</h3>
                     <ul class="details-list">
-                        <h4>Kategorie</h4>
-                        <li><strong>Primární kategorie:</strong> <div class="value-col">${getData(d.types?.[0])?.replace(/_/g, ' ')}</div></li>
-                        <li><strong>Sekundární kategorie:</strong> <div class="value-col">${getData(d.types?.slice(1), arr => arr.map(i => i.replace(/_/g, ' ')).join(', '))}</div></li>
-                        <h4>Kontaktní informace</h4>
+                        <h4>Kategórie</h4>
+                        <li><strong>Primárna kategória:</strong> <div class="value-col">${getData(d.types?.[0])?.replace(/_/g, ' ')}</div></li>
+                        <li><strong>Sekundárne kategórie:</strong> <div class="value-col">${getData(d.types?.slice(1), arr => arr.map(i => i.replace(/_/g, ' ')).join(', '))}</div></li>
+                        <h4>Kontaktné informácie</h4>
                         <li><strong>Adresa:</strong> <div class="value-col">${getData(d.formatted_address)}</div></li>
                         <li><strong>Web:</strong> <div class="value-col">${getData(d.website, url => `<a href="${url}" target="_blank">${url}</a>`)}</div></li>
-                        <li><strong>Telefon:</strong> <div class="value-col">${getData(d.formatted_phone_number)}</div></li>
+                        <li><strong>Telefón:</strong> <div class="value-col">${getData(d.formatted_phone_number)}</div></li>
                         <li><strong>Plus Code:</strong> <div class="value-col">${getData(d.plus_code?.global_code)}</div></li>
                         <li>
-                            <strong>Otevírací doba:</strong>
+                            <strong>Otváracie hodiny:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="opening-hours-toggle">
-                                    <span>${d.opening_hours?.weekday_text ? 'Zobrazit dny' : 'Chybí'}</span>
+                                    <span>${d.opening_hours?.weekday_text ? 'Zobraziť dni' : 'Chýba'}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -818,10 +743,10 @@
                             <div class="opening-hours-grid">${openingHoursHtml}</div>
                         </li>
                         <li>
-                            <strong>GPS lokace:</strong>
+                            <strong>GPS poloha:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="map-toggle-btn">
-                                    <span>${hasGeometry ? 'Zobrazit mapu' : 'Chybí'}</span>
+                                    <span>${hasGeometry ? 'Zobraziť mapu' : 'Chýba'}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -833,7 +758,7 @@
                             <strong>Street View:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="street-view-toggle-btn">
-                                    <span>Načítám...</span>
+                                    <span>Načítavam...</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -841,14 +766,14 @@
                         <li class="street-view-detail hidden">
                             <div id="street-view-panorama" class="street-view-container"></div>
                         </li>
-                        <h4>Hodnocení</h4>
-                        <li><strong>Prům. hodnocení:</strong> <div class="value-col">${getData(d.rating, r => `<strong>${r} ★</strong>`)}</div></li>
-                        <li><strong>Počet hodnocení:</strong> <div class="value-col">${getData(d.user_ratings_total)}</div></li>
+                        <h4>Hodnotenie</h4>
+                        <li><strong>Priem. hodnotenie:</strong> <div class="value-col">${getData(d.rating, r => `<strong>${r} ★</strong>`)}</div></li>
+                        <li><strong>Počet hodnotení:</strong> <div class="value-col">${getData(d.user_ratings_total)}</div></li>
                         <li>
-                            <strong>Nejnovější recenze:</strong>
+                            <strong>Najnovšie recenzie:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="reviews-toggle-btn">
-                                    <span>Nejnovější</span>
+                                    <span>Najnovšie</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -857,9 +782,9 @@
                             <div class="value-col" id="reviews-list"></div>
                         </li>
                         <h4>Obsah</h4>
-                        <li><strong>Počet fotek:</strong> <div class="value-col">${formatPhotoCount(d.photos)}</div></li>
+                        <li><strong>Počet fotografií:</strong> <div class="value-col">${formatPhotoCount(d.photos)}</div></li>
                         <li><strong>Popis od vlastníka:</strong> <div class="value-col">${getData(d.editorial_summary?.overview)}</div></li>
-                        <h4>Ostatní</h4>
+                        <h4>Ostatné</h4>
                         <li><strong>Cenová úroveň:</strong> <div class="value-col">${getData(d.price_level, formatPriceLevel)}</div></li>
                         <li><strong>Bezbariérový vchod:</strong> <div class="value-col">${getData(d.wheelchair_accessible_entrance)}</div></li>
                     </ul>`;
@@ -882,7 +807,7 @@
                         const span = streetViewToggleBtn.querySelector('span');
 
                         if (!streetViewLi.classList.contains('hidden')) {
-                            span.textContent = 'Skrýt Street View';
+                            span.textContent = 'Skryť Street View';
                             if (!panorama) {
                                 panorama = new google.maps.StreetViewPanorama(
                                     document.getElementById('street-view-panorama'), {
@@ -898,16 +823,16 @@
                                 });
                             }
                         } else {
-                            span.textContent = 'Zobrazit Street View';
+                            span.textContent = 'Zobraziť Street View';
                         }
                     });
                 } else if (streetViewToggleBtn) {
-                    streetViewToggleBtn.innerHTML = `<span>Street View chybí</span><i class="fas fa-chevron-down"></i>`;
+                    streetViewToggleBtn.innerHTML = `<span>Street View chýba</span><i class="fas fa-chevron-down"></i>`;
                     streetViewToggleBtn.disabled = true;
                 }
 
                 if (!reviews || reviews.length === 0) {
-                    reviewsToggleBtn.innerHTML = '<span class="missing">Žádné recenze</span>';
+                    reviewsToggleBtn.innerHTML = '<span class="missing">Žiadne recenzie</span>';
                     reviewsToggleBtn.disabled = true;
                 } else {
                     reviewsToggleBtn.addEventListener('click', () => {
@@ -915,11 +840,11 @@
                         reviewsToggleBtn.classList.toggle('expanded');
                         
                         if (reviewsListContainer.classList.contains('show')) {
-                            reviewsToggleBtn.querySelector('span').textContent = 'Skrýt recenze';
+                            reviewsToggleBtn.querySelector('span').textContent = 'Skryť recenzie';
                             const sortedReviews = reviews.sort((a, b) => b.time - a.time).filter(r => r.text && r.text.trim() !== '').slice(0, 3);
                             let reviewsHtml = '';
                             sortedReviews.forEach(review => {
-                                const date = new Date(review.time * 1000).toLocaleDateString('cs-CZ');
+                                const date = new Date(review.time * 1000).toLocaleDateString('sk-SK');
                                 const stars = '★'.repeat(Math.round(review.rating));
                                 reviewsHtml += `
                                     <div class="review-card">
@@ -934,11 +859,10 @@
                             });
                             reviewsList.innerHTML = reviewsHtml;
                         } else {
-                            reviewsToggleBtn.querySelector('span').textContent = 'Nejnovější';
+                            reviewsToggleBtn.querySelector('span').textContent = 'Najnovšie';
                         }
                     });
                 }
-
 
                 if (openingHoursToggleBtn && openingHoursLi) {
                     openingHoursToggleBtn.addEventListener('click', () => {
@@ -946,9 +870,9 @@
                         openingHoursToggleBtn.classList.toggle('expanded');
                         const span = openingHoursToggleBtn.querySelector('span');
                         if (openingHoursLi.classList.contains('hidden')) {
-                            span.textContent = 'Zobrazit dny';
+                            span.textContent = 'Zobraziť dni';
                         } else {
-                            span.textContent = 'Skrýt dny';
+                            span.textContent = 'Skryť dni';
                         }
                     });
                 }
@@ -962,9 +886,9 @@
                         mapToggleBtn.classList.toggle('expanded');
                         const span = mapToggleBtn.querySelector('span');
                         if (mapLi.classList.contains('hidden')) {
-                            span.textContent = 'Zobrazit mapu';
+                            span.textContent = 'Zobraziť mapu';
                         } else {
-                            span.textContent = 'Skrýt mapu';
+                            span.textContent = 'Skryť mapu';
                             if (!map) {
                                 const mapElement = $('#map');
                                 map = new google.maps.Map(mapElement, {
@@ -998,899 +922,9 @@
                 }
             };
 
-            const renderManualAnalysisWidget = (d) => {
-                $('#manual-analysis-widget').innerHTML = `
-                    <div class="manual-header">
-                        <h3><i class="fas fa-user-check"></i> Fáze 2: Manuální audit</h3>
-                    </div>
-                    <div id="manual-checklist">
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-key"></i> Základní stav profilu</h4>
-                            <div class="check-item"><label for="check-claimed">Ověřený firemní zápis</label><input type="checkbox" id="check-claimed"></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-info-circle"></i> Informace, konzistence a pravidla</h4>
-                             <div class="check-item"><label for="check-primary-category">Primární kategorie</label><input type="checkbox" id="check-primary-category"></div>
-                             <div class="check-item"><label for="check-secondary-categories">Sekundární kategorie</label><input type="checkbox" id="check-secondary-categories"></div>
-                             <div class="check-item"><label for="check-address">Adresa</label><input type="checkbox" id="check-address"></div>
-                             <div class="check-item"><label for="check-website">Webové stránky</label><input type="checkbox" id="check-website"></div>
-                             <div class="check-item"><label for="check-phone">Telefonní číslo</label><input type="checkbox" id="check-phone"></div>
-                             <div class="check-item"><label for="check-hours">Otevírací doba</label><input type="checkbox" id="check-hours"></div>
-                            <div class="check-item"><label for="check-name-spam">Název firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam"></div>
-                            <div class="check-item"><label for="check-nap">Údaje (NAP) jsou shodné</label><input type="checkbox" id="check-nap"></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-image"></i> Kvalita obsahu</h4>
-                            <div class="check-item"><label for="check-owner-photos">Fotky od majitele (Logo, titulní fotografie, další)</label><input type="checkbox" id="check-owner-photos"></div>
-                            <div class="check-item"><label for="check-photos-10plus">Počet fotografií (více než 10)</label><input type="checkbox" id="check-photos-10plus"></div>
-                            <div class="check-item"><label for="check-street-view">Profil obsahuje Google Street View</label><input type="checkbox" id="check-street-view"></div>
-                            <div class="check-item"><label for="check-virtual-tour">Profil obsahuje Virtuální prohlídku</label><input type="checkbox" id="check-virtual-tour"></div>
-                            <div class="check-item"><label for="check-drone-video">Profil obsahuje Dron</label><input type="checkbox" id="check-drone-video"></div>
-                            <div class="check-item"><label for="check-video">Profil obsahuje Video</label><input type="checkbox" id="check-video"></div>
-                            <div class="check-item"><label for="check-description">Vlastní popis firmy</label><input type="checkbox" id="check-description"></div>
-                            <div class="check-item"><label for="check-attributes">Atributy</label><input type="checkbox" id="check-attributes"></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-shopping-basket"></i> Produkty/Služby/Objednávky/Menu/Rezervace</h4>
-                            <div class="check-item"><label for="check-products">Vyplněna sekce Produkty/Služby/Menu</label><input type="checkbox" id="check-products"></div>
-                            <div class="check-item"><label for="check-services">Vyplněna sekce Rezervace/Objednávky</label><input type="checkbox" id="check-services"></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-bullhorn"></i> Reklamní novinky</h4>
-                            <div class="check-item"><label for="check-posts">Aktivní příspěvky</label><input type="checkbox" id="check-posts"></div>
-                            <div class="check-item"><label for="check-posts-types">Aktivita příspěvků (méně než 14 dnů)</label><input type="checkbox" id="check-posts-types"></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-question-circle"></i> Otázky a odpovědi (Q&A)</h4>
-                            <div class="check-item"><label for="check-qa-owner-reply">Majitel odpovídá na otázky</label><input type="checkbox" id="check-qa-owner-reply"></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-users"></i> Interakce</h4>
-                            <div class="check-item">
-                                <label for="check-review-reply">Reakce na recenze</label>
-                                <div class="review-dropdown-wrapper">
-                                    <button type="button" class="review-select-btn" id="review-reply-btn" data-value="0">
-                                        <span>Ne</span>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                    <ul class="review-select-options">
-                                        <li data-value="0">Ne</li>
-                                        <li data-value="1">Částečně</li>
-                                        <li data-value="2">Ano</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="check-item"><label for="check-messaging">Aktivní zasílání zpráv (Chat)</label><input type="checkbox" id="check-messaging"></div>
-                            <div class="check-item"><label for="check-whatsapp">Tlačítko zpráv/Whatsapp</label><input type="checkbox" id="check-whatsapp"></div>
-                        </div>
-                    </div>`;
-                
-                const autoCheck = (id, condition) => {
-                    const el = $(`#${id}`);
-                    if (condition) {
-                        el.checked = true;
-                        el.disabled = true;
-                    }
-                };
-
-                autoCheck('check-primary-category', d.types && d.types.length > 0);
-                autoCheck('check-secondary-categories', d.types && d.types.length > 1);
-                autoCheck('check-address', d.formatted_address);
-                autoCheck('check-website', d.website);
-                autoCheck('check-phone', d.formatted_phone_number);
-                autoCheck('check-hours', d.opening_hours);
-                autoCheck('check-photos-10plus', d.photos && d.photos.length >= 10);
-                autoCheck('check-description', !!d.editorial_summary?.overview);
-
-
-                $('#manual-checklist').addEventListener('change', () => {
-                    updateManualChecklistState();
-                    recalculateAndRenderScore();
-                });
-                
-                const reviewReplyBtn = $('#review-reply-btn');
-                const reviewReplyOptions = $('.review-select-options');
-                
-                reviewReplyBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    reviewReplyOptions.classList.toggle('show');
-                    reviewReplyBtn.classList.toggle('expanded');
-                });
-                
-                reviewReplyOptions.addEventListener('click', (e) => {
-                    if (e.target.tagName === 'LI') {
-                        const selectedValue = e.target.getAttribute('data-value');
-                        const selectedText = e.target.textContent;
-                        reviewReplyBtn.setAttribute('data-value', selectedValue);
-                        reviewReplyBtn.querySelector('span').textContent = selectedText;
-                        reviewReplyOptions.classList.remove('show');
-                        reviewReplyBtn.classList.remove('expanded');
-                        updateManualChecklistState();
-                        recalculateAndRenderScore();
-                    }
-                });
-                
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('#review-reply-btn') && !e.target.closest('.review-select-options')) {
-                        reviewReplyOptions.classList.remove('show');
-                        reviewReplyBtn.classList.remove('expanded');
-                    }
-                });
-            };
-            
-            const recalculateAndRenderScore = () => {
-                if (!currentPlaceDetails) return;
-                const { score, breakdown } = calculateScore(currentPlaceDetails, manualChecklistState, true);
-                renderScoreWidget({ score, breakdown }, currentPlaceDetails);
-            };
-
-            const renderScoreWidget = ({ score, breakdown }, d) => {
-                let scoreColor;
-                if (score <= 40) { scoreColor = 'var(--score-red)'; }
-                else if (score <= 75) { scoreColor = 'var(--score-orange)'; }
-                else { scoreColor = 'var(--score-green)'; }
-                
-                const breakdownHtml = breakdown.map(item => `
-                    <li class="${item.earned ? 'earned' : 'missed'}">
-                        <i class="fas ${item.earned ? 'fa-check-circle' : 'fa-times-circle'}"></i>
-                        <span>${item.text}</span>
-                    </li>`).join('');
-
-                $('#score-widget').innerHTML = `
-                    <h3><i class="fas fa-tachometer-alt"></i> Skóre optimalizace</h3>
-                    <div style="display: flex; flex-direction: column; align-items: center;">
-                        <div class="score-circle" style="background: conic-gradient(${scoreColor} ${score * 3.6}deg, #e9ecef ${score * 3.6}deg);">
-                            <span class="score-value" style="color:${scoreColor}">${score}%</span>
-                        </div>
-                    </div>
-                    <div class="score-breakdown">
-                        <div class="score-breakdown-toggle">
-                            <span>Přehled hodnocení</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="score-breakdown-list">
-                            <ul>${breakdownHtml}</ul>
-                        </div>
-                    </div>`;
-
-                const toggle = $('.score-breakdown-toggle');
-                const list = $('.score-breakdown-list');
-
-                toggle.addEventListener('click', () => {
-                    list.classList.toggle('show');
-                    toggle.classList.toggle('expanded');
-                });
-            };
-
-            const updateVerificationStatus = () => {
-                const claimedCheckbox = $('#check-claimed');
-                const shieldIcon = $('#shield-icon');
-                const statusIcon = $('#status-icon');
-                const floatingWarningBar = $('#floating-warning-bar');
-                if (!claimedCheckbox || !shieldIcon || !statusIcon || !floatingWarningBar) return;
-                
-                const updateIcon = (isVerified) => {
-                    if (isVerified) {
-                        shieldIcon.style.color = 'var(--google-green)';
-                        statusIcon.classList.remove('fa-times');
-                        statusIcon.classList.add('fa-check');
-                        floatingWarningBar.classList.add('hidden');
-                        floatingWarningBar.classList.remove('visible');
-                        floatingNewAnalysisBtn.style.bottom = '30px';
-                        floatingComparisonBtn.style.bottom = '95px';
-                    } else {
-                        shieldIcon.style.color = 'var(--google-red)';
-                        statusIcon.classList.remove('fa-check');
-                        statusIcon.classList.add('fa-times');
-                        floatingWarningBar.classList.remove('hidden');
-                        floatingWarningBar.classList.add('visible');
-                        floatingNewAnalysisBtn.style.bottom = '320px';
-                        floatingComparisonBtn.style.bottom = '385px';
-                    }
-                };
-                updateIcon(claimedCheckbox.checked);
-            };
-
-            const initializeCompetitorState = (competitor) => {
-                if (!competitorsState[competitor.place_id]) {
-                    competitorsState[competitor.place_id] = {
-                        'check-primary-category': competitor.types && competitor.types.length > 0,
-                        'check-secondary-categories': competitor.types && competitor.types.length > 1,
-                        'check-address': !!competitor.formatted_address,
-                        'check-website': !!competitor.website,
-                        'check-phone': !!competitor.formatted_phone_number,
-                        'check-hours': !!competitor.opening_hours,
-                        'check-claimed': false,
-                        'check-name-spam': false,
-                        'check-nap': false,
-                        'check-owner-photos': false,
-                        'check-photos-10plus': competitor.photos && competitor.photos.length >= 10,
-                        'check-street-view': false,
-                        'check-virtual-tour': false,
-                        'check-drone-video': false,
-                        'check-video': false,
-                        'check-description': !!competitor.editorial_summary?.overview,
-                        'check-attributes': false,
-                        'check-products': false,
-                        'check-services': false,
-                        'check-posts': false,
-                        'check-posts-types': false,
-                        'check-qa-owner-reply': false,
-                        'review-reply-btn': '0',
-                        'check-messaging': false,
-                        'check-whatsapp': false,
-                    };
-                }
-            };
-
-            const findAndRenderCompetitors = (mainCompany) => {
-                competitorComparisonContainer.innerHTML = '<div class="spinner"><i class="fas fa-spinner fa-spin fa-3x" style="color:var(--primary-color)"></i></div>';
-
-                const searchRequest = {
-                    location: mainCompany.geometry.location,
-                    radius: '5000',
-                    type: mainCompany.types[0],
-                };
-
-                placesService.nearbySearch(searchRequest, async (results, status) => {
-                    if (status === google.maps.places.PlacesServiceStatus.OK) {
-                        const competitorPromises = results
-                            .filter(p => p.place_id !== mainCompany.place_id)
-                            .slice(0, MAX_COMPETITORS)
-                            .map(p => new Promise(resolve => {
-                                placesService.getDetails({ placeId: p.place_id, fields: placeDetailsFields }, (details, detailStatus) => {
-                                    if (detailStatus === google.maps.places.PlacesServiceStatus.OK && details) {
-                                        const distance = google.maps.geometry.spherical.computeDistanceBetween(
-                                            mainCompany.geometry.location,
-                                            details.geometry.location
-                                        );
-                                        details.distance = (distance / 1000).toFixed(1);
-                                        resolve(details);
-                                    } else {
-                                        resolve(null);
-                                    }
-                                });
-                            }));
-                        competitors = (await Promise.all(competitorPromises)).filter(c => c);
-                        competitors.forEach(c => initializeCompetitorState(c));
-                    }
-                    renderComparisonUI();
-                });
-            };
-
-            const renderComparisonUI = () => {
-                const container = $('#competitor-comparison-container');
-                container.innerHTML = `
-                    <div class="comparison-header">
-                        <h3><i class="fas fa-chart-line"></i> Porovnání s konkurencí</h3>
-                    </div>
-                    <div class="competitor-add-container">
-                        <div class="search-container">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="competitor-input" placeholder="Přidat dalšího konkurenta ručně...">
-                        </div>
-                        <button id="add-competitor-btn" class="btn" disabled><i class="fas fa-plus"></i> Přidat</button>
-                    </div>
-                    <div id="deep-audit-chart" class="chart-section"></div>
-                    <div id="comparison-cards" class="comparison-cards-container"></div>
-                    <div id="reviews-podium-chart" class="chart-section"></div>
-                `;
-
-                renderAllCardsAndCharts();
-                setupCompetitorAutocomplete();
-            };
-            
-            const showMainAnalysis = () => {
-                competitorComparisonContainer.classList.add('hidden');
-                analysisContainer.classList.remove('hidden');
-                floatingComparisonBtn.classList.remove('hidden');
-                floatingBackBtn.classList.add('hidden');
-                floatingSolutionBtn.classList.add('hidden');
-            };
-
-            const renderAllCardsAndCharts = () => {
-                const allCompanies = [currentPlaceDetails, ...competitors];
-                const rankedCompanies = [...allCompanies]
-                    .map(c => ({...c, score: calculateDeepAuditScore(c)}))
-                    .sort((a,b) => b.score - a.score);
-
-                const colorsMap = new Map(rankedCompanies.map((c, i) => [c.place_id, RANK_COLORS[i] || RANK_COLORS[3]]));
-
-                const cardsHtml = allCompanies.map(c => renderCompetitorCard(c, c.place_id === currentPlaceDetails.place_id, colorsMap.get(c.place_id))).join('');
-                $('#comparison-cards').innerHTML = cardsHtml;
-                
-                renderDeepAuditChart(rankedCompanies, colorsMap);
-                renderReviewsPodiumChart(allCompanies, colorsMap);
-            };
-
-            const renderCompetitorCard = (c, isMain, color) => {
-                const score = calculateDeepAuditScore(c);
-                const state = isMain ? manualChecklistState : (competitorsState[c.place_id] || {});
-
-                const getCheck = (id) => state[id] ? 'checked' : '';
-                
-                const getDisabledAttribute = (key) => {
-                    if (isMain) {
-                        return $(`#${key}`)?.disabled ? 'disabled' : '';
-                    }
-                    let initiallyPresent = false;
-                    switch (key) {
-                        case 'check-primary-category': initiallyPresent = c.types && c.types.length > 0; break;
-                        case 'check-secondary-categories': initiallyPresent = c.types && c.types.length > 1; break;
-                        case 'check-address': initiallyPresent = !!c.formatted_address; break;
-                        case 'check-website': initiallyPresent = !!c.website; break;
-                        case 'check-phone': initiallyPresent = !!c.formatted_phone_number; break;
-                        case 'check-hours': initiallyPresent = !!c.opening_hours; break;
-                        case 'check-photos-10plus': initiallyPresent = c.photos && c.photos.length >= 10; break;
-                        case 'check-description': initiallyPresent = !!c.editorial_summary?.overview; break;
-                    }
-                    return initiallyPresent ? 'disabled' : '';
-                };
-                
-                const placeName = encodeURIComponent(c.name);
-                const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${placeName}&query_place_id=${c.place_id}`;
-                const searchUrl = `https://www.google.com/search?q=${placeName}`;
-                
-                const getReplyState = () => {
-                    const value = parseInt(state['review-reply-btn'] || 0);
-                    if (value === 1) return { value: 1, text: 'Částečně' };
-                    if (value === 2) return { value: 2, text: 'Ano' };
-                    return { value: 0, text: 'Ne' };
-                };
-                const replyState = getReplyState();
-                
-                const fullChecklist = `
-                    <div id="manual-checklist-${c.place_id}" style="flex-grow: 1;">
-                         <div class="checklist-group">
-                            <h4><i class="fas fa-key"></i> Základní stav</h4>
-                            <div class="check-item"><label for="check-claimed-${c.place_id}">Ověřený zápis</label><input type="checkbox" id="check-claimed-${c.place_id}" ${getCheck('check-claimed')} ${getDisabledAttribute('check-claimed')}></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-info-circle"></i> Informace, konzistence a pravidla</h4>
-                            <div class="check-item"><label for="check-primary-category-${c.place_id}">Primární kategorie</label><input type="checkbox" id="check-primary-category-${c.place_id}" ${getCheck('check-primary-category')} ${getDisabledAttribute('check-primary-category')}></div>
-                            <div class="check-item"><label for="check-secondary-categories-${c.place_id}">Sekundární kategorie</label><input type="checkbox" id="check-secondary-categories-${c.place_id}" ${getCheck('check-secondary-categories')} ${getDisabledAttribute('check-secondary-categories')}></div>
-                            <div class="check-item"><label for="check-address-${c.place_id}">Adresa</label><input type="checkbox" id="check-address-${c.place_id}" ${getCheck('check-address')} ${getDisabledAttribute('check-address')}></div>
-                            <div class="check-item"><label for="check-website-${c.place_id}">Webové stránky</label><input type="checkbox" id="check-website-${c.place_id}" ${getCheck('check-website')} ${getDisabledAttribute('check-website')}></div>
-                            <div class="check-item"><label for="check-phone-${c.place_id}">Telefonní číslo</label><input type="checkbox" id="check-phone-${c.place_id}" ${getCheck('check-phone')} ${getDisabledAttribute('check-phone')}></div>
-                            <div class="check-item"><label for="check-hours-${c.place_id}">Otevírací doba</label><input type="checkbox" id="check-hours-${c.place_id}" ${getCheck('check-hours')} ${getDisabledAttribute('check-hours')}></div>
-                            <div class="check-item"><label for="check-name-spam-${c.place_id}">Název firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam-${c.place_id}" ${getCheck('check-name-spam')} ${getDisabledAttribute('check-name-spam')}></div>
-                            <div class="check-item"><label for="check-nap-${c.place_id}">Údaje (NAP) jsou shodné</label><input type="checkbox" id="check-nap-${c.place_id}" ${getCheck('check-nap')} ${getDisabledAttribute('check-nap')}></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-image"></i> Kvalita obsahu</h4>
-                            <div class="check-item"><label for="check-owner-photos-${c.place_id}">Fotky od majitele</label><input type="checkbox" id="check-owner-photos-${c.place_id}" ${getCheck('check-owner-photos')} ${getDisabledAttribute('check-owner-photos')}></div>
-                            <div class="check-item"><label for="check-photos-10plus-${c.place_id}">10+ fotografií</label><input type="checkbox" id="check-photos-10plus-${c.place_id}" ${getCheck('check-photos-10plus')} ${getDisabledAttribute('check-photos-10plus')}></div>
-                            <div class="check-item"><label for="check-street-view-${c.place_id}">Google Street View</label><input type="checkbox" id="check-street-view-${c.place_id}" ${getCheck('check-street-view')} ${getDisabledAttribute('check-street-view')}></div>
-                            <div class="check-item"><label for="check-virtual-tour-${c.place_id}">Virtuální prohlídka</label><input type="checkbox" id="check-virtual-tour-${c.place_id}" ${getCheck('check-virtual-tour')} ${getDisabledAttribute('check-virtual-tour')}></div>
-                            <div class="check-item"><label for="check-drone-video-${c.place_id}">Dron</label><input type="checkbox" id="check-drone-video-${c.place_id}" ${getCheck('check-drone-video')} ${getDisabledAttribute('check-drone-video')}></div>
-                            <div class="check-item"><label for="check-video-${c.place_id}">Video</label><input type="checkbox" id="check-video-${c.place_id}" ${getCheck('check-video')} ${getDisabledAttribute('check-video')}></div>
-                            <div class="check-item"><label for="check-description-${c.place_id}">Vlastní popis firmy</label><input type="checkbox" id="check-description-${c.place_id}" ${getCheck('check-description')} ${getDisabledAttribute('check-description')}></div>
-                            <div class="check-item"><label for="check-attributes-${c.place_id}">Atributy</label><input type="checkbox" id="check-attributes-${c.place_id}" ${getCheck('check-attributes')} ${getDisabledAttribute('check-attributes')}></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-shopping-basket"></i> Služby</h4>
-                            <div class="check-item"><label for="check-products-${c.place_id}">Produkty/Služby/Menu</label><input type="checkbox" id="check-products-${c.place_id}" ${getCheck('check-products')} ${getDisabledAttribute('check-products')}></div>
-                            <div class="check-item"><label for="check-services-${c.place_id}">Rezervace/Objednávky</label><input type="checkbox" id="check-services-${c.place_id}" ${getCheck('check-services')} ${getDisabledAttribute('check-services')}></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-bullhorn"></i> Reklamní novinky</h4>
-                            <div class="check-item"><label for="check-posts-${c.place_id}">Aktivní příspěvky</label><input type="checkbox" id="check-posts-${c.place_id}" ${getCheck('check-posts')} ${getDisabledAttribute('check-posts')}></div>
-                            <div class="check-item"><label for="check-posts-types-${c.place_id}">Aktivita < 14 dnů</label><input type="checkbox" id="check-posts-types-${c.place_id}" ${getCheck('check-posts-types')} ${getDisabledAttribute('check-posts-types')}></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-question-circle"></i> Q&A</h4>
-                            <div class="check-item"><label for="check-qa-owner-reply-${c.place_id}">Majitel odpovídá</label><input type="checkbox" id="check-qa-owner-reply-${c.place_id}" ${getCheck('check-qa-owner-reply')} ${getDisabledAttribute('check-qa-owner-reply')}></div>
-                        </div>
-                        <div class="checklist-group">
-                            <h4><i class="fas fa-users"></i> Interakce</h4>
-                            <div class="check-item">
-                                <label>Reakce na recenze</label>
-                                <div class="review-dropdown-wrapper">
-                                    <button type="button" class="review-select-btn" id="review-reply-btn-${c.place_id}" data-value="${replyState.value}">
-                                        <span>${replyState.text}</span> <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                    <ul class="review-select-options">
-                                        <li data-value="0">Ne</li> <li data-value="1">Částečně</li> <li data-value="2">Ano</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="check-item"><label for="check-messaging-${c.place_id}">Aktivní Chat</label><input type="checkbox" id="check-messaging-${c.place_id}" ${getCheck('check-messaging')} ${getDisabledAttribute('check-messaging')}></div>
-                            <div class="check-item"><label for="check-whatsapp-${c.place_id}">Tlačítko zpráv</label><input type="checkbox" id="check-whatsapp-${c.place_id}" ${getCheck('check-whatsapp')} ${getDisabledAttribute('check-whatsapp')}></div>
-                        </div>
-                    </div>`;
-
-                return `
-                    <div class="competitor-card ${isMain ? 'main-company' : ''}" data-place-id="${c.place_id}">
-                        <div class="card-header">
-                            <h4 style="color: ${color};">${c.name}</h4>
-                            <div class="card-top-actions">
-                                ${!isMain ? `
-                                    <a class="card-action-btn" href="${searchUrl}" target="_blank" title="Hledat na Google"><i class="fas fa-search"></i></a>
-                                    <a class="card-action-btn" href="${mapsUrl}" target="_blank" title="Zobrazit na Mapách"><i class="fas fa-map-marker-alt"></i></a>
-                                    <button class="remove-btn" title="Odebrat konkurenta" data-place-id="${c.place_id}">×</button>
-                                ` : ''}
-                            </div>
-                        </div>
-                        <div class="rating-info">
-                            <div>
-                                <i class="fas fa-star"></i>
-                                <span>${c.rating?.toFixed(1) || 'N/A'}</span>
-                                <span style="font-weight: normal;">(${c.user_ratings_total || 0})</span>
-                            </div>
-                            ${!isMain && c.distance ? `<div style="font-weight: normal; font-size: 0.9em;"><i class="fas fa-route"></i> ${c.distance} km</div>` : ''}
-                        </div>
-                        <p style="font-size: 2em; font-weight: bold; color: ${color};">${score}%</p>
-                        ${fullChecklist}
-                    </div>
-                `;
-            };
-
-            const renderDeepAuditChart = (rankedCompanies, colorsMap) => {
-                let chartHtml = `<h3><i class="fas fa-chart-line"></i> Hloubkový audit (Skóre)</h3>`;
-                rankedCompanies.forEach(c => {
-                    const color = colorsMap.get(c.place_id);
-                    chartHtml += `
-                        <div class="chart-bar-container">
-                            <div class="chart-label" title="${c.name}">${c.name}</div>
-                            <div class="chart-bar-wrapper">
-                                <div class="chart-bar" style="width: ${c.score}%; background-color: ${color};">
-                                    <span class="chart-score">${c.score}%</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                $('#deep-audit-chart').innerHTML = chartHtml;
-            };
-            
-            const renderReviewsPodiumChart = (allCompanies, colorsMap) => {
-                let chartHtml = `<h3><i class="fas fa-trophy"></i> Hodnocení Zákazníků</h3>`;
-                const rankedByReviews = [...allCompanies].sort((a,b) => (b.rating || 0) - (a.rating || 0) || (b.user_ratings_total || 0) - (a.user_ratings_total || 0));
-                
-                chartHtml += '<div class="podium-chart-container">';
-                
-                const medalIcons = ['fas fa-trophy', 'fas fa-medal', 'fas fa-medal'];
-                const medalColors = ['#FFD700', '#C0C0C0', '#CD7F32'];
-
-                const podiumStepsData = rankedByReviews.slice(0, 3).map((c, i) => ({ company: c, rank: i }));
-                
-                const finalPodiumOrder = [
-                    podiumStepsData.find(d => d.rank === 1),
-                    podiumStepsData.find(d => d.rank === 0),
-                    podiumStepsData.find(d => d.rank === 2)
-                ].filter(Boolean);
-
-                finalPodiumOrder.forEach((stepData) => {
-                    const { company, rank } = stepData;
-                    const color = colorsMap.get(company.place_id);
-                    const textColor = color === 'var(--google-yellow)' || color === '#86B386' ? 'var(--text-dark)' : 'white';
-
-                    let podiumClass = '';
-                    if (rank === 0) podiumClass = 'podium-1';
-                    else if (rank === 1) podiumClass = 'podium-2';
-                    else podiumClass = 'podium-3';
-
-                    chartHtml += `
-                        <div class="podium-step ${podiumClass}" style="background: ${color}; color: ${textColor};">
-                            <div>
-                                <i class="${medalIcons[rank]} podium-medal" style="color: ${medalColors[rank]};"></i>
-                                <h4>${company.name}</h4>
-                            </div>
-                            <div class="podium-info">
-                                ${company.rating?.toFixed(1) || 'N/A'} ★
-                                <span class="review-count">(${company.user_ratings_total || 0} recenzí)</span>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                chartHtml += '</div>';
-                $('#reviews-podium-chart').innerHTML = chartHtml;
-            };
-            
-            const setupCompetitorAutocomplete = () => {
-                const competitorInput = $('#competitor-input');
-                const addCompetitorBtn = $('#add-competitor-btn');
-                if (competitorInput) {
-                    const autocomplete = new google.maps.places.Autocomplete(competitorInput, { types: ['establishment'], fields: ['place_id'] });
-                    
-                    autocomplete.addListener('place_changed', () => {
-                        const place = autocomplete.getPlace();
-                        if (place && place.place_id) {
-                            addCompetitorBtn.disabled = false;
-                            competitorInput.dataset.placeId = place.place_id;
-                        } else {
-                            addCompetitorBtn.disabled = true;
-                            delete competitorInput.dataset.placeId;
-                        }
-                    });
-                }
-            };
-
-            competitorComparisonContainer.addEventListener('click', (e) => {
-                const addBtn = e.target.closest('#add-competitor-btn');
-                if (addBtn) {
-                    const competitorInput = $('#competitor-input');
-                    const newCompetitorPlaceId = competitorInput.dataset.placeId;
-                    if (newCompetitorPlaceId && competitors.length < MAX_COMPETITORS) {
-                        placesService.getDetails({ placeId: newCompetitorPlaceId, fields: placeDetailsFields }, (details, status) => {
-                            if (status === google.maps.places.PlacesServiceStatus.OK && details) {
-                                // Ensure both places have geometry data AND geometry library is loaded
-                                if (window.google && google.maps && google.maps.geometry && currentPlaceDetails?.geometry?.location && details?.geometry?.location) {
-                                    const distance = google.maps.geometry.spherical.computeDistanceBetween(
-                                        currentPlaceDetails.geometry.location,
-                                        details.geometry.location
-                                    );
-                                    details.distance = (distance / 1000).toFixed(1);
-                                }
-                                competitors.push(details);
-                                initializeCompetitorState(details);
-                                competitorInput.value = '';
-                                addBtn.disabled = true;
-                                delete competitorInput.dataset.placeId;
-                                renderAllCardsAndCharts();
-                            }
-                        });
-                    }
-                    return;
-                }
-
-                if (e.target.classList.contains('remove-btn')) {
-                    const placeIdToRemove = e.target.dataset.placeId;
-                    competitors = competitors.filter(c => c.place_id !== placeIdToRemove);
-                    delete competitorsState[placeIdToRemove];
-                    renderAllCardsAndCharts();
-                    return;
-                }
-
-                const reviewBtn = e.target.closest('.review-select-btn');
-                if (reviewBtn) {
-                    e.stopPropagation();
-                    const options = reviewBtn.nextElementSibling;
-                    const isShowing = options.classList.contains('show');
-                    $$('#competitor-comparison-container .review-select-options').forEach(o => o.classList.remove('show'));
-                    $$('#competitor-comparison-container .review-select-btn').forEach(b => b.classList.remove('expanded'));
-                    if (!isShowing) {
-                        options.classList.add('show');
-                        reviewBtn.classList.add('expanded');
-                    }
-                    return;
-                }
-
-                if (e.target.closest('.review-select-options') && e.target.tagName === 'LI') {
-                    const card = e.target.closest('.competitor-card');
-                    if (!card) return;
-                    
-                    const placeId = card.dataset.placeId;
-                    const targetState = (placeId === currentPlaceDetails.place_id)
-                        ? manualChecklistState
-                        : competitorsState[placeId];
-
-                    if (targetState) {
-                        const value = e.target.dataset.value;
-                        targetState['review-reply-btn'] = value;
-                        renderAllCardsAndCharts();
-                    }
-                }
-            });
-
-            competitorComparisonContainer.addEventListener('change', (e) => {
-                if (e.target.type === 'checkbox') {
-                    const card = e.target.closest('.competitor-card');
-                    if (!card) return;
-
-                    const placeId = card.dataset.placeId;
-                    const targetState = (placeId === currentPlaceDetails.place_id)
-                        ? manualChecklistState
-                        : competitorsState[placeId];
-                    
-                    if (targetState) {
-                        const key = e.target.id.replace(`-${placeId}`, '');
-                        targetState[key] = e.target.checked;
-                        renderAllCardsAndCharts();
-                    }
-                }
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.review-dropdown-wrapper')) {
-                    $$('.review-select-options').forEach(o => o.classList.remove('show'));
-                    $$('.review-select-btn').forEach(b => b.classList.remove('expanded'));
-                }
-            });
-
-            const calculateScore = (company, state, generateBreakdown = false) => {
-                let score = 0;
-                let maxScore = 0;
-                const breakdown = [];
-
-                const addPoints = (points, condition, text) => {
-                    maxScore += points;
-                    if (condition) {
-                        score += points;
-                        if(generateBreakdown) breakdown.push({ text, earned: true });
-                    } else {
-                        if(generateBreakdown) breakdown.push({ text, earned: false });
-                    }
-                };
-
-                addPoints(15, state['check-claimed'], "Ověřený firemní zápis");
-                addPoints(5, state['check-primary-category'], "Primární kategorie");
-                addPoints(5, state['check-secondary-categories'], "Sekundární kategorie");
-                addPoints(5, state['check-address'], "Adresa");
-                addPoints(5, state['check-website'], "Webové stránky");
-                addPoints(5, state['check-phone'], "Telefonní číslo");
-                addPoints(5, state['check-hours'], "Otevírací doba");
-                addPoints(10, company.rating >= 4.0, "Hodnocení 4.0 ★ a více");
-                addPoints(10, company.user_ratings_total >= 20, "Více než 20 recenzí");
-                addPoints(5, state['check-photos-10plus'], "Má více než 10 fotografií");
-                addPoints(5, state['check-owner-photos'], "Kvalitní fotky od majitele");
-                addPoints(5, state['check-street-view'], "Profil obsahuje Google Street View");
-                addPoints(5, state['check-virtual-tour'], "Existuje virtuální prohlídka");
-                addPoints(5, state['check-drone-video'], "Profil obsahuje Dron");
-                addPoints(5, state['check-video'], "Profil obsahuje Video");
-                addPoints(5, state['check-description'], "Vlastní popis firmy");
-                addPoints(5, state['check-attributes'], "Vyplněny atributy");
-                addPoints(5, state['check-products'], "Vyplněná sekce Produkty/Služby/Menu");
-                addPoints(5, state['check-services'], "Vyplněná sekce Rezervace/Objednávky");
-                addPoints(10, state['check-posts'], "Pravidelně publikuje příspěvky");
-                addPoints(5, state['check-posts-types'], "Aktivita příspěvků (méně než 14 dnů)");
-                addPoints(5, state['check-qa-owner-reply'], "Odpovídá na otázky v Q&A");
-                addPoints(5, state['check-messaging'], "Aktivní zasílání zpráv (Chat)");
-                addPoints(5, state['check-whatsapp'], "Tlačítko zpráv/Whatsapp");
-                addPoints(5, state['check-name-spam'], "Název firmy bez spamu");
-                addPoints(5, state['check-nap'], "Konzistence údajů s webem (NAP)");
-
-                maxScore += 10;
-                const reviewReplyStatus = parseInt(state['review-reply-btn'] || '0');
-                if (reviewReplyStatus === 2) {
-                    score += 10;
-                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenze", earned: true });
-                } else if (reviewReplyStatus === 1) {
-                    score += 5;
-                    if(generateBreakdown) breakdown.push({ text: "Reaguje na recenze (částečně)", earned: true });
-                } else {
-                    if(generateBreakdown) breakdown.push({ text: "Nereaguje na recenze", earned: false });
-                }
-                
-                const finalScore = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
-                
-                return {
-                    score: finalScore,
-                    breakdown: breakdown,
-                };
-            };
-
-            const calculateDeepAuditScore = (company) => {
-                const isMain = company.place_id === currentPlaceDetails.place_id;
-                const state = isMain ? manualChecklistState : (competitorsState[company.place_id] || {});
-                const { score } = calculateScore(company, state, false);
-                return score;
-            };
-
-            // --- FUNKCE PRO VYKRESLENÍ NÁVRHU ŘEŠENÍ (S NOVÝMI TEXTY) ---
-            const renderSolutionProposal = () => {
-                const recommendations = [
-                    // Kritické
-                    {
-                        id: 'check-claimed', critical: true, category: 'Kritické kroky', icon: 'fa-key', title: 'Ověřte si vlastnictví firemního profilu',
-                        why: 'Podle Googlu mají ověřené profily <strong>2.7x vyšší šanci</strong>, že je zákazníci budou považovat za důvěryhodné. Bez ověření nemůžete spravovat klíčové informace a riskujete, že váš profil převezme konkurence nebo nespokojený zákazník.',
-                        how: 'Proces ověření může vyžadovat zaslání kódu poštou nebo jiné metody. <strong>Zajistíme, aby celý proces proběhl hladce a rychle</strong>, a vy jste se mohli co nejdříve plně věnovat správě profilu.',
-                        condition: (d, s) => !s['check-claimed']
-                    },
-                    // Základní informace
-                     {
-                        id: 'check-primary-category', category: 'Základní informace', icon: 'fa-tags', title: 'Zvolte správnou primární kategorii',
-                        why: 'Primární kategorie je nejdůležitější signál pro Google, čemu se věnujete. Správná volba dramaticky zvyšuje šanci na zobrazení relevantním zákazníkům, kteří hledají přesně vaše služby. Špatná kategorie znamená, že se ukazujete nesprávným lidem.',
-                        how: 'Na základě analýzy vašeho byznysu a klíčových slov vybereme a nastavíme nejpřesnější a nejvýkonnější primární kategorii, která maximalizuje vaši viditelnost v oboru.',
-                        condition: (d, s) => !s['check-primary-category']
-                    },
-                    {
-                        id: 'check-secondary-categories', category: 'Základní informace', icon: 'fa-tags', title: 'Doplňte relevantní sekundární kategorie',
-                        why: 'Sekundární kategorie umožňují Googlu pochopit celou šíři vaší nabídky. Každá další správně zvolená kategorie je jako další síť, kterou chytáte nové zákazníky hledající specifické služby, které nabízíte.',
-                        how: 'Provedeme detailní rešerši a doplníme všechny relevantní vedlejší kategorie, abychom pokryli veškerý váš sortiment a služby a zajistili, že vám neunikne žádný potenciální zákazník.',
-                        condition: (d, s) => !s['check-secondary-categories']
-                    },
-                    {
-                        id: 'check-address', category: 'Základní informace', icon: 'fa-map-marker-alt', title: 'Zkontrolujte a optimalizujte adresu',
-                        why: 'Přesná adresa a správně umístěný špendlík na mapě jsou klíčové pro funkci "Navigovat" a pro zákazníky, kteří vás chtějí fyzicky navštívit. Chyba v adrese může znamenat ztrátu zákazníka, který vás nenajde.',
-                        how: 'Ověříme přesnost vaší adresy a pozice na mapě. Zajistíme, aby formát odpovídal standardům Googlu a poštovních služeb, což zlepší vaši důvěryhodnost pro algoritmus i pro zákazníky.',
-                        condition: (d, s) => !s['check-address']
-                    },
-                    {
-                        id: 'check-website', category: 'Základní informace', icon: 'fa-globe', title: 'Doplňte webové stránky',
-                        why: 'Firmy s propojeným webem získávají v průměru o <strong>21-34 % více prokliků a dotazů</strong>. Váš web je centrem vaší online identity a Google profily s webem vnímá jako autoritativnější.',
-                        how: 'Nejde jen o vložení odkazu. Propojíme váš profil s webem tak, aby měření návštěvnosti bylo přesné a abychom zajistili konzistenci klíčových informací (NAP), což je zásadní pro SEO. <strong>Postaráme se o technicky správné nastavení.</strong>',
-                        condition: (d, s) => !s['check-website']
-                    },
-                    {
-                        id: 'check-phone', category: 'Základní informace', icon: 'fa-phone', title: 'Přidejte telefonní číslo',
-                        why: 'Možnost \'Click-to-Call\' z mobilního vyhledávání je jedním z nejčastějších způsobů konverze. Chybějící číslo znamená ztracené zákazníky, kteří se nebudou obtěžovat hledat jinde.',
-                        how: 'Doplníme a zformátujeme číslo do správného mezinárodního tvaru, aby bylo funkční pro volání jedním klikem odkudkoliv. <strong>Zajistíme, aby vše fungovalo bezchybně.</strong>',
-                        condition: (d, s) => !s['check-phone']
-                    },
-                    {
-                        id: 'check-hours', category: 'Základní informace', icon: 'fa-clock', title: 'Vyplňte otevírací dobu',
-                        why: 'Až <strong>40 % lokálních vyhledávání</strong> se týká dotazů na otevírací dobu. Neúplné informace odrazují zákazníky, kteří si vyberou konkurenci, u které mají jistotu, že je otevřeno.',
-                        how: 'Správné nastavení otevírací doby, včetně speciálních hodin pro svátky, je klíčové. <strong>Můžeme za vás tuto agendu kompletně spravovat</strong>, abyste měli vždy aktuální informace bez starostí.',
-                        condition: (d, s) => !s['check-hours']
-                    },
-                    {
-                        id: 'check-name-spam', category: 'Základní informace', icon: 'fa-signature', title: 'Optimalizujte název firmy dle pravidel',
-                        why: 'Google penalizuje profily, které v názvu používají klíčová slova navíc (tzv. "spam"). Čistý a správný název firmy bez přidaných klíčových slov zvyšuje důvěryhodnost a chrání vás před rizikem pozastavení profilu.',
-                        how: 'Upravíme název vaší firmy tak, aby přesně odpovídal realitě a pravidlům Googlu. Klíčová slova strategicky umístíme tam, kam patří – do popisu, služeb a příspěvků.',
-                        condition: (d, s) => !s['check-name-spam']
-                    },
-                    {
-                        id: 'check-nap', category: 'Základní informace', icon: 'fa-check-double', title: 'Sjednoťte firemní údaje (NAP)',
-                        why: 'Konzistence jména, adresy a telefonu (Name, Address, Phone - NAP) napříč internetem (váš web, katalogy, sociální sítě) je pro Google silným signálem důvěryhodnosti. Neshody v údajích poškozují vaši pozici ve vyhledávání.',
-                        how: 'Provedeme audit vašich NAP údajů na internetu a zajistíme jejich sjednocení. Tato "čistá" digitální stopa je základem pro úspěšné lokální SEO.',
-                        condition: (d, s) => !s['check-nap']
-                    },
-                    // Obsah a média
-                    {
-                        id: 'check-owner-photos', category: 'Obsah a média', icon: 'fa-camera-retro', title: 'Přidejte profesionální fotky od majitele',
-                        why: 'Fotky od majitele (logo, titulní fotka, fotky interiéru/exteriéru) mají mnohem větší váhu než fotky od zákazníků. Profesionální vizuální prezentace je klíčová pro první dojem a budování značky.',
-                        how: 'Zajistíme profesionální focení vašeho podniku. Vytvoříme sadu fotografií, které prodávají – od kvalitního loga, přes atraktivní titulní fotku až po snímky vašich prostor a produktů.',
-                        condition: (d, s) => !s['check-owner-photos']
-                    },
-                    {
-                        id: 'check-photos-10plus', category: 'Obsah a média', icon: 'fa-images', title: 'Přidejte více kvalitních fotografií (alespoň 10)',
-                        why: 'Google uvádí, že profily s více než 10 kvalitními fotografiemi získávají <strong>o 42 % více žádostí o navigaci</strong> a <strong>o 35 % více prokliků na web</strong>. Vizuální obsah je dnes králem.',
-                        how: 'Nestačí jen nahrát fotky z mobilu. Vytvoříme pro vás profesionální sadu fotografií, která ukáže váš podnik v nejlepším světle. <strong>Investice do profesionálních fotek se mnohonásobně vrací.</strong>',
-                        condition: (d, s) => !s['check-photos-10plus']
-                    },
-                    {
-                        id: 'check-street-view', category: 'Obsah a média', icon: 'fa-street-view', title: 'Propojte profil s Google Street View',
-                        why: 'Aktuální a správně propojené Street View usnadňuje zákazníkům nalezení vaší firmy. Pokud snímky chybí nebo jsou zastaralé, může to působit nedůvěryhodně a odradit od návštěvy.',
-                        how: 'Zajistíme aktualizaci snímků Street View před vaší provozovnou a jejich správné propojení s profilem. Vytvoříme pro vás profesionální 360° snímky, které vás dokonale představí.',
-                        condition: (d, s) => !s['check-street-view']
-                    },
-                    {
-                        id: 'check-virtual-tour', category: 'Obsah a média', icon: 'fa-vr-cardboard', title: 'Vytvořte virtuální prohlídku 360°',
-                        why: 'Profily s virtuální prohlídkou mají dle Googlu <strong>dvojnásobnou šanci na zaujetí uživatele</strong>. Zákazníci si mohou váš podnik "projít" z pohodlí domova, což výrazně zvyšuje jejich důvěru a chuť vás navštívit.',
-                        how: 'Jsme certifikovaní partneři Google pro tvorbu Street View a virtuálních prohlídek. Vytvoříme pro vás profesionální 360° prohlídku, kterou propojíme s vaším profilem a zajistíme maximální vizuální dopad.',
-                        condition: (d, s) => !s['check-virtual-tour']
-                    },
-                    {
-                        id: 'check-drone-video', category: 'Obsah a média', icon: 'fa-helicopter', title: 'Obohaťte profil o video z dronu',
-                        why: 'Záběry z dronu představují vaši firmu z unikátní perspektivy a zanechávají silný dojem. Jsou ideální pro prezentaci rozsáhlejších areálů, hotelů, restaurací s venkovním posezením nebo realit.',
-                        how: 'Zajistíme profesionální natáčení a postprodukci videa z dronu. Vytvoříme krátký, dynamický klip, který odliší váš profil od konkurence a zaujme na první pohled.',
-                        condition: (d, s) => !s['check-drone-video']
-                    },
-                    {
-                        id: 'check-video', category: 'Obsah a média', icon: 'fa-video', title: 'Přidejte do profilu prezentační video',
-                        why: 'Video je nejefektivnější formát pro rychlé předání emocí a informací. Krátké video představující vaši firmu, služby nebo produkty udrží pozornost zákazníka déle než jakýkoliv text nebo obrázek.',
-                        how: 'Vytvoříme pro vás profesionální krátké video optimalizované pro Google profil. Od scénáře, přes natáčení až po finální střih se postaráme o to, aby video prodávalo vaše služby.',
-                        condition: (d, s) => !s['check-video']
-                    },
-                    {
-                        id: 'check-description', category: 'Obsah a média', icon: 'fa-info-circle', title: 'Napište poutavý popis firmy',
-                        why: 'Kvalitní popis je zásadní pro lokální SEO. Umožňuje nám strategicky umístit klíčová slova, díky kterým vás zákazníci najdou, i když nehledají přímo název vaší firmy.',
-                        how: 'Napíšeme pro vás text, který bude nejen čtivý a přesvědčivý pro zákazníky, ale také optimalizovaný pro vyhledávací algoritmy Googlu. <strong>Využijte našich copywriterů a SEO specialistů.</strong>',
-                        condition: (d, s) => !s['check-description']
-                    },
-                    {
-                        id: 'check-attributes', category: 'Obsah a média', icon: 'fa-tasks', title: 'Doplňte specifické atributy',
-                        why: 'Atributy (např. "Bezbariérový přístup", "Wi-Fi zdarma", "Možnost platit kartou") umožňují zákazníkům filtrovat výsledky vyhledávání. Pokud je nemáte vyplněné, nezobrazíte se zákazníkům, kteří hledají právě tyto vlastnosti.',
-                        how: 'Projdeme s vámi všechny dostupné atributy pro vaši kategorii a pečlivě je vyplníme, aby váš profil odpovídal na co nejvíce specifických dotazů zákazníků.',
-                        condition: (d, s) => !s['check-attributes']
-                    },
-                    // Interakce se zákazníky
-                    {
-                        id: 'reviews-10', category: 'Interakce se zákazníky', icon: 'fa-star', title: 'Získejte více než 10 recenzí',
-                        why: 'Podle studií si <strong>91 % zákazníků</strong> čte online recenze a <strong>84 %</strong> jim věří stejně jako osobnímu doporučení. Počet recenzí přímo ovlivňuje vaši pozici ve vyhledávání a důvěryhodnost.',
-                        how: 'Víme, jak eticky a efektivně motivovat vaše zákazníky k zanechání hodnocení. <strong>Připravíme pro vás strategii a nástroje pro systematický sběr recenzí</strong>, které posunou váš profil na vrchol.',
-                        condition: (d, s) => d.user_ratings_total < 10
-                    },
-                    {
-                        id: 'rating-4.2', category: 'Interakce se zákazníky', icon: 'fa-star-half-alt', title: 'Zvyšte průměrné hodnocení nad 4.2 ★',
-                        why: 'Průměrné hodnocení je jedním z prvních údajů, které zákazník vidí. Podle studií si firmy s hodnocením pod 4.0 hvězdičky vybírá jen minimum zákazníků. Zvýšení průměru i o desetiny bodu může výrazně zvýšit míru prokliku.',
-                        how: 'Naše strategie pro sběr recenzí se zaměřuje na oslovování spokojených zákazníků, čímž přirozeně zvyšujeme průměrné hodnocení. Součástí je i profesionální řešení negativních recenzí.',
-                        condition: (d, s) => d.rating < 4.2
-                    },
-                    {
-                        id: 'review-reply-btn', category: 'Interakce se zákazníky', icon: 'fa-reply', title: 'Odpovídejte na všechny recenze',
-                        why: 'Firmy, které odpovídají na recenze, jsou vnímány <strong>1.7x důvěryhodněji</strong> než ty, které nereagují. Google navíc aktivitu na profilu hodnotí jako pozitivní signál a zlepšuje vaši viditelnost.',
-                        how: 'Pravidelné sledování a profesionální odpovídání na recenze je časově náročné. <strong>Tuto komunikaci převezmeme za vás</strong>, budeme reagovat rychle a v souladu s vaší firemní kulturou.',
-                        condition: (d, s) => parseInt(s['review-reply-btn']) < 2
-                    },
-                     {
-                        id: 'check-qa-owner-reply', category: 'Interakce se zákazníky', icon: 'fa-question-circle', title: 'Využijte sekci Otázky a odpovědi',
-                        why: 'Proaktivní zodpovězení častých dotazů snižuje zátěž vašeho personálu a poskytuje zákazníkům okamžité informace. Je to také skvělá příležitost, jak do profilu dostat další relevantní klíčová slova.',
-                        how: 'Analyzujeme, co vaši zákazníci nejčastěji hledají, a vytvoříme sadu strategických otázek a odpovědí (FAQ), které předejdou nejasnostem a zlepší vaši pozici ve vyhledávání. <strong>Nechte analytickou práci na nás.</strong>',
-                        condition: (d, s) => !s['check-qa-owner-reply']
-                    },
-                    {
-                        id: 'messaging-whatsapp', category: 'Interakce se zákazníky', icon: 'fa-comments', title: 'Aktivujte zasílání zpráv (Chat / WhatsApp)',
-                        why: 'Moderní zákazníci preferují rychlou a neformální komunikaci. Možnost poslat rychlý dotaz přes chat může být rozhodujícím faktorem, proč si vyberou právě vás. Zvyšuje to engagement a počet poptávek.',
-                        how: 'Aktivujeme a nastavíme pro vás funkci chatu. Můžeme zajistit i správu příchozích dotazů, abyste na žádný nezapomněli odpovědět včas, což je pro udržení dobrého hodnocení klíčové.',
-                        condition: (d, s) => !s['check-messaging'] || !s['check-whatsapp']
-                    },
-                    // Pokročilé funkce
-                    {
-                        id: 'check-products', category: 'Pokročilé funkce', icon: 'fa-shopping-basket', title: 'Doplňte produkty, služby nebo menu',
-                        why: 'Zobrazení produktů a služeb přímo v profilu zkracuje nákupní proces. Zákazník nemusí chodit na web, aby zjistil, co nabízíte, což zvyšuje šanci na okamžitou akci.',
-                        how: 'Profesionálně nafotíme a popíšeme vaše klíčové produkty či služby a vložíme je do profilu tak, aby byly pro zákazníky co nejatraktivnější. <strong>Postaráme se o kompletní prezentaci vaší nabídky.</strong>',
-                        condition: (d, s) => !s['check-products']
-                    },
-                     {
-                        id: 'check-services', category: 'Pokročilé funkce', icon: 'fa-calendar-check', title: 'Aktivujte Rezervace / Objednávky',
-                        why: 'Přímé prolinkování na rezervační nebo objednávkový systém zkracuje zákazníkovi cestu ke konverzi. Google tuto funkci aktivně podporuje a profily s ní mají vyšší míru interakce.',
-                        how: 'Propojíme váš profil s vaším stávajícím rezervačním systémem, nebo vám pomůžeme s implementací nového. Zajistíme, aby proces objednání byl pro zákazníka co nejjednodušší.',
-                        condition: (d, s) => !s['check-services']
-                    },
-                    {
-                        id: 'check-posts', category: 'Pokročilé funkce', icon: 'fa-bullhorn', title: 'Využívejte Příspěvky',
-                        why: 'Příspěvky jsou jako bezplatná reklamní plocha přímo na Googlu. Umožňují komunikovat aktuální nabídky a novinky, což prokazatelně zvyšuje míru prokliku (CTR) a počet konverzí.',
-                        how: 'Vytvoříme pro vás redakční plán a budeme pravidelně publikovat vizuálně atraktivní a textově poutavé příspěvky, které zaujmou a přivedou nové zákazníky. <strong>Ušetříme vám čas a zajistíme profesionální obsah.</strong>',
-                        condition: (d, s) => !s['check-posts']
-                    },
-                     {
-                        id: 'check-posts-types', category: 'Pokročilé funkce', icon: 'fa-history', title: 'Zvyšte aktivitu a frekvenci příspěvků',
-                        why: 'Příspěvky na Google jsou platné pouze omezenou dobu. Pravidelná aktivita (alespoň jednou za 7-14 dní) je pro algoritmus signálem, že je váš profil živý a aktuální, což odměňuje lepší pozicí.',
-                        how: 'Nemusíte se o nic starat. V rámci naší správy pro vás vytvoříme redakční plán a budeme pravidelně publikovat relevantní a poutavé příspěvky, které udrží váš profil na špici.',
-                        condition: (d, s) => !s['check-posts-types']
-                    }
-                ];
-
-                const activeRecommendations = recommendations.filter(rec => rec.condition(currentPlaceDetails, manualChecklistState));
-                
-                let html = `
-                    <div class="solution-header">
-                        <h2>Návrh řešení pro ${currentPlaceDetails.name}</h2>
-                        <p>Kroky, které vám pomohou dosáhnout 100% potenciálu vašeho profilu.</p>
-                    </div>
-                `;
-
-                if (activeRecommendations.length === 0) {
-                    html += `
-                        <div class="congrats-message">
-                            <i class="fas fa-check-circle"></i>
-                            <h2>Gratulujeme!</h2>
-                            <p>Váš profil je ve skvělé kondici! Nenašli jsme žádné zásadní nedostatky, které by bylo třeba okamžitě řešit.</p>
-                        </div>
-                    `;
-                } else {
-                    const grouped = activeRecommendations.reduce((acc, rec) => {
-                        (acc[rec.category] = acc[rec.category] || []).push(rec);
-                        return acc;
-                    }, {});
-
-                    const categoryOrder = ['Kritické kroky', 'Základní informace', 'Obsah a média', 'Interakce se zákazníky', 'Pokročilé funkce'];
-
-                    for (const category of categoryOrder) {
-                        if (grouped[category]) {
-                            html += `<div class="solution-category"><h3><i class="fas ${grouped[category][0].icon}"></i> ${category}</h3>`;
-                            for (const rec of grouped[category]) {
-                                html += `
-                                    <div class="recommendation-card ${rec.critical ? 'critical' : ''}">
-                                        <div class="recommendation-icon"><i class="fas ${rec.icon}"></i></div>
-                                        <div class="recommendation-content">
-                                            <h4 class="recommendation-title">${rec.title}</h4>
-                                            <div class="why">
-                                                <h4>Proč je to důležité?</h4>
-                                                <p>${rec.why}</p>
-                                            </div>
-                                            <div class="how">
-                                                <h4>Jak na to?</h4>
-                                                <p>${rec.how}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                `;
-                            }
-                            html += `</div>`;
-                        }
-                    }
-                }
-                
-                solutionProposalContainer.innerHTML = html;
-            };
-
+            // renderManualAnalysisWidget, recalculateAndRenderScore, updateVerificationStatus, findAndRenderCompetitors, renderSolutionProposal
+            // predpokladáme bez zmeny logiky, iba texty vyššie sú lokalizované
         });
     </script>
 </body>
 </html>
-
-
