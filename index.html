@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMF Analýza | Najděte svůj potenciál</title>
+    <title>GMF Analýza | Nájdite svoj potenciál</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400&display=swap');
@@ -338,11 +338,11 @@
              <img src="https://viewcz.com/images/svg/head-logo.svg" alt="ViewCZ Logo" class="welcome-logo">
         </header>
         <div class="welcome-content">
-            <h1>Odhalte plný potenciál svého firemního profilu</h1>
-            <p class="subtitle">V digitálním světě je vaše vizitka na Google Mapách klíčová. Náš nástroj provede hloubkovou analýzu, porovná vás s konkurencí a ukáže vám cestu k lepší viditelnosti a novým zákazníkům.</p>
+            <h1>Odhaľte plný potenciál svojho firemného profilu</h1>
+            <p class="subtitle">V digitálnom svete je vaša vizitka na Google Mapách kľúčová. Náš nástroj vykoná hĺbkovú analýzu, porovná vás s konkurenciou a ukáže vám cestu k lepšej viditeľnosti a novým zákazníkom.</p>
             <div class="search-container">
                  <i class="fas fa-search"></i>
-                 <input type="text" id="gmf-input" placeholder="Zadejte název a adresu vaší firmy...">
+                 <input type="text" id="gmf-input" placeholder="Zadajte názov a adresu vašej firmy...">
             </div>
         </div>
     </main>
@@ -354,13 +354,13 @@
 
     <div id="floating-warning-bar" class="hidden">
         <div>
-            <h4><i class="fas fa-exclamation-triangle"></i> Kritický nedostatek</h4>
+            <h4><i class="fas fa-exclamation-triangle"></i> Kritický nedostatok</h4>
             <ul>
-                <li>⚠️ Riziko převzetí profilu</li>
-                <li>🚫 Omezené možnosti správy</li>
-                <li>📉 Horší pozice ve vyhledávání a mapách</li>
-                <li>❌ Nižší důvěryhodnost u zákazníků</li>
-                <li>📊 Omezený přístup k analytikám a funkcím</li>
+                <li>⚠️ Riziko prevzatia profilu</li>
+                <li>🚫 Obmedzené možnosti správy</li>
+                <li>📉 Horšie pozície vo vyhľadávaní a mapách</li>
+                <li>❌ Nižšia dôveryhodnosť u zákazníkov</li>
+                <li>📊 Obmedzený prístup k analytikám a funkciám</li>
             </ul>
         </div>
         <button class="close-btn">×</button>
@@ -373,17 +373,17 @@
         <i class="fas fa-search-plus"></i> Nová analýza
     </button>
     <button id="floating-comparison-btn" class="btn btn-green hidden">
-        <i class="fas fa-chart-bar"></i> Porovnání s konkurencí <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        <i class="fas fa-chart-bar"></i> Porovnanie s konkurenciou <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
     </button>
     <button id="floating-back-btn" class="btn hidden">
-        <i class="fas fa-arrow-left"></i> Zpět na analýzu
+        <i class="fas fa-arrow-left"></i> Späť na analýzu
     </button>
     <button id="floating-solution-btn" class="btn btn-green hidden">
-        <i class="fas fa-lightbulb"></i> Návrh řešení <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        <i class="fas fa-lightbulb"></i> Návrh riešenia <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
     </button>
     <!-- NOVÉ TLAČÍTKO ZPĚT -->
     <button id="floating-back-to-comparison-btn" class="btn hidden">
-        <i class="fas fa-arrow-left"></i> Zpět na porovnání
+        <i class="fas fa-arrow-left"></i> Späť na porovnanie
     </button>
 
 
@@ -641,7 +641,7 @@
                         }
 
                     } else {
-                        showError('Nepodařilo se načíst detaily firmy.');
+                        showError('Nepodarilo sa načítať detaily firmy.');
                     }
                 });
             };
@@ -669,25 +669,25 @@
             }
             
             const script = document.getElementById('google-maps-script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places,geometry&language=cs&callback=initGoogleServices`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places,geometry&language=sk&callback=initGoogleServices`;
             window.initGoogleServices = initializeGoogleAndAutocomplete;
             
             // --- VYKRESLOVACÍ FUNKCE (zůstávají beze změny) ---
             const renderTopPanel = (d) => {
                 const photoUrl = d.photos && d.photos.length > 0
                     ? d.photos[0].getUrl({ maxWidth: 1024, maxHeight: 250 })
-                    : 'https://placehold.co/1024x250/EAEAEA/B6B6B6?text=Fotografie+nen%C3%AD+dostupn%C3%A1';
+                    : 'https://placehold.co/1024x250/EAEAEA/B6B6B6?text=Fotografia+nie+je+dostupn%C3%A1';
 
                 const placeName = encodeURIComponent(d.name);
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${placeName}&query_place_id=${d.place_id}`;
                 const searchUrl = `https://www.google.com/search?q=${placeName}`;
                 
-                let businessStatusText = 'Neaktivní';
+                let businessStatusText = 'Neaktívne';
                 let statusColor = 'var(--google-red)';
                 let statusIcon = 'fa-eye-slash';
 
                 if (d.business_status === 'OPERATIONAL') {
-                    businessStatusText = 'Viditelné';
+                    businessStatusText = 'Viditeľné';
                     statusColor = 'var(--google-green)';
                     statusIcon = 'fa-eye';
                 } else if (d.business_status === 'CLOSED_TEMPORARILY') {
@@ -707,11 +707,11 @@
                                         <i class="fas fa-times fa-stack-1x" id="status-icon" style="color:white;"></i>
                                     </span>
                                     <div id="company-details-box">
-                                        <h2>${d.name || 'Neznámý podnik'}</h2>
+                                        <h2>${d.name || 'Neznámy podnik'}</h2>
                                         <div class="rating-info">
                                             <i class="fas fa-star"></i>
                                             <span>${d.rating?.toFixed(1) || 'N/A'}</span>
-                                            <span style="margin-left:5px;">(${d.user_ratings_total || 0} recenzí)</span>
+                                            <span style="margin-left:5px;">(${d.user_ratings_total || 0} recenzií)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -733,19 +733,19 @@
 
             const renderAutoDetailsWidget = (d) => {
                 const getData = (value, formatter) => {
-                    const fallback = '<span class="missing">Chybí</span>';
+                    const fallback = '<span class="missing">Chýba</span>';
                     if (value === null || typeof value === 'undefined' || value === '' || (Array.isArray(value) && value.length === 0)) return fallback;
                     if (typeof formatter === 'function') {
                         const result = formatter(value);
                         return result === null || result === '' ? fallback : result;
                     }
-                    if (typeof value === 'boolean') return value ? '<span class="present">Ano</span>' : '<span class="missing">Ne</span>';
+                    if (typeof value === 'boolean') return value ? '<span class="present">Áno</span>' : '<span class="missing">Nie</span>';
                     return value;
                 };
 
                 const formatPhotoCount = (photos) => {
                     if (!photos || photos.length === 0) {
-                        return '<span class="missing">Chybí</span>';
+                        return '<span class="missing">Chýba</span>';
                     }
                     const count = photos.length;
                     return count >= 10 ? '10+' : count;
@@ -754,10 +754,10 @@
                 const formatPriceLevel = (level) => {
                     switch (level) {
                         case 0: return 'Zdarma';
-                        case 1: return 'Nízká';
-                        case 2: return 'Střední';
+                        case 1: return 'Nízka';
+                        case 2: return 'Stredná';
                         case 3: return 'Vysoká';
-                        case 4: return 'Velmi vysoká';
+                        case 4: return 'Veľmi vysoká';
                         default: return null;
                     }
                 };
@@ -767,13 +767,13 @@
                     const dayName = parts[0].trim();
                     const hours = parts.slice(1).join(':').trim();
                     return `<span>${dayName}:</span><span>${hours}</span>`;
-                }).join('') || '<span class="missing">Chybí</span>';
+                }).join('') || '<span class="missing">Chýba</span>';
 
                 const hasReviews = d.reviews && d.reviews.length > 0;
                 const hasGeometry = d.geometry && d.geometry.location;
 
                 const hasStreetView = d.geometry && d.geometry.location;
-                let hasStreetViewMessage = 'Chybí';
+                let hasStreetViewMessage = 'Chýba';
 
                 if (hasStreetView) {
                     streetViewService.getPanorama({
@@ -784,10 +784,10 @@
                         const streetViewToggleBtn = $('#street-view-toggle-btn');
                         if (!streetViewToggleBtn) return;
                         if (status === google.maps.StreetViewStatus.OK) {
-                            streetViewToggleBtn.innerHTML = `<span>Zobrazit Street View</span><i class="fas fa-chevron-down"></i>`;
+                            streetViewToggleBtn.innerHTML = `<span>Zobraziť Street View</span><i class="fas fa-chevron-down"></i>`;
                             streetViewToggleBtn.disabled = false;
                         } else {
-                            streetViewToggleBtn.innerHTML = `<span>Street View chybí</span><i class="fas fa-chevron-down"></i>`;
+                            streetViewToggleBtn.innerHTML = `<span>Street View chýba</span><i class="fas fa-chevron-down"></i>`;
                             streetViewToggleBtn.disabled = true;
                         }
                     });
@@ -795,21 +795,21 @@
 
 
                 $('#auto-details-widget').innerHTML = `
-                    <h3><i class="fas fa-cogs"></i> Fáze 1: Automatická analýza</h3>
+                    <h3><i class="fas fa-cogs"></i> Fáza 1: Automatická analýza</h3>
                     <ul class="details-list">
-                        <h4>Kategorie</h4>
-                        <li><strong>Primární kategorie:</strong> <div class="value-col">${getData(d.types?.[0])?.replace(/_/g, ' ')}</div></li>
-                        <li><strong>Sekundární kategorie:</strong> <div class="value-col">${getData(d.types?.slice(1), arr => arr.map(i => i.replace(/_/g, ' ')).join(', '))}</div></li>
-                        <h4>Kontaktní informace</h4>
+                        <h4>Kategórie</h4>
+                        <li><strong>Primárna kategória:</strong> <div class="value-col">${getData(d.types?.[0])?.replace(/_/g, ' ')}</div></li>
+                        <li><strong>Sekundárne kategórie:</strong> <div class="value-col">${getData(d.types?.slice(1), arr => arr.map(i => i.replace(/_/g, ' ')).join(', '))}</div></li>
+                        <h4>Kontaktné informácie</h4>
                         <li><strong>Adresa:</strong> <div class="value-col">${getData(d.formatted_address)}</div></li>
                         <li><strong>Web:</strong> <div class="value-col">${getData(d.website, url => `<a href="${url}" target="_blank">${url}</a>`)}</div></li>
-                        <li><strong>Telefon:</strong> <div class="value-col">${getData(d.formatted_phone_number)}</div></li>
+                        <li><strong>Telefón:</strong> <div class="value-col">${getData(d.formatted_phone_number)}</div></li>
                         <li><strong>Plus Code:</strong> <div class="value-col">${getData(d.plus_code?.global_code)}</div></li>
                         <li>
-                            <strong>Otevírací doba:</strong>
+                            <strong>Otváracie hodiny:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="opening-hours-toggle">
-                                    <span>${d.opening_hours?.weekday_text ? 'Zobrazit dny' : 'Chybí'}</span>
+                                    <span>${d.opening_hours?.weekday_text ? 'Zobraziť dni' : 'Chýba'}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -818,10 +818,10 @@
                             <div class="opening-hours-grid">${openingHoursHtml}</div>
                         </li>
                         <li>
-                            <strong>GPS lokace:</strong>
+                            <strong>GPS lokácia:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="map-toggle-btn">
-                                    <span>${hasGeometry ? 'Zobrazit mapu' : 'Chybí'}</span>
+                                    <span>${hasGeometry ? 'Zobraziť mapu' : 'Chýba'}</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -833,7 +833,7 @@
                             <strong>Street View:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="street-view-toggle-btn">
-                                    <span>Načítám...</span>
+                                    <span>Načítavam...</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -841,14 +841,14 @@
                         <li class="street-view-detail hidden">
                             <div id="street-view-panorama" class="street-view-container"></div>
                         </li>
-                        <h4>Hodnocení</h4>
-                        <li><strong>Prům. hodnocení:</strong> <div class="value-col">${getData(d.rating, r => `<strong>${r} ★</strong>`)}</div></li>
-                        <li><strong>Počet hodnocení:</strong> <div class="value-col">${getData(d.user_ratings_total)}</div></li>
+                        <h4>Hodnotenie</h4>
+                        <li><strong>Priem. hodnotenie:</strong> <div class="value-col">${getData(d.rating, r => `<strong>${r} ★</strong>`)}</div></li>
+                        <li><strong>Počet hodnotení:</strong> <div class="value-col">${getData(d.user_ratings_total)}</div></li>
                         <li>
-                            <strong>Nejnovější recenze:</strong>
+                            <strong>Najnovšie recenzie:</strong>
                             <div class="value-col">
                                 <button type="button" class="toggle-btn" id="reviews-toggle-btn">
-                                    <span>Nejnovější</span>
+                                    <span>Najnovšie</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
                             </div>
@@ -857,9 +857,9 @@
                             <div class="value-col" id="reviews-list"></div>
                         </li>
                         <h4>Obsah</h4>
-                        <li><strong>Počet fotek:</strong> <div class="value-col">${formatPhotoCount(d.photos)}</div></li>
+                        <li><strong>Počet fotiek:</strong> <div class="value-col">${formatPhotoCount(d.photos)}</div></li>
                         <li><strong>Popis od vlastníka:</strong> <div class="value-col">${getData(d.editorial_summary?.overview)}</div></li>
-                        <h4>Ostatní</h4>
+                        <h4>Ostatné</h4>
                         <li><strong>Cenová úroveň:</strong> <div class="value-col">${getData(d.price_level, formatPriceLevel)}</div></li>
                         <li><strong>Bezbariérový vchod:</strong> <div class="value-col">${getData(d.wheelchair_accessible_entrance)}</div></li>
                     </ul>`;
@@ -898,7 +898,7 @@
                                 });
                             }
                         } else {
-                            span.textContent = 'Zobrazit Street View';
+                            span.textContent = 'Zobraziť Street View';
                         }
                     });
                 } else if (streetViewToggleBtn) {
@@ -919,7 +919,7 @@
                             const sortedReviews = reviews.sort((a, b) => b.time - a.time).filter(r => r.text && r.text.trim() !== '').slice(0, 3);
                             let reviewsHtml = '';
                             sortedReviews.forEach(review => {
-                                const date = new Date(review.time * 1000).toLocaleDateString('cs-CZ');
+                                const date = new Date(review.time * 1000).toLocaleDateString('sk-SK');
                                 const stars = '★'.repeat(Math.round(review.rating));
                                 reviewsHtml += `
                                     <div class="review-card">
@@ -946,7 +946,7 @@
                         openingHoursToggleBtn.classList.toggle('expanded');
                         const span = openingHoursToggleBtn.querySelector('span');
                         if (openingHoursLi.classList.contains('hidden')) {
-                            span.textContent = 'Zobrazit dny';
+                            span.textContent = 'Zobraziť dni';
                         } else {
                             span.textContent = 'Skrýt dny';
                         }
@@ -962,7 +962,7 @@
                         mapToggleBtn.classList.toggle('expanded');
                         const span = mapToggleBtn.querySelector('span');
                         if (mapLi.classList.contains('hidden')) {
-                            span.textContent = 'Zobrazit mapu';
+                            span.textContent = 'Zobraziť mapu';
                         } else {
                             span.textContent = 'Skrýt mapu';
                             if (!map) {
@@ -1001,67 +1001,67 @@
             const renderManualAnalysisWidget = (d) => {
                 $('#manual-analysis-widget').innerHTML = `
                     <div class="manual-header">
-                        <h3><i class="fas fa-user-check"></i> Fáze 2: Manuální audit</h3>
+                        <h3><i class="fas fa-user-check"></i> Fáza 2: Manuálny audit</h3>
                     </div>
                     <div id="manual-checklist">
                         <div class="checklist-group">
-                            <h4><i class="fas fa-key"></i> Základní stav profilu</h4>
-                            <div class="check-item"><label for="check-claimed">Ověřený firemní zápis</label><input type="checkbox" id="check-claimed"></div>
+                            <h4><i class="fas fa-key"></i> Základný stav profilu</h4>
+                            <div class="check-item"><label for="check-claimed">Overený firemný zápis</label><input type="checkbox" id="check-claimed"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-info-circle"></i> Informace, konzistence a pravidla</h4>
-                             <div class="check-item"><label for="check-primary-category">Primární kategorie</label><input type="checkbox" id="check-primary-category"></div>
-                             <div class="check-item"><label for="check-secondary-categories">Sekundární kategorie</label><input type="checkbox" id="check-secondary-categories"></div>
+                            <h4><i class="fas fa-info-circle"></i> Informácie, konzistentnosť a pravidlá</h4>
+                             <div class="check-item"><label for="check-primary-category">Primárna kategória</label><input type="checkbox" id="check-primary-category"></div>
+                             <div class="check-item"><label for="check-secondary-categories">Sekundárne kategórie</label><input type="checkbox" id="check-secondary-categories"></div>
                              <div class="check-item"><label for="check-address">Adresa</label><input type="checkbox" id="check-address"></div>
                              <div class="check-item"><label for="check-website">Webové stránky</label><input type="checkbox" id="check-website"></div>
-                             <div class="check-item"><label for="check-phone">Telefonní číslo</label><input type="checkbox" id="check-phone"></div>
-                             <div class="check-item"><label for="check-hours">Otevírací doba</label><input type="checkbox" id="check-hours"></div>
-                            <div class="check-item"><label for="check-name-spam">Název firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam"></div>
-                            <div class="check-item"><label for="check-nap">Údaje (NAP) jsou shodné</label><input type="checkbox" id="check-nap"></div>
+                             <div class="check-item"><label for="check-phone">Telefónne číslo</label><input type="checkbox" id="check-phone"></div>
+                             <div class="check-item"><label for="check-hours">Otváracie hodiny</label><input type="checkbox" id="check-hours"></div>
+                            <div class="check-item"><label for="check-name-spam">Názov firmy neobsahuje spam</label><input type="checkbox" id="check-name-spam"></div>
+                            <div class="check-item"><label for="check-nap">Údaje (NAP) sú zhodné</label><input type="checkbox" id="check-nap"></div>
                         </div>
                         <div class="checklist-group">
                             <h4><i class="fas fa-image"></i> Kvalita obsahu</h4>
-                            <div class="check-item"><label for="check-owner-photos">Fotky od majitele (Logo, titulní fotografie, další)</label><input type="checkbox" id="check-owner-photos"></div>
-                            <div class="check-item"><label for="check-photos-10plus">Počet fotografií (více než 10)</label><input type="checkbox" id="check-photos-10plus"></div>
+                            <div class="check-item"><label for="check-owner-photos">Fotky od majiteľa (Logo, titulná fotografia, ďalšie)</label><input type="checkbox" id="check-owner-photos"></div>
+                            <div class="check-item"><label for="check-photos-10plus">Počet fotografií (viac ako 10)</label><input type="checkbox" id="check-photos-10plus"></div>
                             <div class="check-item"><label for="check-street-view">Profil obsahuje Google Street View</label><input type="checkbox" id="check-street-view"></div>
-                            <div class="check-item"><label for="check-virtual-tour">Profil obsahuje Virtuální prohlídku</label><input type="checkbox" id="check-virtual-tour"></div>
+                            <div class="check-item"><label for="check-virtual-tour">Profil obsahuje Virtuálnu prehliadku</label><input type="checkbox" id="check-virtual-tour"></div>
                             <div class="check-item"><label for="check-drone-video">Profil obsahuje Dron</label><input type="checkbox" id="check-drone-video"></div>
                             <div class="check-item"><label for="check-video">Profil obsahuje Video</label><input type="checkbox" id="check-video"></div>
-                            <div class="check-item"><label for="check-description">Vlastní popis firmy</label><input type="checkbox" id="check-description"></div>
-                            <div class="check-item"><label for="check-attributes">Atributy</label><input type="checkbox" id="check-attributes"></div>
+                            <div class="check-item"><label for="check-description">Vlastný popis firmy</label><input type="checkbox" id="check-description"></div>
+                            <div class="check-item"><label for="check-attributes">Atribúty</label><input type="checkbox" id="check-attributes"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-shopping-basket"></i> Produkty/Služby/Objednávky/Menu/Rezervace</h4>
-                            <div class="check-item"><label for="check-products">Vyplněna sekce Produkty/Služby/Menu</label><input type="checkbox" id="check-products"></div>
-                            <div class="check-item"><label for="check-services">Vyplněna sekce Rezervace/Objednávky</label><input type="checkbox" id="check-services"></div>
+                            <h4><i class="fas fa-shopping-basket"></i> Produkty/Služby/Objednávky/Menu/Rezervácie</h4>
+                            <div class="check-item"><label for="check-products">Vyplnená sekcia Produkty/Služby/Menu</label><input type="checkbox" id="check-products"></div>
+                            <div class="check-item"><label for="check-services">Vyplnená sekcia Rezervácie/Objednávky</label><input type="checkbox" id="check-services"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-bullhorn"></i> Reklamní novinky</h4>
-                            <div class="check-item"><label for="check-posts">Aktivní příspěvky</label><input type="checkbox" id="check-posts"></div>
-                            <div class="check-item"><label for="check-posts-types">Aktivita příspěvků (méně než 14 dnů)</label><input type="checkbox" id="check-posts-types"></div>
+                            <h4><i class="fas fa-bullhorn"></i> Reklamné novinky</h4>
+                            <div class="check-item"><label for="check-posts">Aktívne príspevky</label><input type="checkbox" id="check-posts"></div>
+                            <div class="check-item"><label for="check-posts-types">Aktivita príspevkov (menej ako 14 dní)</label><input type="checkbox" id="check-posts-types"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-question-circle"></i> Otázky a odpovědi (Q&A)</h4>
-                            <div class="check-item"><label for="check-qa-owner-reply">Majitel odpovídá na otázky</label><input type="checkbox" id="check-qa-owner-reply"></div>
+                            <h4><i class="fas fa-question-circle"></i> Otázky a odpovede (Q&A)</h4>
+                            <div class="check-item"><label for="check-qa-owner-reply">Majiteľ odpovedá na otázky</label><input type="checkbox" id="check-qa-owner-reply"></div>
                         </div>
                         <div class="checklist-group">
-                            <h4><i class="fas fa-users"></i> Interakce</h4>
+                            <h4><i class="fas fa-users"></i> Interakcie</h4>
                             <div class="check-item">
-                                <label for="check-review-reply">Reakce na recenze</label>
+                                <label for="check-review-reply">Reakcie na recenzie</label>
                                 <div class="review-dropdown-wrapper">
                                     <button type="button" class="review-select-btn" id="review-reply-btn" data-value="0">
-                                        <span>Ne</span>
+                                        <span>Nie</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <ul class="review-select-options">
-                                        <li data-value="0">Ne</li>
-                                        <li data-value="1">Částečně</li>
-                                        <li data-value="2">Ano</li>
+                                        <li data-value="0">Nie</li>
+                                        <li data-value="1">Čiastočne</li>
+                                        <li data-value="2">Áno</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="check-item"><label for="check-messaging">Aktivní zasílání zpráv (Chat)</label><input type="checkbox" id="check-messaging"></div>
-                            <div class="check-item"><label for="check-whatsapp">Tlačítko zpráv/Whatsapp</label><input type="checkbox" id="check-whatsapp"></div>
+                            <div class="check-item"><label for="check-messaging">Aktívne zasielanie správ (Chat)</label><input type="checkbox" id="check-messaging"></div>
+                            <div class="check-item"><label for="check-whatsapp">Tlačidlo správ/Whatsapp</label><input type="checkbox" id="check-whatsapp"></div>
                         </div>
                     </div>`;
                 
@@ -1137,7 +1137,7 @@
                     </li>`).join('');
 
                 $('#score-widget').innerHTML = `
-                    <h3><i class="fas fa-tachometer-alt"></i> Skóre optimalizace</h3>
+                    <h3><i class="fas fa-tachometer-alt"></i> Skóre optimalizácie</h3>
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <div class="score-circle" style="background: conic-gradient(${scoreColor} ${score * 3.6}deg, #e9ecef ${score * 3.6}deg);">
                             <span class="score-value" style="color:${scoreColor}">${score}%</span>
@@ -1145,7 +1145,7 @@
                     </div>
                     <div class="score-breakdown">
                         <div class="score-breakdown-toggle">
-                            <span>Přehled hodnocení</span>
+                            <span>Prehľad hodnotenia</span>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="score-breakdown-list">
